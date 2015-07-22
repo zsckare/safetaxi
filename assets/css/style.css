@@ -1,0 +1,16 @@
+body{
+	background-color: #eceff1 !important;
+}
+.padding-largo{
+	padding: 1.2em;
+}
+
+.primary{
+	background-color: #03a9f4 !important;
+}
+.primary-dark{
+	background-color: #303f9f !important;
+}
+.accent{
+	background-color: #18ffff !important;
+}
