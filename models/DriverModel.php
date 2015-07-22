@@ -11,12 +11,12 @@
     }
 
 
-    public function get($cellComparate = null, $value = null)
+    public function get($id)
     {
         $query = $this->consult->getConsultar("
             SELECT *
             FROM driver
-            WHERE $cellComparate = '$value'
+            WHERE id_driver = '$id'
         ");
 
         while($row = $query->fetch_array(MYSQLI_ASSOC)){
@@ -64,15 +64,17 @@
           "))
       {
          Cookies::set("complete","Se ha creadi el usuario correctamente","20-s");
-          header('Location:'.Rutas::getDireccion('drivers'));
+         // header('Location:'.Rutas::getDireccion('drivers'));
+         Redirection::go("drivers");
       }else{
          Cookies::set("alert","Error: por algun motivo no se pudo crear el usuario intenta de nuevo","20-s");
-         header('Location:'.Rutas::getDireccion('drivers'));
+         Redirection::go("drivers");
       }
     }
 
-    public function update($useractual,$mailactual, $comp, $user, $correo, $values=array())
+    public function update($values=array())
     {
+      extract($values);
       if($this->consult->getConsultar("
           UPDATE driver
           SET name = '$name'
@@ -81,25 +83,25 @@
       {
         $_SESSION['user']=$name;
         Cookies::set("complete","Se ha editado el usuario correctamente","20-s");
-        Redirection::go("user");
+        Redirection::go("drivers");
       }else{
         Cookies::set("alert","Error: por algun motivo no se pudo editar el usuario intenta de nuevo","20-s");
-        Redirection::go("user");
+        Redirection::go("drivers");
       }   
     }
 
-    public function destroy($id)
+    public function delete($id)
     {
         if($this->consult->getConsultar("
             DELETE FROM driver
-            WHERE id_user = '$id'
+            WHERE id_driver = '$id'
         ")){
            Cookies::set("delete","Se ha eliminado el usuario correctamente","20-s");
-           Redirection::go("home");
+           Redirection::go("drivers");
         }else
         {
            Cookies::set("alert","Error: No se ha podido eliminar el usuario intenta de nuevo","20-s");
-          Redirection::go("home");
+          Redirection::go("drivers");
         }
     }
   }
@@ -121,3 +123,5 @@
       return self::$_app_path.$direccion;
     }
   }
+
+?>

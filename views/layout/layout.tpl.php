@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="/assets/css/materialize.css">
 	<link rel="stylesheet" href="/assets/css/style.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 <body>
 	<header>

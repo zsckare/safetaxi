@@ -14,3 +14,16 @@ body{
 .accent{
 	background-color: #18ffff !important;
 }
+.rojo-oscuro{
+	color: #d50000 !important;
+}
+
+.titulos{
+	font-size: 1em !important;
+}
+.subtitulos{
+	font-size: 1.2em !important; 
+}
+.verDriver{
+	padding: 1.2em 1.2em 1.2em 1.2em !important;
+}
