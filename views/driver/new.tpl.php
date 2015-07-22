@@ -2,6 +2,7 @@
 	if (isset($_POST['nombre'])) {
 		$consulta = new DriverModel();
 		return $consulta->create([
+			
 			"nombre"=> $_POST['nombre'],
 			"paterno"=> $_POST['paterno'],
 			"materno"=> $_POST['materno'],

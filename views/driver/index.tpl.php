@@ -1,4 +1,4 @@
-<section style="height: 500px !important; ">
+<section style="height: 550px !important; ">
 	<div class="row">
 		<div class="col s6 m6 l6 offset-s4 offset-m4 offset-l4">
 			<h3>Lista de Taxistas</h3>		

@@ -30,6 +30,10 @@ class DriversController{
         return new View("driver/edit", ["title" => "Taxi Seguro", "layout" => "on", "nameLayout" => "layout","values"=>$values]);
        
     }
+    public function uploadAction()
+    {
+        return new View("driver/upload", ["title" => "Taxi Seguro | Resgistro de Taxistas", "layout" => "on", "nameLayout" => "layout"]);
+    }
     public function deleteAction(){
         $del=$_GET['d'];
         $consulta= new DriverModel();

@@ -76,9 +76,7 @@
     {
       extract($values);
       if($this->consult->getConsultar("
-          UPDATE driver
-          SET name = '$name'
-          WHERE name_user = '$user'
+         UPDATE `driver` SET `name_driver` = '$nombre', `paterno_driver` = '$paterno', `materno_driver` = '$materno', `emails_driver` = '$correo', `image_driver` = '$imagen', `phone_driver` = '$telefono',  `code_taxi` = '$taxicode', `placas_taxi` = '$placas', `calle` = '$calle', `colonia` = '$colonia', `numero` = '$numero' WHERE id_driver = '$id'
       "))
       {
         $_SESSION['user']=$name;
@@ -88,6 +86,10 @@
         Cookies::set("alert","Error: por algun motivo no se pudo editar el usuario intenta de nuevo","20-s");
         Redirection::go("drivers");
       }   
+    }
+    public function subirfoto($value=array())
+    {
+      # code...
     }
 
     public function delete($id)

@@ -33,7 +33,7 @@
 				</div>
 				<div class="row">
 					<div class="col s2 m2 l2 offset-s10 offset-m10 offset-l10" >
-						<a href="/drivers/edit/?id_driver=<?=$row['id_driver'] ?>" Title="Editar" class="btn-floating primary-dark"><i class="small ion-android-create"></i></a>
+						<a href="/drivers/edit/?id_driver=<?=$row['id_driver'] ?>" Title="Editar" class="btn-floating waves-effect waves-light primary-dark"><i class="small ion-android-create"></i></a>
 					</div>
 					
 				</div>
