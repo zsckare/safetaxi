@@ -9,6 +9,9 @@
        url(/assets/iconfont/MaterialIcons-Regular.woff) format('woff'),
        url(/assets/iconfont/MaterialIcons-Regular.ttf) format('truetype');
 }
+html,body{
+  font-family: 'Roboto', sans-serif !important;
+}
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
@@ -52,7 +55,12 @@ body{
 .rojo-oscuro{
 	color: #d50000 !important;
 }
-
+.be-white{
+  background-color: #FFF !important;
+}
+.be-black{
+  color: #000 !important;
+}
 .titulos{
 	font-size: 1em !important;
 }
@@ -75,12 +83,12 @@ body{
   background-color: #fff;
   z-index: 10;
   overflow-y: auto;
-  background-color: #03a9f4;
+  background-color: #37474F;
 
 }
 .logo{
   height: 10em;
-  background-color: #303f9f !important;
+  background-color: #263238 !important;
 
 }
 .menulateral ul li {
@@ -89,9 +97,15 @@ body{
 .menulateral ul li a{
   display: block;
   padding: 1.1em;
-  color: #fff !important;
+  color: #78909C !important;
+  font-family: 'Slabo 27px', serif;
+  font-size: 1.3em;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
 }
-.menulateral ul li:hover{
-  background-color: #303f9f !important;
+.menulateral ul li a:hover{
+  background-color: #03a9f4 !important;
+  color: #fff !important;
   cursor: hand;
 }

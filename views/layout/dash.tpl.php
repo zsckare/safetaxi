@@ -6,12 +6,23 @@
 	<link rel="stylesheet" href="/assets/css/materialize.css">
 	<link rel="stylesheet" href="/assets/css/style.css">
 	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+	<style>
+		html,body{
+			overflow: hidden;
+		}	
+	</style>
 </head>
 <body>
 	<header>
-		<nav class="primary top-nav"style="margin-left:240px;">
-		    <div class="primary nav-wrapper" >
-		      <a href="/home" class="brand-logo" style="margin-left:30px;">Taxi Seguro</a>
+		<nav class="be-white top-nav"style="margin-left:240px;">
+		    <div class="be-white nav-wrapper" >
+		      <a href="/home" class="brand-logo be-black" style="margin-left:30px;">Taxi Seguro</a>
+		      <ul class="" style="margin-left:62em !important;">
+		      	<li><a href="/logout" class="be-black">Cerrar Sesion <i class=" left material-icons">input</i></a></li>
+		      </ul>
+		      
 		    </div>
 		  </nav>
 		

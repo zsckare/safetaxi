@@ -12,7 +12,7 @@
 		<div class="row">
 			<div class="col s6 m6 l6 offset-s3 offset-m3 offset-l3">
 				<div class="card padding-largo">
-					<form action="" method="post">
+					<form action="/session" method="post">
 						<div class="row">
 							<div class="input-field col s4 m4 l4 offset-s4 offset-m4 offset-l4">
 								<label for="us">Usuario</label>
@@ -27,7 +27,7 @@
 						</div>
 						<div class="row">
 							<div class="center-align">
-								<input type="submit" id="submit-form" class="btn primary">
+								<input type="submit" id="submit-form" class="btn primary" value="Iniciar Sesion">
 							</div>							
 						</div>
 						
@@ -40,7 +40,7 @@
 
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
-	<script src="/assets/js/ajax.js"></script>
+	
 
 
 	

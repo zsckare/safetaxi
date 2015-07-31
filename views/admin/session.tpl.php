@@ -8,7 +8,7 @@
 		}
 
 		if($user == $session){
-			Redirection::go("admin");
+			Redirection::go("home");
 		}else{
 			session_destroy();
 		}
