@@ -5,7 +5,7 @@
 	<title><?=$title ?></title>
 	<link rel="stylesheet" href="/assets/css/materialize.css">
 	<link rel="stylesheet" href="/assets/css/style.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/messages.css">
 	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 <body>
@@ -39,6 +39,7 @@
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="/assets/js/materialize.js"></script>
     <script src="/assets/js/init.js"></script>
-    <script src="/assets/js/pasgen.js"></script>
+    <script src="/assets/js/pasgen.js"></script>    
+	<script src="/assets/js/messages.js"></script>
 </body>
 </html>

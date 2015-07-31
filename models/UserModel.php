@@ -30,6 +30,7 @@
     public function create($user, $correo, $values = array())
     {
       extract($values);
+      
       $pass = Security::getEncrypt($password);
       if($this->consult->getConsultar("
               INSERT INTO user

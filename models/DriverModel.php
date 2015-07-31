@@ -58,12 +58,13 @@
     public function create($values = array())
     {
       extract($values);
+      $imagen="/assets/img/default.png"; 
       $pass = Security::getEncrypt($password);
       if($this->consult->getConsultar("
-        INSERT INTO driver (id_driver, name_driver, paterno_driver, materno_driver, emails_driver, phone_driver, password_driver, code_taxi, placas_taxi, calle, colonia, numero) VALUES (null, '$nombre', '$paterno', '$materno', '$correo', '$telefono', '$pass', '$taxicode', '$placas', '$calle', '$colonia', '$numero');
+        INSERT INTO driver (id_driver, name_driver, paterno_driver, materno_driver, emails_driver, image_driver, phone_driver, password_driver, code_taxi, placas_taxi, calle, colonia, numero, tipo_auto, activo) VALUES (null, '$nombre', '$paterno', '$materno', '$correo', '$imagen', '$telefono', '$pass', '$taxicode', '$placas', '$calle', '$colonia', '$numero', '$tipo_auto', '1' );
           "))
       {
-         Cookies::set("complete","Se ha creadi el usuario correctamente","20-s");
+         Cookies::set("complete","Se ha creado el usuario correctamente","20-s");
          // header('Location:'.Rutas::getDireccion('drivers'));
          Redirection::go("drivers");
       }else{
@@ -108,22 +109,6 @@
     }
   }
 
-  class Rutas
-  {
-    private static $_app_path;
-
-    public static function getDireccion($direccion)
-    {
-      self::$_app_path = ROOT_RUTA;
-      return self::$_app_path.$direccion;
-    }
-
-    public static function getInclude($direccion)
-    {
-      $direccion = ereg_replace ("/", SLASH, $direccion);
-      self::$_app_path = $_SERVER['DOCUMENT_ROOT'];;
-      return self::$_app_path.$direccion;
-    }
-  }
+  
 
 ?>

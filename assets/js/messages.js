@@ -21,7 +21,7 @@ for (var i = 0; i < cookies.length;  i++){
 		if(cookies[i] === values[j]){
          nameCookie = values[j];
 			$("#msj").attr("class",values[j]+"_msj");
-			$("#msj figure img").attr("src","/media/img/messages/"+values[j]+".png");
+			$("#msj figure img").attr("src","/assets/img/messages/"+values[j]+".png");
 			var texto = String(docCookies.getItem(values[j]));
 			var patron = "+";
 			texto = texto.replace(/\+/g," ");

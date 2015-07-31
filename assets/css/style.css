@@ -1,3 +1,38 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(/assets/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
+       url(/assets/iconfont/MaterialIcons-Regular.woff) format('woff'),
+       url(/assets/iconfont/MaterialIcons-Regular.ttf) format('truetype');
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
 body{
 	background-color: #eceff1 !important;
 }
@@ -26,4 +61,37 @@ body{
 }
 .verDriver{
 	padding: 1.2em 1.2em 1.2em 1.2em !important;
+}
+.menulateral{
+
+  position: fixed;
+  width: 240px;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  height: calc(100% + 60px);
+  height: -moz-calc(100%);
+  padding-bottom: 60px;
+  background-color: #fff;
+  z-index: 10;
+  overflow-y: auto;
+  background-color: #03a9f4;
+
+}
+.logo{
+  height: 10em;
+  background-color: #303f9f !important;
+
+}
+.menulateral ul li {
+  
+  }
+.menulateral ul li a{
+  display: block;
+  padding: 1.1em;
+  color: #fff !important;
+}
+.menulateral ul li:hover{
+  background-color: #303f9f !important;
+  cursor: hand;
 }

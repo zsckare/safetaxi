@@ -4,22 +4,25 @@ class DriversController{
 
     public function indexAction($hola="hola")
     {
-      	$driver = new DriverModel();
-      	$values=$driver->getAll();
-        return new View("driver/index", ["title" => "Taxi Seguro", "layout" => "on", "nameLayout" => "layout","values"=>$values]);
+        
+        $driver = new DriverModel();
+        $values=$driver->getAll();
+        return new View("driver/index", ["title" => "Taxi Seguro", "layout" => "on", "nameLayout" => "dash","values"=>$values]);
+        
     }
 
     public function newAction($hola="hola")
     {
-      
-        return new View("driver/new", ["title" => "Taxi Seguro | Resgistro de Taxistas", "layout" => "on", "nameLayout" => "layout"]);
+        $cars= new CarModel();
+        $values=$cars->getAll(); 
+        return new View("driver/new", ["title" => "Taxi Seguro | Resgistro de Taxistas", "layout" => "on", "nameLayout" => "dash","values"=>$values]);
     }
     public function readAction()
     {
         $id=$_GET['id'];
         $consulta= new DriverModel();
         $values=$consulta->get($id);
-        return new View("driver/read", ["title" => "Taxi Seguro", "layout" => "on", "nameLayout" => "layout","values"=>$values]);
+        return new View("driver/read", ["title" => "Taxi Seguro", "layout" => "on", "nameLayout" => "dash","values"=>$values]);
    
         
     }
@@ -27,12 +30,12 @@ class DriversController{
         $is=$_GET['id_driver'];
         $consulta= new DriverModel();
         $values=$consulta->get($is);
-        return new View("driver/edit", ["title" => "Taxi Seguro", "layout" => "on", "nameLayout" => "layout","values"=>$values]);
+        return new View("driver/edit", ["title" => "Taxi Seguro", "layout" => "on", "nameLayout" => "dash","values"=>$values]);
        
     }
     public function uploadAction()
     {
-        return new View("driver/upload", ["title" => "Taxi Seguro | Resgistro de Taxistas", "layout" => "on", "nameLayout" => "layout"]);
+        return new View("driver/upload", ["title" => "Taxi Seguro | Resgistro de Taxistas", "layout" => "on", "nameLayout" => "dash"]);
     }
     public function deleteAction(){
         $del=$_GET['d'];

@@ -82,12 +82,12 @@
 								<input type="text" name="imagen" value="<?=$row["image_driver"]; ?>" id="pass">
 							</div>
 							<div class="col s4 m4 l4">
-								<a href="/drivers/upload" class="btn" target="_blank">Subir Foto</a>
+								<a href="/drivers/upload" class="btn accent" target="_blank">Subir Foto</a>
 							</div>
 						</div>
 						<div class="row">
 							<div class="center-align">
-								<input type="submit" value="Actualizar" class="light-blue accent-2 btn"  >
+								<input type="submit" value="Actualizar" class="primary-dark btn"  >
 							</div>
 						</div>
 					</form>

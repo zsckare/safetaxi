@@ -12,7 +12,7 @@ if (defined('YOi_Start') && $YOi_Token == "5ab7b44c0747390658bbf882ae4df1c7") {
 	         <figure><img src="" alt=""></figure>
 	         <p></p>
 	      </div>
-	      <script src="/media/js/messages.js"></script>
+	      <script src="/assets/js/messages.js"></script>
 	<?php
 	      }
 	   }

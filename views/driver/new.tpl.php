@@ -13,7 +13,8 @@
 			"telefono"=> $_POST['telefono'],
 			"taxicode"=> $_POST['taxicode'],
 			"placas"=> $_POST['placas'],
-			"password"=> $_POST['password']
+			"password"=> $_POST['password'],
+			"tipo_auto"=> $_POST['tipo_auto']
 			]);
 	}
  ?>
@@ -76,7 +77,15 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="input-field col s8 m8 l8">
+							<div class=" input-field col s4 m4 l4">
+								<select class="browser-default" name="tipo_auto">
+								<option value="" disabled selected>Seleccione un Auto</option>
+									<?php foreach ($values as $row) {?>
+										<option value="<?=$row["marca"]; ?>"><?=$row["marca"]; ?></option>
+									<?php } ?>
+								</select>
+							</div>
+							<div class="input-field col s4 m4 l4">
 								<label for="pass">Contraseña</label>
 								<input type="password" name="password" id="pass">
 							</div>
