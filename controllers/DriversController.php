@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class DriversController{
 
     public function indexAction($hola="hola")

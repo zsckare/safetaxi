@@ -3,7 +3,7 @@ var pass;
    	e = document.getElementById('pass');
     pass=randomString(9);
 
-    console.log("pass:"+pass);
+    sweetAlert("La Contraseña Generada es",pass, "success");
     e.value=pass;
     }
 

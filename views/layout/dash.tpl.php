@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/assets/css/sweetalert.css">
 	<style>
 		html,body{
 			overflow: hidden;
@@ -55,6 +56,7 @@
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="/assets/js/materialize.js"></script>
     <script src="/assets/js/init.js"></script>
+    <script src="/assets/js/sweetalert.min.js"></script>
     <script src="/assets/js/pasgen.js"></script>
 </body>
 </html>

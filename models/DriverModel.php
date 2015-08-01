@@ -76,8 +76,9 @@
     public function update($values=array())
     {
       extract($values);
+      $pass = Security::getEncrypt($password);
       if($this->consult->getConsultar("
-         UPDATE `driver` SET `name_driver` = '$nombre', `paterno_driver` = '$paterno', `materno_driver` = '$materno', `emails_driver` = '$correo', `image_driver` = '$imagen', `phone_driver` = '$telefono',  `code_taxi` = '$taxicode', `placas_taxi` = '$placas', `calle` = '$calle', `colonia` = '$colonia', `numero` = '$numero' WHERE id_driver = '$id'
+         UPDATE `driver` SET `name_driver` = '$nombre', `paterno_driver` = '$paterno', `materno_driver` = '$materno', `emails_driver` = '$correo', 'password_driver' = '$pass', `image_driver` = '$imagen', `phone_driver` = '$telefono',  `code_taxi` = '$taxicode', `placas_taxi` = '$placas', `calle` = '$calle', `colonia` = '$colonia', `numero` = '$numero' WHERE id_driver = '$id'
       "))
       {
         $_SESSION['user']=$name;

@@ -86,6 +86,15 @@
 							</div>
 						</div>
 						<div class="row">
+							<div class="input-field col s4 m4 l4">
+								<label for="pass">Contraseña</label>
+								<input type="password" name="password" id="pass">
+							</div>
+							<div class="input-field col s4 m4 l4">
+								<div class="btn" onclick="generar(); false" >Generar Contraseña</div>
+							</div>
+						</div>
+						<div class="row">
 							<div class="center-align">
 								<input type="submit" value="Actualizar" class="primary-dark btn"  >
 							</div>
