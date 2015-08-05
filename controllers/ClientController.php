@@ -6,7 +6,8 @@ class ClientController{
     {
         $consulta=new ClientModel();
         $clientes=$consulta->getAll();        
-        return new View("client/index", ["title" => "", "layout" => "off", "nameLayout" => "dash"]); 
+        
+        return new View("client/index", ["title" => "", "layout" => "off", "nameLayout" => "dash", "clientes"=> $clientes ]); 
     }
     public function newAction($hola="hola")
     {   

@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<meta charset="UTF-8" >
+		<title>Problema</title>
+		<link rel="StyleSheet" href="estilos.css" type="text/css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	</head>
+	<body>
+		Ingrese dni (solo existen los valores 1,2 y 3):<input type="text"
+		name="dni" id="dni" size="10"><br>
+		<input type="button" value="Enviar" id="boton1">
+		<div id="resultados"></div>
+
+	<script>
+		var x;
+		x=$(document);
+		x.ready(inicializarEventos);
+
+		function inicializarEventos()
+		{
+		  var x;
+		  x=$("#boton1");
+		  x.click(presionSubmit);
+		}
+
+		function presionSubmit()
+		{
+		  console.log("------");
+		  var v=$("#dni").attr("value");
+		  var d ="";
+		  $.getJSON("http://safetaxi.esy.es/client/",d,llegadaDatos); 
+		  return false;
+		}
+
+		function llegadaDatos(datos)
+		{
+			console.log("******");
+		 $("#resultados").html("Nombre:"+datos.nombre+
+		                       "<br>"+"Apellido:"+
+		                       datos.apellido+"<br>"+
+		                       "Direccion:"+datos.correo);
+		}
+	</script>
+	</body>
+</html>
