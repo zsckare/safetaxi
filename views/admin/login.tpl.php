@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 	<title><?=$title?></title>
 	<link rel="stylesheet" href="/assets/css/materialize.css">
 	<link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
+	
+	<nav class="be-white top-nav">
+	    <div class="be-white nav-wrapper" >
+		    <a href="/home" class="brand-logo center be-black" >Taxi Seguro</a>
+	    	<ul class="" style="margin-left:62em !important;">
+	   			
+	    	</ul>		      
+	    </div>
+	</nav>
 
-	<section id="">
+	<section style="margin-top:7em;">
 		<div class="row">
-			<div class="col s6 m6 l6 offset-s3 offset-m3 offset-l3">
+			<div class="col s12 m8 l8 offset-m2 offset-l2">
 				<div class="card padding-largo">
 					<form action="/session" method="post">
 						<div class="row">
-							<div class="input-field col s4 m4 l4 offset-s4 offset-m4 offset-l4">
+							<div class="input-field col s12 m12 l12">
 								<label for="us">Usuario</label>
 								<input type="text" name="user" class="user_data">	
 							</div>
 						</div>
 						<div class="row">
-							<div class="input-field col s4 m4 l4 offset-s4 offset-m4 offset-l4">
+							<div class="input-field col s12 m12 l12">
 								<label for="pass">Contraseña</label>
 								<input type="password" name="password" class="password_data">
 							</div>

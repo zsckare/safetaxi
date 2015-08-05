@@ -29,7 +29,7 @@
  				</div>
  				<div class="row">
  					<div class="center-align">
- 						<input type="submit" class="btn primary" value="Agregar">
+ 						<input type="submit" class="btn-large primary" value="Agregar">
  					</div>
  				</div>
  			</form>

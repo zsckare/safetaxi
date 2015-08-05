@@ -21,8 +21,8 @@
 
 <section class="padding-largo" >
 	<div class="row">
-		<div class="row">
-					<h3 class="center-align">Registrar Nuevo Taxista</h3>
+		<div class="row" >
+					<h3 class="center-align" style="margin-top:-5px !important;">Registrar Nuevo Taxista</h3>
 				</div>
 				<div class="row">
 					<form action="" method="POST" class="col s12 m12 l12">
@@ -43,41 +43,29 @@
 
 						<div class="row">
 							<div class="input-field col s12 m4 l4 " >
-								<input id="nom" type="text" name="calle" required>
-	         				 <label for="nom">Calle</label>
+								<input id="calle" type="text" name="calle" required>
+	         				 <label for="calle">Calle</label>
 							</div>
 							<div class="input-field col s12 m4 l4 ">
-								<label for="ap" >Colonia/Fraccionamiento</label>
-								<input id="ap" type="text" name="colonia" required>
+								<label for="fracc" >Colonia/Fraccionamiento</label>
+								<input id="fracc" type="text" name="colonia" required>
 							</div>
 							<div class="input-field col s12  m4 l4">
-								<label for="am" >Numero</label>
-								<input id="am" type="text" name="numero" required>
+								<label for="num" >Numero</label>
+								<input id="num" type="text" name="numero" required>
 							</div>
 						</div><!--Datos Generales-->
 						
 						<div class="row">
-							<div class="input-field col s12 m6 l6 " >
-								<input id="nom" type="email" name="correo" required>
-	         				 <label for="nom">Correo Electronico</label>
+							<div class="input-field col s12 m4 l4 " >
+								<input id="mail" type="email" name="correo" required>
+	         				 <label for="mail">Correo Electronico</label>
 							</div>
-							<div class="input-field col s12 m6 l6 ">
-								<label for="ap" >Telefono</label>
-								<input id="ap" type="text" name="telefono" required>
+							<div class="input-field col s12 m4 l4 ">
+								<label for="tel" >Telefono</label>
+								<input id="tel" type="text" name="telefono" required>
 							</div>
-						</div><!--Mas Generales-->
-						<div class="row">
-							<div class="input-field col s12 m6 l6">
-								<label for="code">Codigo del Taxi</label>
-								<input type="text" name="taxicode" id="code">
-							</div>
-							<div class="input-field col s12 m6 l6">
-								<label for="placa">Placas</label>
-								<input type="text" name="placas" id="placa" >
-							</div>
-						</div>
-						<div class="row">
-							<div class=" input-field col s4 m4 l4">
+							<div class=" input-field col s12 m4 l4">
 								<select class="browser-default" name="tipo_auto">
 								<option value="" disabled selected>Seleccione un Auto</option>
 									<?php foreach ($values as $row) {?>
@@ -85,17 +73,28 @@
 									<?php } ?>
 								</select>
 							</div>
-							<div class="input-field col s4 m4 l4">
-								<label for="pass">Contraseña</label>
-								<input type="password" name="password" id="pass">
+						</div><!--Mas Generales-->
+
+						<div class="row">
+							<div class="input-field col s12 m3 l3">
+								<label for="code">Codigo del Taxi</label>
+								<input type="text" name="taxicode" id="code">
 							</div>
-							<div class="input-field col s4 m4 l4">
-								<div class="btn" onclick="generar(); false" >Generar Contraseña</div>
+							<div class="input-field col s12 m3 l3">
+								<label for="placa">Placas</label>
+								<input type="text" name="placas" id="placa" >
+							</div>
+							<div class="input-field col s12 m3 l3">
+								<label for="pass">Contraseña</label>
+								<input type="password" name="password" id="pass" disabled>
+							</div>
+							<div class="input-field col s12 m3 l3">
+								<div class="btn-large waves-effect waves-light light-blue darken-1" onclick="generar(); false" >Generar Contraseña</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="center-align">
-								<input type="submit" value="registrar" class="light-blue accent-2 btn"  >
+								<input type="submit" value="registrar" class="light-blue darken-3 btn-large"  >
 							</div>
 						</div>
 					</form>

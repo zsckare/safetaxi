@@ -11,12 +11,12 @@
     }
 
 
-    public function get($cellComparate = null, $value = null)
+    public function get($value = null)
     {
         $query = $this->consult->getConsultar("
             SELECT *
             FROM clientes
-            WHERE $cellComparate = '$value'
+            WHERE id_cliente = '$value'
         ");
 
         while($row = $query->fetch_array(MYSQLI_ASSOC)){
@@ -26,7 +26,20 @@
         return $this->rows;
 
     }
-   
+   public function getAll($value = null)
+    {
+        $query = $this->consult->getConsultar("
+            SELECT *
+            FROM clientes
+        ");
+
+        while($row = $query->fetch_array(MYSQLI_ASSOC)){
+            $this->rows[] = $row;
+        }
+
+        return $this->rows;
+
+    }
 
     public function create($values = array())
     {
