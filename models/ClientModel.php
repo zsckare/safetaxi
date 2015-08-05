@@ -46,16 +46,14 @@
       extract($values);
       $pass= Security::getEncrypt($password);
       if($this->consult->getConsultar("
-              INSERT INTO cliente
-              (id_cliente, nombre, paterno, materno, correo, password, activo)
-              VALUES
-              (null, '$nombre', '$paterno', '$materno', '$correo', '$pass', '1')
+              INSERT INTO `clientes` (`id_cliente`, `nombre`, `paterno`, `materno`, `correo`, `password`, `foto`, `activo`, `imei`) VALUES (NULL, '$nombre', '$paterno', '$materno', '$correo', '$pass', '', '1', '');
           "))
       {
          
          Redirection::go("cars");
       }else{
-         Redirection::go("cars");
+        echo '<script>alert("!!!!!!");</script>';
+         Redirection::go("client");
       }
     }
 

@@ -11,7 +11,7 @@ class ClientController{
     }
     public function newAction($hola="hola")
     {   
-        return new View("client/new", ["title" => "", "layout" => "on", "nameLayout" => "dash","values"=>$values]);       
+        return new View("client/new", ["title" => "", "layout" => "on", "nameLayout" => "dash"]);       
     }
 
     public function readAction()

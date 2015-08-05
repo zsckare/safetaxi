@@ -1,83 +1,21 @@
-<?php
-class Consumer
-{
-	public function sendPost($nombre, $paterno, $materno, $correo, $pass )
-    {
-        $data = array("nombre" => $nombre, "paterno"=> $paterno, "materno" => $materno, "correo" => $correo, "password" => $pass, "activo" => 1  );
-        
-        //$data = array("title" => "otro libro", "isbn" => "998-84-8184-1", "author" => "otro autor :)");
-        $ch = curl_init("http://safetaxi.esy.es/api/client/");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_POSTFIELDS,http_build_query($data));
-        $response = curl_exec($ch);
-        curl_close($ch);
-        if(!$response) 
-        {
-            return false;
-        }
-        else
-        {
-            var_dump($response);
-        }
-    }
- 
-    public function sendPut($id)
-    {
-        //$data = array("title" => "libro actualizado", "isbn" => "978-74-3456-2", "author" => "juan", "id" => $id);
-        $ch = curl_init("http://safetaxi.esy.es/api/client/");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-        curl_setopt($ch, CURLOPT_POSTFIELDS,http_build_query($data));
-        $response = curl_exec($ch);
-        curl_close($ch);
-        if(!$response) 
-        {
-            return false;
-        }
-        else
-        {
-            var_dump($response);
-        }
-    }
- 
-    public function sendGetAll()
-    {
-        $ch = curl_init("http://yoi.dev/api/client/");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
-        $response = curl_exec($ch);
-        curl_close($ch);
-        if(!$response) 
-        {
-            return false;
-        }
-        else
-        {
-            var_dump($response);
-        }
-    }
+<html>
+	<head>
+		<meta charset="UTF-8" >
+		<title>Problema</title>
+		<link rel="StyleSheet" href="estilos.css" type="text/css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	</head>
+	<body>
+		<form action="http://yoi.dev/client/new"method="POST" id="formulario" name="registro" >
+			<input type="text" name="nombre" id="nombre"><br>
+			<input type="text" name="paterno" id="paterno"><br>
+			<input type="text" name="materno" id="materno"><br>
+			<input type="text" name="correo" id="correo"><br>
+			<input type="text" name="pass" id="pass"><br>
+			<input type="submit" id="send" value="Add">
+		</form>
 
-    public function sendGetById($id)
-    {
-        $ch = curl_init("http://safetaxi.esy.es/api/client/$id");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
-        $response = curl_exec($ch);
-        curl_close($ch);
-        if(!$response) 
-        {
-            return false;
-        }
-        else
-        {
-            var_dump($response);
-        }
-    }
- 
-    
-}
 
-$curl = new Consumer();
-//$curl->sendPost("Astra","Alvarez","Guevara","astra@gmail.com","asdfghjklñ");
-$curl->sendGetAll();
+		
+	</body>
+</html>
