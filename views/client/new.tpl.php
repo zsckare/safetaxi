@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 	if (isset($_POST['nombre'])) {
 		$consulta = new ClientModel();
 		return $consulta->create([			
