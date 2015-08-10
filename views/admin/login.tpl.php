@@ -17,8 +17,12 @@
 	    	</ul>		      
 	    </div>
 	</nav>
-
-	<section style="margin-top:7em;">
+	<div class="row">
+		<div class="col s2 m2 l2 offset-l5" style="margin-top:1em;">
+			<img src="/assets/img/logo.png" alt="" class="responsive-img">
+		</div>
+	</div>
+	<section style="margin-top:1em;">
 		<div class="row">
 			<div class="col s12 m8 l8 offset-m2 offset-l2">
 				<div class="card padding-largo">

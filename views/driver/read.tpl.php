@@ -14,28 +14,28 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col s12 m12 l12">
-						<p class="titulos">Direccion</p>
+					<div class="col s12 m6 l6">
+						<p class="titulos">Numero Economico</p>
 						<p class="subtitulos">
-							<?=$row["calle"]; ?> <?=$row["colonia"]; ?> <?=$row["numero"]; ?>
+							<?=$row["code_taxi"]; ?>
 						</p>
-						</div>
-				</div>
-				<div class="row">
-					<div class="col s12 m8 l8">
-						<p class="titulos">Email:</p>
-						<p class="subtitulos"><?=$row["emails_driver"]; ?></p>
 					</div>
-					<div class="col s12 m4 l4">
-						<p class="titulos">Telefono:</p>
-						<p class="subtitulos"><?=$row["phone_driver"]; ?></p>
+					<div class="col s12 m6 l6">
+						<p class="titulos">Numero Telefonico</p>
+						<p class="subtitulos">
+							<?=$row["phone_driver"]; ?>
+						</p>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col s2 m2 l2 offset-s10 offset-m10 offset-l10" >
-						<a href="/drivers/edit/?id_driver=<?=$row['id_driver'] ?>" Title="Editar" class="btn-floating waves-effect waves-light primary-dark"><i class="small ion-android-create"></i></a>
+					<div class="col s12 m6 l6">
+						<p class="titulos">Placas:</p>
+						<p class="subtitulos"><?=$row["placas_taxi"]; ?></p>
 					</div>
-					
+					<div class="col s12 m6 l6">
+						<p class="titulos">Base:</p>
+						<p class="subtitulos"><?=$row["base"]; ?></p>
+					</div>
 				</div>
 				
 			</div>

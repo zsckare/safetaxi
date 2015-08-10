@@ -61,7 +61,7 @@
       $imagen="/assets/img/default.png"; 
       $pass = Security::getEncrypt($password);
       if($this->consult->getConsultar("
-        INSERT INTO driver (id_driver, name_driver, paterno_driver, materno_driver, emails_driver, image_driver, phone_driver, password_driver, code_taxi, placas_taxi, calle, colonia, numero, tipo_auto, activo) VALUES (null, '$nombre', '$paterno', '$materno', '$correo', '$imagen', '$telefono', '$pass', '$taxicode', '$placas', '$calle', '$colonia', '$numero', '$tipo_auto', '1' );
+        INSERT INTO driver (id_driver, name_driver, paterno_driver, materno_driver, emails_driver, image_driver, phone_driver, password_driver, code_taxi, placas_taxi, calle, colonia, numero, tipo_auto, activo, sindical, base) VALUES (null, '$nombre', '$paterno', '$materno', '$correo', '$imagen', '$telefono', '$pass', '$taxicode', '$placas', '$calle', '$colonia', '$numero', '$tipo_auto', '1', '$sindical', '$base' );
           "))
       {
          Cookies::set("complete","Se ha creado el usuario correctamente","20-s");
@@ -78,20 +78,29 @@
       extract($values);
       $pass = Security::getEncrypt($password);
       if($this->consult->getConsultar("
-         UPDATE `driver` SET `name_driver` = '$nombre', `paterno_driver` = '$paterno', `materno_driver` = '$materno', `emails_driver` = '$correo', 'password_driver' = '$pass', `image_driver` = '$imagen', `phone_driver` = '$telefono',  `code_taxi` = '$taxicode', `placas_taxi` = '$placas', `calle` = '$calle', `colonia` = '$colonia', `numero` = '$numero' WHERE id_driver = '$id'
+        UPDATE `safetaxi`.`driver` SET `name_driver` = '$name_driver', `paterno_driver` = '$paterno_driver', `materno_driver` = '$materno_driver', `emails_driver` = '$emails_driver', `image_driver` = '$image_driver', `phone_driver` = '$phone_driver', `password_driver` = '$pass', `code_taxi` = '$code_taxi', `placas_taxi` = '$placas_taxi `calle` = '$calle', `colonia` = '$colonia', `numero` = '$numero', `tipo_auto` = '$tipo_auto', `activo` = '1', `sindical` = '$sindical', `base` = '$base' WHERE `driver`.`id_driver` = $id_driver;         
       "))
       {
         $_SESSION['user']=$name;
         Cookies::set("complete","Se ha editado el usuario correctamente","20-s");
-        Redirection::go("drivers");
+        Redirection::go("cars");
       }else{
         Cookies::set("alert","Error: por algun motivo no se pudo editar el usuario intenta de nuevo","20-s");
         Redirection::go("drivers");
       }   
     }
-    public function subirfoto($value=array())
+    public function subirfoto($value)
     {
-      # code...
+      
+      if($this->consult->getConsultar("
+        INSERT INTO `fotos` (`id_foto`, `ruta`) VALUES (NULL, '$value');
+          "))
+      {
+      }else{
+         Cookies::set("alert","Error: por algun motivo no se pudo crear el usuario intenta de nuevo","20-s");
+         Redirection::go("drivers");
+      }
+      
     }
 
     public function delete($id)

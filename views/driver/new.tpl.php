@@ -14,7 +14,9 @@
 			"taxicode"=> $_POST['taxicode'],
 			"placas"=> $_POST['placas'],
 			"password"=> $_POST['password'],
-			"tipo_auto"=> $_POST['tipo_auto']
+			"tipo_auto"=> $_POST['tipo_auto'],
+			"sindical"=> $_POST['sindical'],
+			"base"=> $_POST['base']
 			]);
 	}
  ?>
@@ -57,15 +59,15 @@
 						</div><!--Datos Generales-->
 						
 						<div class="row">
-							<div class="input-field col s12 m4 l4 " >
+							<div class="input-field col s12 m3 l3 " >
 								<input id="mail" type="email" name="correo" required>
 	         				 <label for="mail">Correo Electronico</label>
 							</div>
-							<div class="input-field col s12 m4 l4 ">
+							<div class="input-field col s12 m3 l3 ">
 								<label for="tel" >Telefono</label>
 								<input id="tel" type="text" name="telefono" required>
 							</div>
-							<div class=" input-field col s12 m4 l4">
+							<div class=" input-field col s12 m3 l3">
 								<select class="browser-default" name="tipo_auto">
 								<option value="" disabled selected>Seleccione un Auto</option>
 									<?php foreach ($values as $row) {?>
@@ -73,28 +75,40 @@
 									<?php } ?>
 								</select>
 							</div>
+							<div class=" input-field col s12 m3 l3">
+								<select class="browser-default" name="base">
+								<option value="" disabled selected>Seleccione una Base</option>
+									<?php foreach ($bases as $row) {?>
+										<option value="<?=$row["nombre"]; ?>"><?=$row["nombre"]; ?></option>
+									<?php } ?>
+								</select>
+							</div>
 						</div><!--Mas Generales-->
 
 						<div class="row">
 							<div class="input-field col s12 m3 l3">
-								<label for="code">Codigo del Taxi</label>
+								<label for="code">Numero Economico</label>
 								<input type="text" name="taxicode" id="code">
 							</div>
 							<div class="input-field col s12 m3 l3">
 								<label for="placa">Placas</label>
 								<input type="text" name="placas" id="placa" >
 							</div>
-							<div class="input-field col s12 m3 l3">
-								<label for="pass">Contraseña</label>
+
+							<div class="input-field col s12 m2 l2">
+								<label for="placa">Numero Sindical</label>
+								<input type="text" name="sindical" id="placa" >
+							</div>
+							<div class="input-field col s12 m1 l1">
 								<input type="password" name="password" id="pass" disabled>
 							</div>
 							<div class="input-field col s12 m3 l3">
-								<div class="btn-large waves-effect waves-light light-blue darken-1" onclick="generar(); false" >Generar Contraseña</div>
+								<div class="btn waves-effect waves-light light-blue darken-1" onclick="generar(); false" >Generar Contraseña</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="center-align">
-								<input type="submit" value="registrar" class="light-blue darken-3 btn-large"  >
+								<input type="submit" value="registrar" class="light-blue darken-3 btn"  >
 							</div>
 						</div>
 					</form>

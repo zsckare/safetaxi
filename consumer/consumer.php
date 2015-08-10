@@ -43,7 +43,7 @@ class Consumer
  
     public function sendGetAll()
     {
-        $ch = curl_init("http://yoi.dev/api/client/");
+        $ch = curl_init("http://safetaxi.esy.es/client/");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
         $response = curl_exec($ch);

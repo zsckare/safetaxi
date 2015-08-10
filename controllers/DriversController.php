@@ -18,7 +18,9 @@ class DriversController{
         if (isset($_SESSION['user'])) {
             $cars= new CarModel();
             $values=$cars->getAll(); 
-            return new View("driver/new", ["title" => "Taxi Seguro | Resgistro de Taxistas", "layout" => "on", "nameLayout" => "dash","values"=>$values]);
+            $base =new BaseModel();
+            $bases=$base->getAll();
+            return new View("driver/new", ["title" => "Taxi Seguro | Resgistro de Taxistas", "layout" => "on", "nameLayout" => "dash","values"=>$values, "bases"=>$bases]);
         }else {
             Redirection::go("login");
         }
@@ -29,6 +31,11 @@ class DriversController{
             $id=$_GET['id'];
             $consulta= new DriverModel();
             $values=$consulta->get($id);
+            $foto="";
+            foreach ($values as $key) {
+                $id_foto=$key['image_driver'];
+            }
+
             return new View("driver/read", ["title" => "Taxi Seguro", "layout" => "on", "nameLayout" => "dash","values"=>$values]);
         }else {
             Redirection::go("login");
@@ -40,7 +47,9 @@ class DriversController{
             $is=$_GET['id_driver'];
             $consulta= new DriverModel();
             $values=$consulta->get($is);
-            return new View("driver/edit", ["title" => "Taxi Seguro", "layout" => "on", "nameLayout" => "dash","values"=>$values]);
+            $pic= new FotoModel();
+            $fotos = $pic->getAll();
+            return new View("driver/edit", ["title" => "Taxi Seguro", "layout" => "on", "nameLayout" => "dash","values"=>$values, "fotos"=>$fotos]);
         }else {
             Redirection::go("login");
         }

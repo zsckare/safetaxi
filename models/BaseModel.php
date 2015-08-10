@@ -1,6 +1,6 @@
 <?php
 
-  class ClientModel{
+  class BaseModel{
 
     protected $consult;
     public $rows;
@@ -11,12 +11,12 @@
     }
 
 
-    public function get($value = null)
+    public function get($cellComparate = null, $value = null)
     {
         $query = $this->consult->getConsultar("
             SELECT *
-            FROM clientes
-            WHERE id_cliente = '$value'
+            FROM base
+            WHERE $cellComparate = '$value'
         ");
 
         while($row = $query->fetch_array(MYSQLI_ASSOC)){
@@ -26,11 +26,11 @@
         return $this->rows;
 
     }
-   public function getAll($value = null)
+    public function getAll()
     {
-        $query = $this->consult->getConsultar("
+    	 $query = $this->consult->getConsultar("
             SELECT *
-            FROM clientes
+            FROM base
         ");
 
         while($row = $query->fetch_array(MYSQLI_ASSOC)){
@@ -38,22 +38,23 @@
         }
 
         return $this->rows;
-
     }
 
     public function create($values = array())
     {
       extract($values);
-      $pass= Security::getEncrypt($password);
       if($this->consult->getConsultar("
-              INSERT INTO `clientes` (`id_cliente`, `nombre`, `paterno`, `materno`, `correo`, `password`, `foto`, `activo`, `imei`) VALUES (NULL, '$nombre', '$paterno', '$materno', '$correo', '$pass', '', '1', '');
+              INSERT INTO base
+              (id_base, nombre)
+              VALUES
+              (null, '$nombre')
           "))
       {
-         
-         Redirection::go("client");
+         Cookies::set("complete","Se ha creadi el auto correctamente","20-s");
+         Redirection::go("base");
       }else{
-        echo '<script>alert("!!!!!!");</script>';
-         Redirection::go("cars");
+         Cookies::set("alert","Error: por algun motivo no se pudo crear el auto intenta de nuevo","20-s");
+         Redirection::go("base");
       }
     }
 
@@ -77,15 +78,15 @@
     public function delete($id)
     {
         if($this->consult->getConsultar("
-            DELETE FROM autos
-            WHERE id_auto = '$id'
+            DELETE FROM base
+            WHERE id_base = '$id'
         ")){
            Cookies::set("delete","Se ha eliminado el usuario correctamente","20-s");
-           Redirection::go("cars");
+           Redirection::go("base");
         }else
         {
            Cookies::set("alert","Error: No se ha podido eliminar el usuario intenta de nuevo","20-s");
-          Redirection::go("cars");
+          Redirection::go("base");
         }
     }
   }

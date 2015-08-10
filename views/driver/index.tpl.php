@@ -13,7 +13,7 @@
 			     <thead>
 			       <tr>
 			           <th data-field="id">Nombre</th>
-			           <th data-field="name">Codigo del taxi</th>
+			           <th data-field="name">Numero Economico</th>
 			           <th data-field="price">Placas del Taxi</th>
 			       </tr>
 			    </thead>
@@ -26,7 +26,8 @@
 						<td><?=$row["code_taxi"]; ?></td>
 						<td><?=$row["placas_taxi"]; ?></td>
 						<td><a href="/drivers/read/?id=<?=$row['id_driver'] ?>" Title="Ver"><i class="small ion-eye"></i></a></td>
-						<td><a href="/drivers/delete/?d=<?=$row['id_driver']?>" title="Eliminar"> <i class="small material-icons rojo-oscuro">delete</i></a></td>
+						<td><a href="/drivers/edit/?id_driver=<?=$row['id_driver'] ?>" Title="Editar" style="color:#388e3c !important;" ><i class="small ion-android-create"></i></a></td>
+						<td><a href="/drivers/delete/?d=<?=$row['id_driver']?>" title="Eliminar"> <i class="small material-icons rojo-oscuro">delete</i></a></td>						
 					</tr>	
 						
 				
