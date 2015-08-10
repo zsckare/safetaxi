@@ -10,7 +10,7 @@
 		     <thead>
 		       <tr>
 		           <th data-field="id">Nombre</th>
-		           <th data-field="name">Codigo del taxi</th>
+		           <th data-field="name">Numero Economico</th>
 		           <th data-field="price">Placas del Taxi</th>
 		       </tr>
 		    </thead>

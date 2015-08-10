@@ -49,7 +49,12 @@ class DriversController{
             $values=$consulta->get($is);
             $pic= new FotoModel();
             $fotos = $pic->getAll();
-            return new View("driver/edit", ["title" => "Taxi Seguro", "layout" => "on", "nameLayout" => "dash","values"=>$values, "fotos"=>$fotos]);
+            $cars= new CarModel();
+            $autos=$cars->getAll(); 
+            $base =new BaseModel();
+            $bases=$base->getAll();
+            
+            return new View("driver/edit", ["title" => "Taxi Seguro", "layout" => "on", "nameLayout" => "dash","values"=>$values, "fotos"=>$fotos, "bases"=>$bases, "autos"=>$autos]);
         }else {
             Redirection::go("login");
         }

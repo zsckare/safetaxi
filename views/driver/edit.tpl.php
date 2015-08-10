@@ -1,5 +1,5 @@
 <?php
-	if (isset($_POST['nombre'])) {
+	if (isset($_POST['id_driver'])) {
 		$consulta = new DriverModel();
 		return $consulta->update([			
 			"id_driver"=>$_POST['id_driver'],
@@ -57,18 +57,21 @@
 						<input type="hidden"value="<?=$row["sindical"]; ?>" name="sindical">
 						<input type="hidden"value="<?=$row["tipo_auto"]; ?>" name="tipo_auto">
 						<div class="row">
-							<div class="input-field col s12 m2 l2 " >
+							<div class="input-field col s12 m4 l4 " >
 								<input id="nom" type="text" name="calle" value="<?=$row["calle"]; ?>" required>
 	         				 <label for="nom">Calle</label>
 							</div>
-							<div class="input-field col s12 m2 l2 ">
+							<div class="input-field col s12  m4 l4">
 								<label for="ap" >Colonia/Fraccionamiento</label>
 								<input id="ap" type="text" name="colonia" value="<?=$row["colonia"]; ?>" required>
 							</div>
-							<div class="input-field col s12  m2 l2">
+							<div class="input-field col s12  m4 l4">
 								<label for="am" >Numero</label>
 								<input id="am" type="text" name="numero" value="<?=$row["numero"]; ?>" required>
 							</div>
+						
+						</div><!--Datos Generales-->
+						<div class="row">
 							<div class="input-field col s12 m3 l3">
 								<label for="code">Numero Economico</label>
 								<input type="text" name="taxicode" value="<?=$row["code_taxi"]; ?>" id="code">
@@ -77,8 +80,24 @@
 								<label for="placa">Placas</label>
 								<input type="text" name="placas" value="<?=$row["placas_taxi"]; ?>" id="placa" >
 							</div>
-						</div><!--Datos Generales-->
-						
+							<div class=" input-field col s12 m3 l3">
+								<select class="browser-default" name="tipoauto">
+								<option value="" disabled selected>Seleccione un Auto</option>
+									<?php foreach ($autos as $row) {?>
+										<option value="<?=$row["marca"]; ?>"><?=$row["marca"]; ?></option>
+									<?php } ?>
+								</select>
+							</div>
+							<div class=" input-field col s12 m3 l3">
+								<select class="browser-default" name="basenueva">
+								<option value="" disabled selected>Seleccione una Base</option>
+									<?php foreach ($bases as $row) {?>
+										<option value="<?=$row["nombre"]; ?>"><?=$row["nombre"]; ?></option>
+									<?php } ?>
+								</select>
+							</div>
+
+						</div>
 						<div class="row">
 							<div class="col s2 m2 l2">
 								<label for="">Seleccionar Foto</label>

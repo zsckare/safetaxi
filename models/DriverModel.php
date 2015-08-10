@@ -73,12 +73,12 @@
       }
     }
 
-    public function update($values=array())
+    public function update($values = array())
     {
       extract($values);
       $pass = Security::getEncrypt($password);
       if($this->consult->getConsultar("
-        UPDATE `safetaxi`.`driver` SET `name_driver` = '$name_driver', `paterno_driver` = '$paterno_driver', `materno_driver` = '$materno_driver', `emails_driver` = '$emails_driver', `image_driver` = '$image_driver', `phone_driver` = '$phone_driver', `password_driver` = '$pass', `code_taxi` = '$code_taxi', `placas_taxi` = '$placas_taxi `calle` = '$calle', `colonia` = '$colonia', `numero` = '$numero', `tipo_auto` = '$tipo_auto', `activo` = '1', `sindical` = '$sindical', `base` = '$base' WHERE `driver`.`id_driver` = $id_driver;         
+        UPDATE `driver` SET `name_driver` = '$name_driver', `paterno_driver` = '$paterno_driver', `materno_driver` = '$materno_driver', `emails_driver` = '$emails_driver', `image_driver` = '$image_driver', `phone_driver` = '$phone_driver', `password_driver` = '$pass', `code_taxi` = '$code_taxi', `placas_taxi` = '$placas_taxi `calle` = '$calle', `colonia` = '$colonia', `numero` = '$numero', `tipo_auto` = '$tipo_auto', `activo` = '1', `sindical` = '$sindical', `base` = '$base' WHERE `driver`.`id_driver` = $id_driver;         
       "))
       {
         $_SESSION['user']=$name;
@@ -89,6 +89,7 @@
         Redirection::go("drivers");
       }   
     }
+
     public function subirfoto($value)
     {
       

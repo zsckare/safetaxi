@@ -20,7 +20,7 @@
 					?>
 					<tr class="row">
 						<td class="col s1 m1 l1" ><img src="<?=$row["ruta"]; ?>" alt="" class="responsive-img"></td>
-						<td class="col s1 m2 l1 offset-m3 offset-l3"><a href="/fotos/delete/?id=<?=$row['id_foto']?>" title="Eliminar"> <i class="small material-icons rojo-oscuro">delete</i></a></td>						
+						<td class="col s1 m2 l1 offset-m1 offset-l1"><a href="/fotos/delete/?id=<?=$row['id_foto']?>" title="Eliminar"> <i class="small material-icons rojo-oscuro">delete</i></a></td>						
 					</tr>	
 						
 				
