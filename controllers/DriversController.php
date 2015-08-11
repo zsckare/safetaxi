@@ -35,8 +35,10 @@ class DriversController{
             foreach ($values as $key) {
                 $id_foto=$key['image_driver'];
             }
+            $fotos=new FotoModel();
+            $pic=$fotos->get($id_foto);
 
-            return new View("driver/read", ["title" => "Taxi Seguro", "layout" => "on", "nameLayout" => "dash","values"=>$values]);
+            return new View("driver/read", ["title" => "Taxi Seguro", "layout" => "on", "nameLayout" => "dash","values"=>$values, "pic"=>$pic]);
         }else {
             Redirection::go("login");
         }  
@@ -48,13 +50,8 @@ class DriversController{
             $consulta= new DriverModel();
             $values=$consulta->get($is);
             $pic= new FotoModel();
-            $fotos = $pic->getAll();
-            $cars= new CarModel();
-            $autos=$cars->getAll(); 
-            $base =new BaseModel();
-            $bases=$base->getAll();
-            
-            return new View("driver/edit", ["title" => "Taxi Seguro", "layout" => "on", "nameLayout" => "dash","values"=>$values, "fotos"=>$fotos, "bases"=>$bases, "autos"=>$autos]);
+            $fotos = $pic->getAll();        
+            return new View("driver/edit", ["title" => "Taxi Seguro", "layout" => "on", "nameLayout" => "dash","values"=>$values, "fotos"=>$fotos]);
         }else {
             Redirection::go("login");
         }

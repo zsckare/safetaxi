@@ -11,6 +11,16 @@ class ApiController{
         return new View("api/clients", ["title" => "", "layout" => "off", "nameLayout" => "dash", "clientes"=> $clientes ]); 
     }
 
+    public function ClientAction()
+    {
+        $id=$_GET['id'];
+        $consulta=new ClientModel();
+        $cliente=$consulta->get($id);        
+        
+        return new View("api/client", ["title" => "", "layout" => "off", "nameLayout" => "dash", "cliente"=> $cliente ]); 
+    }
+
+
     public function DriverAction()
     {
         $id=$_GET['id'];
@@ -20,9 +30,9 @@ class ApiController{
     }
 
 
-    public function newAction($hola="hola")
+    public function newAction()
     {   
-        return new View("api/new", ["title" => "", "layout" => "on", "nameLayout" => "dash"]);       
+        return new View("api/new", ["title" => "", "layout" => "off", "nameLayout" => "dash"]);       
     }
 
     

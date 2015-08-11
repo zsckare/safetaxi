@@ -83,17 +83,13 @@
 							<div class=" input-field col s12 m3 l3">
 								<select class="browser-default" name="tipoauto">
 								<option value="" disabled selected>Seleccione un Auto</option>
-									<?php foreach ($autos as $row) {?>
-										<option value="<?=$row["marca"]; ?>"><?=$row["marca"]; ?></option>
-									<?php } ?>
+									
 								</select>
 							</div>
 							<div class=" input-field col s12 m3 l3">
 								<select class="browser-default" name="basenueva">
 								<option value="" disabled selected>Seleccione una Base</option>
-									<?php foreach ($bases as $row) {?>
-										<option value="<?=$row["nombre"]; ?>"><?=$row["nombre"]; ?></option>
-									<?php } ?>
+									
 								</select>
 							</div>
 
@@ -126,7 +122,7 @@
 							</div>
 							<div class="input-field col s4 m4 l4">
 								<label for="pass">Contraseña</label>
-								<input type="password" name="password" id="pass" disabled>
+								<input type="password" name="password" id="pass" value="<?=$row["password_driver"]; ?>" disabled>
 							</div>
 							<div class="input-field col s4 m4 l4">
 								<div class="btn-large waves-effect waves-light light-blue darken-1" onclick="generar(); false" >Generar Contraseña</div>

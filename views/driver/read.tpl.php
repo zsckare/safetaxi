@@ -3,7 +3,10 @@
 		<?php foreach ($values as $row) {?>
 			<div class="col  s12 m6 l6">
 				<figure>
-					<img src='<?=$row["image_driver"]; ?> ' alt="" class="responsive-img">
+					<?php foreach ($pic as $key) { ?> 
+						
+					<img src='<?=$key["ruta"]; ?> ' alt="" class="responsive-img">
+					<?php	} ?>
 				</figure>
 			</div>
 			<div class="col s12 m6 l6">
