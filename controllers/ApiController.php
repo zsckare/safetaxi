@@ -30,9 +30,9 @@ class ApiController{
     }
 
 
-    public function newAction()
+    public function newserviceAction()
     {   
-        return new View("api/new", ["title" => "", "layout" => "off", "nameLayout" => "dash"]);       
+        return new View("api/newservice", ["title" => "", "layout" => "off", "nameLayout" => "dash"]);       
     }
 
     

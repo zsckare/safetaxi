@@ -1,6 +1,6 @@
 <?php
 
-  class UserModel{
+  class ServiceModel{
 
     protected $consult;
     public $rows;
@@ -31,7 +31,7 @@
     {
         $query = $this->consult->getConsultar("
             SELECT *
-            FROM servicio
+            FROM servicio WHERE disponible=1
         ");
 
         while($row = $query->fetch_array(MYSQLI_ASSOC)){
@@ -45,36 +45,32 @@
     public function create($values = array())
     {
       extract($values);
-      
+      $fecha=Date::getFecha();
       if($this->consult->getConsultar("
-              INSERT INTO servicio
-              (id_servicio, id_cliente, fechainicio, disponible, inicio)
-              VALUES
-              (null, '$id_cliente', $fecha, CURRENT_TIMESTAMP , '1', CURRENT_TIMESTAMP)
+              INSERT INTO `servicio` (`id_servico`, `id_cliente`,`disponible`) VALUES (NULL, '3','1');
           "))
       {
          Cookies::set("complete","Se ha creadi el usuario correctamente","20-s");
-         Redirection::go("user");
+         Redirection::go("cars");
       }else{
          Cookies::set("alert","Error: por algun motivo no se pudo crear el usuario intenta de nuevo","20-s");
          Redirection::go("user");
       }
     }
 
-    public function update($useractual,$mailactual, $comp, $user, $correo, $values=array())
+    public function update($values = array())
     {
+      extract($values);
+
       if($this->consult->getConsultar("
-          UPDATE user
-          SET name = '$name'
-          WHERE name_user = '$user'
+        UPDATE servicio SET id_driver = '$id_driver', disponible = '0' WHERE id_servico = '$id_servicio';
       "))
       {
-        $_SESSION['user']=$name;
         Cookies::set("complete","Se ha editado el usuario correctamente","20-s");
-        Redirection::go("user");
+        Redirection::go("drivers");
       }else{
         Cookies::set("alert","Error: por algun motivo no se pudo editar el usuario intenta de nuevo","20-s");
-        Redirection::go("user");
+        Redirection::go("drivers");
       }   
     }
 

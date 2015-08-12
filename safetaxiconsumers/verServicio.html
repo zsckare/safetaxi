@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Consultar</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+	<style>
+		.padding-largo{
+		padding: 1.2em;
+		}
+		.mostar{
+			display: block;
+		}
+		.no-mostrar{
+			display: none;
+		}
+
+		
+	</style>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+
+	<div class="container">
+		<div class="padding-largo">
+			<div id="servicios">
+				<div id="tablebody" class="">
+				</div>		
+			</div>
+			<div id="terminarservicio" class="no-mostrar">
+				<div class="row">
+					<div class="center-align ">
+						<div class="btn" onclick="teminarServicio()">Terminar Servicio</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<input type="hidden" name="libre" value="1" id="libre" >
+	<script>
+		var iddriver=14;
+		texto="";
+		url ="http://yoi.dev/service";
+		$(document).on("ready",otro	);
+		function otro () {
+			setInterval('main()', 3000);
+		}
+		function main() {
+			console.log("Ejecutando main");	
+			var libre=document.getElementById('libre').value;
+			if (libre==1) {
+
+			console.log("libre"+libre);
+			getServicios();
+			};
+		}
+
+		function getServicios() {
+			console.log("trayendo servicios disponibles");
+			texto="";
+
+			$("#tablebody").removeClass("no-mostrar");
+			$("#tablebody").addClass("mostrar");
+			$.getJSON(url,function(datos){
+				$.each(datos.services, function(i, item){
+						
+				texto+="<div class='row'><div class='col s6 m6 l6'><div class='btn-large' onclick='tomarservicio( "+iddriver+","+item.id_servicio+" )' >Servico Disponible #"+item.id_servicio+"</div></div></div>";
+				});
+				$("#tablebody").html(texto);
+			});
+		}
+
+		function tomarservicio(id_driver,id_service) {
+			document.getElementById('libre').value=0;
+			val = document.getElementById('libre').value;
+			console.log("libre 2"+val);
+			$("#tablebody").removeClass("mostrar");
+			$("#tablebody").addClass("no-mostrar");
+			$("#terminarservicio").removeClass("no-mostrar");
+			$("#terminarservicio").addClass("mostrar");
+			var ajax = new XMLHttpRequest();
+	
+
+		  	ajax.open("POST","http://yoi.dev/service/tomarServico",true);
+		  	ajax.onreadystatechange=function () {
+		  		if (ajax.readyState==4){
+		  			console.log("----");
+
+		  		}
+			}
+	  	
+	  		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	  	
+	  		ajax.send("id_driver="+id_driver+"&id_servicio="+id_service);
+
+
+
+		}
+
+		function teminarServicio() {
+			document.getElementById('libre').value=1;
+			$("#tablebody").removeClass("no-mostrar");
+			$("#tablebody").addClass("mostrar");
+			$("#terminarservicio").removeClass("mostrar");
+			$("#terminarservicio").addClass("no-mostrar");
+		}
+	</script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-08-2015 a las 22:36:52
+-- Tiempo de generación: 12-08-2015 a las 02:43:49
 -- Versión del servidor: 5.6.24
 -- Versión de PHP: 5.6.8
 
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   `foto` varchar(100) NOT NULL,
   `activo` int(1) NOT NULL,
   `imei` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `clientes`
@@ -106,7 +106,8 @@ INSERT INTO `clientes` (`id_cliente`, `nombre`, `paterno`, `materno`, `correo`, 
 (9, 'Alejandra', 'Come ', 'Nueces', 'a@a.com', 'a20d2e01959dc2b755f8cd1dd2e2b09b319ed65f8c43f1a0dfe532aba6b16f49', '', 1, ''),
 (10, 'Alan', 'Maldonado', 'Ayala', 'alan@gmail.com', 'a20d2e01959dc2b755f8cd1dd2e2b09b319ed65f8c43f1a0dfe532aba6b16f49', '', 1, ''),
 (11, 'Carlos', 'Chavez', 'Alvarez', 'a@a.com', 'a20d2e01959dc2b755f8cd1dd2e2b09b319ed65f8c43f1a0dfe532aba6b16f49', '', 1, ''),
-(12, 'Isaias', 'Medina', 'Guevara', 'a@a.com', 'a20d2e01959dc2b755f8cd1dd2e2b09b319ed65f8c43f1a0dfe532aba6b16f49', '', 1, '');
+(12, 'Isaias', 'Medina', 'Guevara', 'a@a.com', 'a20d2e01959dc2b755f8cd1dd2e2b09b319ed65f8c43f1a0dfe532aba6b16f49', '', 1, ''),
+(13, 'Lisbeth', 'Valenzuela', 'Escobedo', 'a@a.com', 'a20d2e01959dc2b755f8cd1dd2e2b09b319ed65f8c43f1a0dfe532aba6b16f49', '', 1, '');
 
 -- --------------------------------------------------------
 
@@ -139,16 +140,16 @@ CREATE TABLE IF NOT EXISTS `driver` (
 --
 
 INSERT INTO `driver` (`id_driver`, `name_driver`, `paterno_driver`, `materno_driver`, `emails_driver`, `image_driver`, `phone_driver`, `password_driver`, `code_taxi`, `placas_taxi`, `calle`, `colonia`, `numero`, `tipo_auto`, `activo`, `sindical`, `base`) VALUES
-(22, 'Edga', 'RAlan', 'Poes', 'sa@a.com', '/assets/img/logo.png', '123456723', 'd6cc3d34f8904ec8ddf33c0ecbd3f6fce9b832ce1be3934f033996d5ccf7dcc308', 'COD-okmn', 'ppappap', 'amuerto', 'eres', '2', '1', 1, 'asdfk', 'plpl'),
-(20, 'Pedro', 'Castro', 'Quintanilla', 'a@a.com', '/assets/img/default.png', '6181138046', '57327274fa40b2e94dbbd6e59771f7a36da27b9977da4d1212216c312b56ab75', 'COD-oosp', 'ppallallal', 'a', 'Centro', '11', '', 0, '', ''),
+(22, 'Edga', 'Alan', 'Poe', 'sa@a.com', '1', '123456723', 'a20d2e01959dc2b755f8cd1dd2e2b09b319ed65f8c43f1a0dfe532aba6b16f49', 'COD-okmn', 'ppappap', 'amuerto', 'eres', '219', '1', 1, 'asdfk', 'plpl'),
+(20, 'Pedro', 'Castro', 'Quintanilla', 'a@a.com', '/assets/img/default.png', '6181138046', 'a20d2e01959dc2b755f8cd1dd2e2b09b319ed65f8c43f1a0dfe532aba6b16f49', 'COD-oosp', 'ppallallal', 'a', 'Centro', '11', '', 1, '', ''),
 (19, 'Eduardo', 'Pinedo', 'Velarde', 'a@a.com', '/assets/img/default.png', '123456789', 'a9bf4e7f2638db57b50fe8f3299b5efe30dfefb355745c63b3ce754cbb172e31', 'COD-oosp', 'ppallallal', '20 de Noviembre', 'Centro', '1', '', 0, '', ''),
 (18, 'Samael', 'Romero', 'Zubia', 'a@a.com', '/assets/img/default.png', '123456789', '2b4539bab4d2a10dd607f82e9bf93fd388ca48ea56e6ddd522fe02a0c917d5a7', 'a1212', 'wweweaa', 'asdfg', 'asdfghjkl', '11', '', 0, '', ''),
 (14, 'Antonio', 'Alvarez', 'Guevara', 'tokyo.blue.tsubasa@gmaill.com', '/assets/img/default.png', '6181138046', '917c7d6ddc0fcc89933a3fb988442fdd00d14972b8b9369f6e7c45e9e5dd46b4', 'COD-oosp', 'ppallallal', 'De Las Palmas', 'Valle Verde', '102', '', 0, '', ''),
 (23, 'Carlos', 'Villa', 'Avila', 'a@a.com', '/assets/img/default.png', '123456789', '8a548594aed570d5bdb61edf78975fdb4ef67e236121645af71c8a2ac3c86b94', 'COD-oosp', 'ppallallal', '20 de Noviembre', 'aaa', '102', '', 0, '', ''),
 (21, 'Jorge Orlando', 'Carrasco', 'Poe', 'a@a.com', '/assets/img/default.png', '6181138046', 'f16f9df4639c36e36f524ceeb0604f7cd2fb8bf2c6aeb53cd3436b54a1800b59', 'COD-oosp', 'ppallallal', '20 de Noviembre', 'Centro', '12', '', 0, '', ''),
 (24, 'Diego', 'Acosta', 'Simental', 'a@a.com', '/assets/img/default.png', '6181138046', 'd6f2b43c801b857ac114c8de688bcf1f0d8680ed80501c75a2d7919262e3b6ee', 'COD-oosp', 'ppallallal', '20 de Noviembre', 'Centro', '200', '', 0, '', ''),
-(26, 'Aldo', 'Garcia', 'Urbina', 'a@a.com', '/assets/img/default.png', '6181138046', '3145c60c68495a8626fa784e34e52e1d5dfb992ce90742149c0bb11ee6b32955', 'COD-oosp', 'plplpl', 'a', 'Valle Verde', '102', 'Atos', 1, '', ''),
-(27, 'Carlos Gerardp', 'Villa', 'Avila', 'okyo.blue.tsubasa@gmaill.com', '/assets/img/logo.png', '123456723', 'aa20d2e01959dc2b755f8cd1dd2e2b09b319ed65f8c43f1a0dfe532aba6b16f49', 'COD-oospa', 'ppallallala', 'Por ahi', 'Vaalle Verde', '112', 'Spark', 0, 'qaqqaqa', 'Base PAseo Durango');
+(26, 'Aldo', 'Garcia', 'Urbina', 'a@a.com', '/assets/img/default.png', '6181138046', 'a20d2e01959dc2b755f8cd1dd2e2b09b319ed65f8c43f1a0dfe532aba6b16f49', 'COD-oosp', 'plplpl', 'a', 'Valle Verde', '102', 'Atos', 1, '', ''),
+(27, 'Carlos Gerardo', 'Villa', 'Avila', 'okyo.blue.tsubasa@gmaill.com', '/assets/img/logo.png', '123456723', 'a20d2e01959dc2b755f8cd1dd2e2b09b319ed65f8c43f1a0dfe532aba6b16f49', 'COD-oospa', 'ppallallala', 'Por ahi', 'Vaalle Verde', '112', 'Spark', 1, 'qaqqaqa', 'Base PAseo Durango');
 
 -- --------------------------------------------------------
 
@@ -167,6 +168,35 @@ CREATE TABLE IF NOT EXISTS `fotos` (
 
 INSERT INTO `fotos` (`id_foto`, `ruta`) VALUES
 (1, '/assets/img/logo.png');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `servicio`
+--
+
+CREATE TABLE IF NOT EXISTS `servicio` (
+  `id_servico` int(11) NOT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `fechainicio` date NOT NULL,
+  `fechafin` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `id_driver` int(11) NOT NULL,
+  `disponible` int(1) NOT NULL,
+  `inico` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `servicio`
+--
+
+INSERT INTO `servicio` (`id_servico`, `id_cliente`, `fechainicio`, `fechafin`, `id_driver`, `disponible`, `inico`) VALUES
+(6, 3, '0000-00-00', '2015-08-12 00:27:33', 0, 0, '0000-00-00 00:00:00'),
+(7, 3, '0000-00-00', '2015-08-12 00:13:12', 22, 0, '0000-00-00 00:00:00'),
+(8, 3, '0000-00-00', '2015-08-12 00:39:24', 14, 0, '0000-00-00 00:00:00'),
+(9, 3, '0000-00-00', '2015-08-12 00:31:14', 14, 0, '0000-00-00 00:00:00'),
+(10, 3, '0000-00-00', '2015-08-12 00:40:56', 14, 0, '0000-00-00 00:00:00'),
+(11, 3, '0000-00-00', '2015-08-12 00:40:52', 0, 1, '0000-00-00 00:00:00'),
+(12, 3, '0000-00-00', '2015-08-12 00:41:13', 0, 1, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -232,6 +262,12 @@ ALTER TABLE `fotos`
   ADD PRIMARY KEY (`id_foto`);
 
 --
+-- Indices de la tabla `servicio`
+--
+ALTER TABLE `servicio`
+  ADD PRIMARY KEY (`id_servico`);
+
+--
 -- Indices de la tabla `user`
 --
 ALTER TABLE `user`
@@ -260,7 +296,7 @@ ALTER TABLE `base`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT de la tabla `driver`
 --
@@ -271,6 +307,11 @@ ALTER TABLE `driver`
 --
 ALTER TABLE `fotos`
   MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `servicio`
+--
+ALTER TABLE `servicio`
+  MODIFY `id_servico` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT de la tabla `user`
 --
