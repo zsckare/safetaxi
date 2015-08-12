@@ -71,5 +71,6 @@
 
     <script src="/assets/js/pasgen.js"></script>
     <script src="/assets/js/modalfotos.js"></script>
+    <script src="/assets/js/busqueda.js"></script>
 </body>
 </html>

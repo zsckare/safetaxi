@@ -40,6 +40,21 @@
             return $this->rowsAll;
 
         }
+
+      public function search($buscar)
+      {
+        $b=$buscar;
+        $query = $this->consult->getConsultar("
+            SELECT * FROM driver WHERE name_driver LIKE '%".$b."%' OR paterno_driver LIKE '%".$b."%' 
+          ");
+
+        while($row = $query->fetch_array(MYSQLI_ASSOC)){
+          $this->rowsAll[] = $row;
+        }
+
+        return $this->rowsAll;
+      }
+
       public function getLast()
       {
           $query = $this->consult->getConsultar("
