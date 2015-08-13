@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Crear Servicio</title>
 
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
 
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -23,7 +24,11 @@
 		<div class="row"><div class="center-align" id="title"><h3>Elegir Usuario</h3></div></div>
 		<div class="row">
 			<div id="users">
-				
+				<div class="row">
+					<div class="center-align">
+						<div class="btn" onclick="crearServicio(1)" >perdir servicio</div>
+					</div>
+				</div>
 			</div>
 			<div id="servicio" class="no-mostrar" > 
 				<input type="hidden" id="username">
@@ -49,19 +54,7 @@
 		$(document).on("ready",main	);
 		function main () {
 
-				console.log("funciona evento");
-				var texto = "";
-				var items = [];
-				var tags="dog";
-				$.getJSON(url,function(datos) {
-					texto+="<div class='card' id='userjson'> <div class=''>"
-					$.each(datos.items, function (i, item) {
-						
-						texto += "<p>"+ item.nombre +" "+ item.paterno +" "+ item.materno + " - "+ item.correo+"<div class='btn' onclick='selectuser("+item.id_cliente +")' >Seleccionar </div>"    +"</p>";
-					});
-					texto+="</div></div>"
-					$("#users").html(texto);
-				});
+				
 			
 		}
 

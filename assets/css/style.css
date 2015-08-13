@@ -108,3 +108,20 @@ body{
   color: #fff !important;
   cursor: hand;
 }
+.link{
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+.link:hover{
+  cursor: pointer;
+}
+
+
+/*fuentes*/
+.dosis{
+  font-family: 'Dosis', sans-serif;
+}
+.yanone{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}

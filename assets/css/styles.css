@@ -38,3 +38,9 @@
     background-color: #fff;   
     padding: 1.2em;
 }
+.login{
+    color: #2979ff !important;
+}
+.login:hover{
+    cursor: pointer;
+}
