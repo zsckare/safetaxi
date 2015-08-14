@@ -4,7 +4,7 @@ class HomeController{
 
     public function indexAction($hola="hola")
     {
-        if (isset($_SESSION['user'])) {
+        if (isset($_SESSION['user'] )&& $_SESSION['type']== "admin"  ) {
       		      
             $driver = new DriverModel();
             $values=$driver->getLast();

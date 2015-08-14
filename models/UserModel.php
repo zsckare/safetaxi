@@ -16,7 +16,7 @@
         $query = $this->consult->getConsultar("
             SELECT *
             FROM user
-            WHERE $cellComparate = '$value'
+            WHERE $cellComparate = '$value' 
         ");
 
         while($row = $query->fetch_array(MYSQLI_ASSOC)){

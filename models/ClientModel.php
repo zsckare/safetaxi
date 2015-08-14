@@ -26,6 +26,24 @@
         return $this->rows;
 
     }
+    public function sesion($values = array())
+    {
+        extract($values);
+
+        $password=Security::getEncrypt($contraseña);
+
+        $query = $this->consult->getConsultar("
+            SELECT *
+            FROM clientes
+            WHERE correo = '$correo' AND password = '$password'
+        ");
+
+        while($row = $query->fetch_array(MYSQLI_ASSOC)){
+            $this->rows[] = $row;
+        }
+
+        return $this->rows;
+    }
    public function getAll($value = null)
     {
         $query = $this->consult->getConsultar("

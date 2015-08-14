@@ -8,7 +8,7 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
-
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<!--css-->
 	<link rel="stylesheet" href="/assets/css/materialize.css">
 	<link rel="stylesheet" href="/assets/css/style.css">
@@ -19,18 +19,22 @@
 	
 	<nav class="light-blue top-nav">
 	    <div class="light-blue nav-wrapper container" >
-		    <a href="" class="brand-logo center be-black" >Taxi Seguro</a>
+		    <a href="" class="brand-logo center " >Taxi Seguro</a>
 		    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 	    	<ul class="right hide-on-med-and-down">	   			
-        		<li><div class="link" >Inicio</a></li>
-        		<li><div class="link" >Inicio</a></li>
+        		<li><a href="" onclick="menu(1);">Inicio <i class="left small  material-icons">home</i></a></li>
+        		<li><a href="" onclick="menu(2);">Mi Ubicacion <i class="left small  material-icons">ic_map</i></a></li>
+        		<li><a href="" onclick="menu(3);">Buscar Chofer <i class="left  small material-icons">ic_local_taxi</i></a></li>
+        		<li><a href="" onclick="menu(4);">Mi Cuenta <i class="left small material-icons">perm_identity</i></a></li>
+        		<li><a href="" onclick="menu(5);">Acerca de <i class="left  small material-icons">info_outline</i></a></li>
 	    	</ul>
 	    
 	        <ul class="side-nav" id="mobile-demo">
-        		<li><a href="">Inicio</a></li>
-        		<li><a href="">Buscar Chofer</a></li>
-        		<li><a href="">Mi Cuenta</a></li>
-        		<li><a href="">Acerca de</a></li>
+        		<li><a href="" onclick="menu(1);">Inicio <i class=" ion-android-home left "></i></a></li>
+        		<li><a href="" onclick="menu(2);">Mi Ubicacion <i class=" ion-android-map left "></i></a></li>
+        		<li><a href="" onclick="menu(3);">Buscar Chofer <i class="ion-android-car left "></i></a></li>
+        		<li><a href="" onclick="menu(4);">Mi Cuenta <i class="ion-android-person left "></i></a></li>
+        		<li><a href="" onclick="menu(5);">Acerca de <i class="ion-android-alert left "></i></a></li>
       		</ul>	
 
 	    </div>
@@ -78,6 +82,9 @@
 			});
 		}
 	</script>
+	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    </script>
+
 
 
 	

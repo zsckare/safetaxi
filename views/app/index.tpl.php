@@ -34,7 +34,7 @@
 						<input type="password" id="password" name="pass">
 					</div>
 					<div class="row">
-						<div class="col s3 m3 l3 offset-s4 offset-m4 offset-l3">
+						<div class="col s3 m3 l3 offset-s3 offset-m4 offset-l3">
 							<input type="submit" class="btn blue darken-4"  value="Registrarse">
 						</div>
 					</div>
@@ -72,5 +72,49 @@
 				<div class="row"></div>
 			</div>
 		</form>
+	</div>
+</div>
+
+<div id="miposicion" class="card no-mostrar">
+	<div class="container">
+		<div class="row">
+		<h3 class="center-align">Mi Ubicacion</h3>
+		</div>
+		<div class="row">
+			<div id="map"></div>
+
+		</div>
+	</div>
+</div>
+
+
+<div id="driver" class="card no-mostrar">
+	<div class="row padding-largo">
+		<h4 class="center-align">Buscar Chofer</h4>
+	</div>
+</div>
+
+<div id="account" class="card no-mostrar">
+	<div class="row padding-largo">
+		<h4 class="center-align">Mi Cuenta</h4>
+	</div>
+</div>
+
+<div id="acerca" class="card no-mostrar">
+	<div class="padding-largo">
+		<div class="row"></div>
+		<div class="row">
+			<div class="col s4 m3 l3 offset-s2"><img src="/assets/img/logo.png" alt="" class="responsive-img"></div>
+			<div class="col s4 m3 l3"><img src="/assets/img/logo-alianza.png" alt="" class="responsive-img"></div>
+		</div>
+		<div class="row">
+			<p class="center-align dos">Taxi Seguro Alianza APP</p>
+			<p class="center-align" style="font-size:1.5em;" >Es un Servicio del Sindicato Alianza Durango</p>
+		</div>
+
+		<div class="row">
+			<p class="center-align">Desarrollado por:</p>
+			<p class="center-align">Antonio Alvarez Guevara | Pedro Castro Quintanila</p>
+		</div>
 	</div>
 </div>

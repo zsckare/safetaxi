@@ -125,3 +125,16 @@ body{
 .yanone{
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
+.dosisnormal{
+ font-family: 'Dosis', sans-serif !important;
+ font-weight: 400; 
+}
+.dosismedium{
+ font-family: 'Dosis', sans-serif !important;
+ font-weight: 400; 
+}
+
+.dosisbold{
+ font-family: 'Dosis', sans-serif !important;
+ font-weight: 400; 
+}
