@@ -1,18 +1,29 @@
-<?php
-	if($values == null){
-		session_destroy();
-		echo "string";
-	}else{
-		foreach($values as $row){
-			$user = $row["correo"];
-			Cookies::set("complete","Hola Bienvenido: ¡" .$user."!","20-s");
-		}
+<?php 
+if ($values==null) {
+	echo "string";
+}else{
+	$password=Security::getEncrypt($pass);
+	$pasbd="";
+	$type="client";
+	$name="";
+	foreach ($values as $row) {
 
-		if(isset($user)){
-			Redirection::go("app");
-		}else{
-			session_destroy();
-			Redirection::go("home");	
-		}
-
+		$pasbd=$row['password'];
+		$name=$row['correo'];
+		
 	}
+
+	echo $password."<br>".$pasbd;
+}
+	if ($password==$pasbd) {
+		$_SESSION['user']=$name;
+		$_SESSION['type']=$type;
+		Redirection::go('app');
+	}else{
+		session_destroy();
+		Redirection::go('app');
+	}
+	
+
+
+?>

@@ -26,7 +26,7 @@
         return $this->rows;
 
     }
-
+    
     public function create($user, $correo, $values = array())
     {
       extract($values);

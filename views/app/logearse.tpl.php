@@ -27,14 +27,14 @@
 					<div class="col s4 m4 l4 offset-s4 offset-m4"><img src="/assets/img/logo.png" alt="" class="responsive-img"></div>
 				</div>
 				<div class="row">
-					<h3 class="center-align dosisbold">Inica Sesión</h3>
+					<h3 class="center-align dosisbold">Inicia Sesión</h3>
 				</div>
 				<div class="row">
-					<form action="/sessionclient" method="POST">
+					<form action="/sesionclient" method="POST">
 						<div class="row">
 							<div class="input-field col s12 m12 l12">
-								<label for="correo">Correo Electronico</label>
-								<input type="text" name="correo" id="correo">
+								<label for="correo">Correo Electrónico</label>
+								<input type="text" name="mails" id="correo">
 							</div>
 						</div>
 						<div class="row">
@@ -59,3 +59,31 @@
 		
 	</body>
 </html>
+
+<?php 
+	if (isset($_POST['correo'])) {
+		
+		$corr=$_POST['correo'];
+		echo '<script>alert('.$corr.');</script>';
+		$consulta = new ClientModel();
+
+		$consulta->getSesion([
+			"correo"=> $_POST['correo'],
+			"password"=> $_POST['password']
+			]);
+
+		$max = sizeof($consulta);
+		
+		if($max==1){
+
+			foreach ($consulta as $row) {
+			
+				
+				
+			}
+		}
+	}
+
+
+?>
+

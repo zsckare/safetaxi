@@ -3,13 +3,13 @@
 function registrar() {
 		
 	var ajax = new XMLHttpRequest();
-	nombre=document.registro.nombre.value;
+	  nombre=document.registro.nombre.value;
   	paterno=document.registro.paterno.value;
   	materno=document.registro.materno.value;
   	correo=document.registro.correo.value;
   	pass=document.registro.pass.value;
 
-  	ajax.open("POST","http://safetaxizsckare.esy.es/client/new",true);
+  	ajax.open("POST","http://yoi.dev/client/new",true);
   	ajax.onreadystatechange=function () {
   		if (ajax.readyState==4){
   			console.log("!!!!!!!!!!!!!!!!");
@@ -27,8 +27,8 @@ function registrar() {
 function vaciarForm() {
 	sweetAlert("Registrado", "", "success");
 
-	window.location="http://safetaxizsckare.esy.es/app/signin";
-  
+	window.location="http://yoi.dev/app/signin";
+
 	document.registro.nombre.value="";
 	document.registro.paterno.value="";
 	document.registro.materno.value="";

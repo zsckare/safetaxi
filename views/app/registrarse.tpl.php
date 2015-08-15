@@ -37,7 +37,7 @@
 					</div>
 					
 					<div class="row">
-						<form action="" id="formulario" name="registro" onsubmit="registrar(); return false" >
+						<form action="" id="formulario" name="registro" method="POST" >
 							<div class="padding-largo">
 								<div class="row input-field">
 									<label for="nombre">Nombre</label>
@@ -60,7 +60,7 @@
 									<input type="password" id="password" name="pass">
 								</div>
 								<div class="row">
-									<div class="col s3 m3 l3 offset-s3 offset-m4 offset-l3">
+									<div class="center-align">
 										<input type="submit" class="btn blue darken-4"  value="Registrarse">
 									</div>
 								</div>
@@ -81,8 +81,27 @@
 		<script src="/assets/js/materialize.js"></script>
 		<script src="/assets/js/init.js"></script>
     	<script src="/assets/js/sweetalert.min.js"></script>
-		<script src="/assets/js/signup.js"></script>
-		</script>
+		
+
 		
 	</body>
 </html>
+
+<?php
+        header("Access-Control-Allow-Origin: *");     
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");   
+
+	if (isset($_POST['nombre'])) {
+		$consulta = new ClientModel();
+		return $consulta->create([			
+			"nombre"=> $_POST['nombre'],
+			"paterno"=> $_POST['paterno'],
+			"materno"=> $_POST['materno'],
+			"calle"=> $_POST['calle'],
+			"colonia"=> $_POST['colonia'],
+			"numero"=> $_POST['numero'],
+			"correo"=> $_POST['correo'],
+			"password"=> $_POST['pass']
+			]);
+	}
+?>

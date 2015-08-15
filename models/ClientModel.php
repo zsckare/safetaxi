@@ -26,16 +26,12 @@
         return $this->rows;
 
     }
-    public function sesion($values = array())
+    public function getSesion($correo = null)
     {
-        extract($values);
-
-        $password=Security::getEncrypt($contraseña);
-
         $query = $this->consult->getConsultar("
             SELECT *
             FROM clientes
-            WHERE correo = '$correo' AND password = '$password'
+            WHERE correo = '$correo' 
         ");
 
         while($row = $query->fetch_array(MYSQLI_ASSOC)){
@@ -62,13 +58,14 @@
     public function create($values = array())
     {
       extract($values);
-      $pass= Security::getEncrypt($password);
+
+      $pass=Security::getEncrypt($password);
       if($this->consult->getConsultar("
               INSERT INTO `clientes` (`id_cliente`, `nombre`, `paterno`, `materno`, `correo`, `password`, `foto`, `activo`, `imei`) VALUES (NULL, '$nombre', '$paterno', '$materno', '$correo', '$pass', '', '1', '');
           "))
       {
          
-         Redirection::go("client");
+         Redirection::go("app/signin");
       }else{
         echo '<script>alert("!!!!!!");</script>';
          Redirection::go("cars");
@@ -106,4 +103,6 @@
           Redirection::go("cars");
         }
     }
+
+
   }

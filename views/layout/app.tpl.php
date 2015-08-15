@@ -30,11 +30,12 @@
 	    	</ul>
 	    
 	        <ul class="side-nav" id="mobile-demo">
-        		<li><a href="" onclick="menu(1);">Inicio <i class=" ion-android-home left "></i></a></li>
-        		<li><a href="" onclick="menu(2);">Mi Ubicacion <i class=" ion-android-map left "></i></a></li>
-        		<li><a href="" onclick="menu(3);">Buscar Chofer <i class="ion-android-car left "></i></a></li>
-        		<li><a href="" onclick="menu(4);">Mi Cuenta <i class="ion-android-person left "></i></a></li>
-        		<li><a href="" onclick="menu(5);">Acerca de <i class="ion-android-alert left "></i></a></li>
+        		<li><a href="/app/">Inicio <i class=" ion-android-home left "></i></a></li>
+        		<li><a href="/app/myubication" >Mi Ubicacion <i class=" ion-android-map left "></i></a></li>
+        		<li><a href="/app/pedir">Buscar Chofer <i class="ion-android-car left "></i></a></li>
+        		<li><a href="/app/">Mi Cuenta <i class="ion-android-person left "></i></a></li>
+        		<li><a href="/app/about">Acerca de <i class="ion-android-alert left "></i></a></li>
+        		<li><a href="/app/logout">Cerrar Sesión <i class="ion-android-alert left "></i></a></li>
       		</ul>	
 
 	    </div>

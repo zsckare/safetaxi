@@ -4,12 +4,23 @@ class AppController{
 
     public function IndexAction($value='')
     {
-        if (isset($_SESSION['user'])) {
-        return new View("app/index", ["title" => "", "layout" => "on", "nameLayout" => "app"]);   
-        }else {
-            Redirection::go("app/signup");
-        }    
+        if (isset($_SESSION['user']) && $_SESSION['type']=="client" ) {
+            return new View("app/index", ["title" => "", "layout" => "on", "nameLayout" => "app"]);       
+        }else{
+            Redirection::go('app/signup');
+        }     
     }
+
+    public function MyUbicationAction()
+    {
+        return new View("app/myubication", ["title" => "Mi Ubicacion", "layout" => "on", "nameLayout" => "app"]);    
+    }
+
+    public function PedirAction()
+    {
+        return new View("app/pedir", ["title" => "Mi Ubicacion", "layout" => "on", "nameLayout" => "app"]);    
+    }
+
     public function AccountAction()
     {
       return new View("app/index", ["title" => "", "layout" => "on", "nameLayout" => "app"]);     
@@ -27,6 +38,14 @@ class AppController{
     {
       return new View("app/index", ["title" => "", "layout" => "on", "nameLayout" => "app"]);     
     }
-
+    public function AboutAction()
+    {
+        return new View("app/about", ["title" => "Acerca de ", "layout" => "on", "nameLayout" => "app"]);    
+    }
+    public function LogoutAction()
+    {
+        session_destroy();
+        Redirection::go("app"); 
+    }
     
 }

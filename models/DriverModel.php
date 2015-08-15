@@ -74,7 +74,7 @@
     {
       extract($values);
       $imagen="/assets/img/default.png"; 
-      $pass = Security::getEncrypt($password);
+      $pass = $password;
       if($this->consult->getConsultar("
         INSERT INTO driver (id_driver, name_driver, paterno_driver, materno_driver, emails_driver, image_driver, phone_driver, password_driver, code_taxi, placas_taxi, calle, colonia, numero, tipo_auto, activo, sindical, base) VALUES (null, '$nombre', '$paterno', '$materno', '$correo', '$imagen', '$telefono', '$pass', '$taxicode', '$placas', '$calle', '$colonia', '$numero', '$tipo_auto', '1', '$sindical', '$base' );
           "))
