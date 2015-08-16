@@ -30,7 +30,7 @@
 					<h3 class="center-align dosisbold">Inicia Sesión</h3>
 				</div>
 				<div class="row">
-					<form action="/sesionclient" method="POST">
+					<form action="" method="POST">
 						<div class="row">
 							<div class="input-field col s12 m12 l12">
 								<label for="correo">Correo Electrónico</label>
@@ -59,31 +59,36 @@
 		
 	</body>
 </html>
+<?php
+	if(isset($_POST['mails'])){
+		$correo=trim($_POST['mails']);
+	$pass=trim($_POST['password']);
+	$driver = new ClientModel();
+	$values=$driver->getSesion($correo);
 
-<?php 
-	if (isset($_POST['correo'])) {
+	if ($values==null) {
+		echo "string";
+	}else{
+		$password=Security::getEncrypt($pass);
+		$pasbd="";
+		$type="client";
+		$name="";
+	foreach ($values as $row) {
+		$pasbd=$row['password'];
+		$name=$row['correo'];
+		$_SESSION['id_user']=$row['id_cliente'];
 		
-		$corr=$_POST['correo'];
-		echo '<script>alert('.$corr.');</script>';
-		$consulta = new ClientModel();
-
-		$consulta->getSesion([
-			"correo"=> $_POST['correo'],
-			"password"=> $_POST['password']
-			]);
-
-		$max = sizeof($consulta);
-		
-		if($max==1){
-
-			foreach ($consulta as $row) {
-			
-				
-				
-			}
-		}
 	}
-
-
+		echo $password."<br>".$pasbd;
+	}
+	if ($password==$pasbd) {
+		$_SESSION['user']=$name;
+		$_SESSION['type']=$type;
+		Redirection::go('app');
+	}else{
+		session_destroy();
+		Redirection::go('app');
+	}
+	
+	}
 ?>
-

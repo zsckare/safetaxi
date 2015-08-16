@@ -1,7 +1,7 @@
 <div id="miposicion" class="card mostrar">
 	<div class="container">
 		<div class="row">
-		<h3 class="center-align">Mi Ubicacion</h3>
+		<h3 class="center-align ">Mi Ubicacion</h3>
 		</div>
 		<div class="row">
 			<div id="map"></div>
@@ -12,6 +12,7 @@
 
 <script>
 	window.onload=localize();
+	
 	function localize()
 		{
 			console.log("---!!!---");
@@ -34,6 +35,7 @@
 			var longitud = pos.coords.longitude;
 			var precision = pos.coords.accuracy;
 
+			console.log("latitud "+latitud+" longitud"+longitud);
 			/* A través del DOM obtenemos el div que va a contener el mapa */
 			var contenedor = document.getElementById("map");
 

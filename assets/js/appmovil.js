@@ -41,102 +41,26 @@ function vaciarForm() {
 		document.registro.pass.value="";
 }
 
-//funciones para iniciar sesion del usuario
+//funciones del usuario
 
-function showIniciarSesion() {
-	console.log("mostar");
+function solicitarTaxi(id_cliente,latitud,longitud) {
 
-$("#registrarse").removeClass("mostrar");
-$("#registrarse").addClass("no-mostrar");
+	url="http://yoi.dev/api/newservice";
+	console.log(""+id_cliente+" "+latitud+","+longitud);
+	var ajax = new XMLHttpRequest();
+	ajax.open("POST",url,true);
+	ajax.onreadystatechange=function () {
+		if (ajax.readyState==4){
+			console.log("!!!!!!!!!!!!!!!!");
+			sweetAlert("Esperando que alguien tome el servicio", "", "info");
+		
+		}
+	}
+	  	
+	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	
+	ajax.send("id="+id_cliente);
 
-$("#login").removeClass("no-mostrar");
-$("#login").addClass("mostrar");
+
+		 	
 }
-//acciones del menu
-
-
-function menu(opcion) {
-	switch(opcion) {
-	    case 1:
-	    	console.log("menu opcion"+opcion)
-	        $("#registrarse").removeClass("no-mostrar");
-			$("#registrarse").addClass("mostrar");
-			$("#login").removeClass("mostrar");
-			$("#login").addClass("no-mostrar");
-			$("#miposicion").removeClass("mostrar");
-			$("#miposicion").addClass("no-mostrar");
-			$("#driver").removeClass("mostrar");
-			$("#driver").addClass("no-mostrar");
-			$("#account").removeClass("mostrar");
-			$("#account").addClass("no-mostrar");
-			$("#acerca").removeClass("mostrar");
-			$("#acerca").addClass("no-mostrar");
-	        break;
-	    case 2:
-	        console.log("menu opcion"+opcion)
-	        localize();
-	        $("#registrarse").removeClass("mostrar");
-			$("#registrarse").addClass("no-mostrar");
-			$("#login").removeClass("mostrar");
-			$("#login").addClass("no-mostrar");
-			$("#miposicion").removeClass("no-mostrar");
-			$("#miposicion").addClass("mostrar");
-			$("#driver").removeClass("mostrar");
-			$("#driver").addClass("no-mostrar");
-			$("#account").removeClass("mostrar");
-			$("#account").addClass("no-mostrar");
-			$("#acerca").removeClass("mostrar");
-			$("#acerca").addClass("no-mostrar");
-	        break;
-	   	case 3:
-	        console.log("menu opcion"+opcion)
-	        $("#registrarse").removeClass("mostrar");
-			$("#registrarse").addClass("no-mostrar");
-			$("#login").removeClass("mostrar");
-			$("#login").addClass("no-mostrar");
-			$("#miposicion").removeClass("mostrar");
-			$("#miposicion").addClass("no-mostrar");
-			$("#driver").removeClass("no-mostrar");
-			$("#driver").addClass("mostrar");
-			$("#account").removeClass("mostrar");
-			$("#account").addClass("no-mostrar");
-			$("#acerca").removeClass("mostrar");
-			$("#acerca").addClass("no-mostrar");
-	        break;
-	    case 4:
-	        console.log("menu opcion"+opcion)
-	        $("#registrarse").removeClass("mostrar");
-			$("#registrarse").addClass("no-mostrar");
-			$("#login").removeClass("mostrar");
-			$("#login").addClass("no-mostrar");
-			$("#miposicion").removeClass("mostrar");
-			$("#miposicion").addClass("no-mostrar");
-			$("#driver").removeClass("mostrar");
-			$("#driver").addClass("no-mostrar");
-			$("#account").removeClass("no-mostrar");
-			$("#account").addClass("mostrar");
-			$("#acerca").removeClass("mostrar");
-			$("#acerca").addClass("no-mostrar");
-	        break;
-		case 5:
-	        console.log("menu opcion"+opcion)
-	        $("#registrarse").removeClass("mostrar");
-			$("#registrarse").addClass("no-mostrar");
-			$("#login").removeClass("mostrar");
-			$("#login").addClass("no-mostrar");
-			$("#miposicion").removeClass("mostrar");
-			$("#miposicion").addClass("no-mostrar");
-			$("#driver").removeClass("mostrar");
-			$("#driver").addClass("no-mostrar");
-			$("#account").removeClass("mostrar");
-			$("#account").addClass("no-mostrar");
-			$("#acerca").removeClass("no-mostrar");
-			$("#acerca").addClass("mostrar");
-	        break;
-	} 	
-}
-
-
-//funciones para los mapas
-
-

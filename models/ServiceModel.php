@@ -46,8 +46,9 @@
     {
       extract($values);
       $fecha=Date::getFecha();
+      $id_cliente=$id;
       if($this->consult->getConsultar("
-              INSERT INTO `servicio` (`id_servico`, `id_cliente`,`disponible`) VALUES (NULL, '3','1');
+              INSERT INTO `servicio` (`id_servico`, `id_cliente`,`disponible`) VALUES (NULL, '$id_cliente','1');
           "))
       {
          Cookies::set("complete","Se ha creadi el usuario correctamente","20-s");

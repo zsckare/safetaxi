@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="/assets/css/materialize.css">
 	<link rel="stylesheet" href="/assets/css/style.css">
 	<link rel="stylesheet" href="/assets/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/sweetalert.css">
+	
 	
 </head>
 <body>
@@ -24,7 +26,7 @@
 	    	<ul class="right hide-on-med-and-down">	   			
         		<li><a href="" onclick="menu(1);">Inicio <i class="left small  material-icons">home</i></a></li>
         		<li><a href="" onclick="menu(2);">Mi Ubicacion <i class="left small  material-icons">ic_map</i></a></li>
-        		<li><a href="" onclick="menu(3);">Buscar Chofer <i class="left  small material-icons">ic_local_taxi</i></a></li>
+        		<li><a href="" onclick="menu(3);">Buscar Chofer <i class="left  small material-icons">local_taxi</i></a></li>
         		<li><a href="" onclick="menu(4);">Mi Cuenta <i class="left small material-icons">perm_identity</i></a></li>
         		<li><a href="" onclick="menu(5);">Acerca de <i class="left  small material-icons">info_outline</i></a></li>
 	    	</ul>
@@ -33,9 +35,9 @@
         		<li><a href="/app/">Inicio <i class=" ion-android-home left "></i></a></li>
         		<li><a href="/app/myubication" >Mi Ubicacion <i class=" ion-android-map left "></i></a></li>
         		<li><a href="/app/pedir">Buscar Chofer <i class="ion-android-car left "></i></a></li>
-        		<li><a href="/app/">Mi Cuenta <i class="ion-android-person left "></i></a></li>
+        		<li><a href="/app/account">Mi Cuenta <i class="ion-android-person left "></i></a></li>
+        		<li><a href="/app/logout">Cerrar Sesión <i class="ion-android-exit left "></i></a></li>        		
         		<li><a href="/app/about">Acerca de <i class="ion-android-alert left "></i></a></li>
-        		<li><a href="/app/logout">Cerrar Sesión <i class="ion-android-alert left "></i></a></li>
       		</ul>	
 
 	    </div>
@@ -47,13 +49,12 @@
 	</section>
 
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js" ></script>
-	<script src="/assets/js/materialize.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
     <script src="/assets/js/init.js"></script>
     <script src="/assets/js/pasgen.js"></script>    
-	<script src="/assets/js/messages.js"></script>
-
+	<script src="/assets/js/messages.js"></script>	
+    <script src="/assets/js/sweetalert.min.js"></script>
 	<script src="/assets/js/appmovil.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
 	<script>
 		url ="http://safetaxizsckare.esy.es/client";
 		$(document).on("ready",main	);

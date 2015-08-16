@@ -5,7 +5,7 @@
 	if (isset($_POST['id'])) {
 		$consulta = new ServiceModel();
 		return $consulta->create([			
-			"id_cliente"=> $_POST['id'],
+			"id"=> $_POST['id'],
 			"pass"=>"0"
 			]);
 	}

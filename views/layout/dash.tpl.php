@@ -49,7 +49,7 @@
 		        <li><a href="/drivers">Taxistas <i class="left material-icons">supervisor_account</i></a></li>	
 		        <li><a href="/cars">Autos <i class="left material-icons">local_taxi</i></a></li>
 		        <li><a href="/base">Bases <i class="left material-icons">business</i></a></li>
-		        <li><a href="/fotos">Fotos <i class="left material-icons">eject</i></a></li>
+		        <li><a href="/fotos">Fotos <i class="left material-icons">collections</i></a></li>
 		        
 		   </ul>
 		</div>
