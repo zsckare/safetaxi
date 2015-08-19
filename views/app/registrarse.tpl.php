@@ -91,9 +91,14 @@
         header("Access-Control-Allow-Origin: *");     
         header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");   
 
-	if (isset($_POST['nombre'])) {
-		$consulta = new ClientModel();
-		return $consulta->create([			
+	if (isset($_POST['correo'])) {
+		
+		$client=new ClientModel();
+		$values=$client->getSesion($_POST['correo']);
+
+		if($values=null){
+			$consulta = new ClientModel();
+			return $consulta->create([			
 			"nombre"=> $_POST['nombre'],
 			"paterno"=> $_POST['paterno'],
 			"materno"=> $_POST['materno'],
@@ -103,5 +108,10 @@
 			"correo"=> $_POST['correo'],
 			"password"=> $_POST['pass']
 			]);
+		}
+		else{
+			echo '
+<script>sweetAlert("EL Correo que intentas registrar","Ya existe","warning");</script>';
+		}
 	}
 ?>

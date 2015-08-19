@@ -26,6 +26,20 @@
         return $this->rows;
 
     }
+    public function getSesion($value=null)
+    {
+        $query = $this->consult->getConsultar("
+            SELECT *
+            FROM driver
+            WHERE emails_driver = '$value'
+        ");
+
+        while($row = $query->fetch_array(MYSQLI_ASSOC)){
+            $this->rows[] = $row;
+        }
+
+        return $this->rows;
+    }
     public function getAll()
         {
             $query = $this->consult->getConsultar("
@@ -91,14 +105,14 @@
     public function update($values = array())
     {
       extract($values);
-      $pass = Security::getEncrypt($password);
+      $pass=Security::getEncrypt($password);
       if($this->consult->getConsultar("
 
         UPDATE driver SET name_driver = '$name_driver', paterno_driver = '$paterno_driver', materno_driver = '$materno_driver', emails_driver = '$emails_driver', image_driver = '$image_driver', phone_driver = '$phone_driver', password_driver = '$pass', code_taxi = '$code_taxi', placas_taxi = '$placas_taxi', calle = '$calle', colonia = '$colonia', numero = '$numero', tipo_auto = '$tipo_auto', activo = '1', sindical = '$sindical', base = '$base' WHERE id_driver = '$id_driver';         
       "))
       {
-        Cookies::set("complete","Se ha editado el usuario correctamente","20-s");
-        Redirection::go("drivers");
+        Cookies::set("complete","Se ha editado el usuario".$pass." correctamente","20-s");
+        Redirection::go("cars");
       }else{
         Cookies::set("alert","Error: por algun motivo no se pudo editar el usuario intenta de nuevo","20-s");
         Redirection::go("drivers");

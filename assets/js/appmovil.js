@@ -52,15 +52,17 @@ function solicitarTaxi(id_cliente,latitud,longitud) {
 	ajax.onreadystatechange=function () {
 		if (ajax.readyState==4){
 			console.log("!!!!!!!!!!!!!!!!");
-			sweetAlert("Esperando que alguien tome el servicio", "", "info");
+			
 		
 		}
 	}
 	  	
 	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	
-	ajax.send("id="+id_cliente);
+	ajax.send("id="+id_cliente+"&longitud="+longitud+"&latitud="+latitud);
 
 
 		 	
 }
+
+

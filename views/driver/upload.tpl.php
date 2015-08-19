@@ -13,7 +13,7 @@
 				if (move_uploaded_file($_FILES['url']['tmp_name'], $imagen_subida)) {
 					$consulta = new DriverModel();
 					$consulta->subirfoto($rutaimagen);
-					echo '<script>sweetAlert("Fotografia Seleccionada","", "info");</script>';
+					echo '<script>sweetAlert("Fotografia Subida","", "info");</script>';
 					echo '<script>window.close();</script>';
 
 				}else{

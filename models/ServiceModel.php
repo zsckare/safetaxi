@@ -27,6 +27,20 @@
 
     }
 
+    public function ultimo($value=null)
+    {
+        $query = $this->consult->getConsultar("
+            SELECT * FROM `servicio` WHERE id_cliente = '$value' ORDER BY `id_servico` DESC LIMIT 1 
+        ");
+
+        while($row = $query->fetch_array(MYSQLI_ASSOC)){
+            $this->rows[] = $row;
+        }
+
+        return $this->rows;
+
+    }
+
     public function getAll( $value = null)
     {
         $query = $this->consult->getConsultar("
@@ -48,14 +62,14 @@
       $fecha=Date::getFecha();
       $id_cliente=$id;
       if($this->consult->getConsultar("
-              INSERT INTO `servicio` (`id_servico`, `id_cliente`,`disponible`) VALUES (NULL, '$id_cliente','1');
+              INSERT INTO `servicio` (`id_servico`, `id_cliente`,`disponible`,`latitud`,`longitud`) VALUES (NULL, '$id_cliente','1','$latitud', '$longitud' );
           "))
       {
-         Cookies::set("complete","Se ha creadi el usuario correctamente","20-s");
-         Redirection::go("cars");
+         
+         
       }else{
-         Cookies::set("alert","Error: por algun motivo no se pudo crear el usuario intenta de nuevo","20-s");
-         Redirection::go("user");
+         Cookies::set("alert","Error: por algun motivo no se pudo crear el servicio intenta de nuevo","20-s");
+         
       }
     }
 

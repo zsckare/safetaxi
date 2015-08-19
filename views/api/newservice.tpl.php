@@ -6,10 +6,12 @@
 		$consulta = new ServiceModel();
 		return $consulta->create([			
 			"id"=> $_POST['id'],
-			"pass"=>"0"
+			"pass"=>"0",
+			"latitud"=>$_POST['latitud'],
+			"longitud"=>$_POST['longitud']
 			]);
 	}
 	else{
-		echo "ni madres";
+		echo "no existe";
 	}
 ?>

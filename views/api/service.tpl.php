@@ -6,12 +6,11 @@
     $servicio_array = array();
 
 
-    foreach ($services as $row) {
+    foreach ($values as $row) {
         $id_servicio=$row['id_servico'];
+        $id_cliente=$row['id_cliente'];
         $disponible=$row['disponible'];
-        $latitud=$row['latitud'];
-        $longitud=$row['longitud'];
-        $servicio_array[]= array('id_servicio' => $id_servicio, 'disponible' => $disponible, "latitud"=>$latitud, "longitud"=>$longitud);
+        $servicio_array[]= array('id_servicio' => $id_servicio, 'disponible' => $disponible, 'id_cliente'=>$id_cliente);
     }
     $services = array('services' => $servicio_array );
     $json =json_encode($services);

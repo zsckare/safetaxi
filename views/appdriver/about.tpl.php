@@ -1,4 +1,4 @@
-<div id="acerca" class="card mostrar">
+<div id="acerca" class=" mostrar">
 	<div class="padding-largo">
 		<div class="row"></div>
 		<div class="row">
@@ -13,8 +13,7 @@
 			
 			<div class="row">
 				<p class="center-align">Desarrollado por:</p>
-				<p class="center-align">Antonio Alvarez Guevara | Pedro Castro Quintanila </p>
-				<p class="center-align"> Carlos Gerardo Villa Avila</p>
+				<p class="center-align">Antonio Alvarez Guevara | Pedro Castro Quintanila</p>
 			</div>
 		</div>
 	</div>
