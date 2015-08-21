@@ -24,7 +24,15 @@ class DriverController{
             Redirection::go('driver/signup');
         }  
     }
+    public function ServicesAction()
+    {
 
+        if (isset($_SESSION['user']) && $_SESSION['type']=="driver" ) {
+            return new View("appdriver/services", ["title" => "Buscando Servicios", "layout" => "on", "nameLayout" => "appdriver"]);    
+        }else{
+            Redirection::go('driver/signup');
+        }  
+    }
     public function AccountAction()
     {
         if (isset($_SESSION['user']) && $_SESSION['type']=="driver" ) {

@@ -64,15 +64,15 @@
 										<input type="submit" class="btn blue darken-4"  value="Registrarse">
 									</div>
 								</div>
+								<div class="row">
+									<p class="center-align">
+										Al Resgistrarte Aceptas Nuestros <a href="">Terminos de Privacidad y Condiciones de Uso</a>
+									</p>
+								</div>
 							</div>
 						</form>
 					</div>
 
-					<div class="row">
-						<div class="center-align">
-							Ya Tienes Cuenta... <a href="/app/signin" class="dosismedium" >Inicia Sesion</a>
-						</div>
-					</div>
 				</div>
 			</div>
 			

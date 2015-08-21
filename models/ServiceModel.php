@@ -62,7 +62,7 @@
       $fecha=Date::getFecha();
       $id_cliente=$id;
       if($this->consult->getConsultar("
-              INSERT INTO `servicio` (`id_servico`, `id_cliente`,`disponible`,`latitud`,`longitud`) VALUES (NULL, '$id_cliente','1','$latitud', '$longitud' );
+              INSERT INTO `servicio` (`id_servico`, `id_cliente`,`disponible`,`latitud`,`longitud`, `dirfisica`) VALUES (NULL, '$id_cliente','1','$latitud', '$longitud', '$dirfisica' );
           "))
       {
          
@@ -78,7 +78,7 @@
       extract($values);
 
       if($this->consult->getConsultar("
-        UPDATE servicio SET id_driver = '$id_driver', disponible = '0' WHERE id_servico = '$id_servicio';
+        UPDATE servicio SET id_driver = '$id_driver', disponible = '2' WHERE id_servico = '$id_servicio';
       "))
       {
         Cookies::set("complete","Se ha editado el usuario correctamente","20-s");

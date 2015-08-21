@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-08-2015 a las 21:20:24
+-- Tiempo de generación: 21-08-2015 a las 16:54:49
 -- Versión del servidor: 5.6.24
 -- Versión de PHP: 5.6.8
 
@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `driver` (
   `activo` int(1) NOT NULL,
   `sindical` varchar(20) NOT NULL,
   `base` varchar(20) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `driver`
@@ -144,7 +144,8 @@ INSERT INTO `driver` (`id_driver`, `name_driver`, `paterno_driver`, `materno_dri
 (26, 'Aldo', 'Garcia', 'Urbina', 'a@a.com', '/assets/img/default.png', '6181138046', 'a20d2e01959dc2b755f8cd1dd2e2b09b319ed65f8c43f1a0dfe532aba6b16f49', 'COD-oosp', 'plplpl', 'a', 'Valle Verde', '102', 'Atos', 1, '', ''),
 (27, 'Carlos Gerardo', 'Villa', 'Avila', 'okyo.blue.tsubasa@gmaill.com', '/assets/img/logo.png', '123456723', 'fdddf0d3ba91e98a8b9a7fafb9b6ae7f5704e9b34443b37e4799c508b57d3a26', 'COD-oospa', 'ppallallala', 'Por ahi', 'Vaalle Verde', '112', 'Spark', 1, 'qaqqaqa', 'Base PAseo Durango'),
 (28, 'Isaias', 'Medina', 'Beltran', 'tokyo.blue.tsubasa@gmaill.com', '/assets/img/default.png', '6181138046', 'a20d2e01959dc2b755f8cd1dd2e2b09b319ed65f8c43f1a0dfe532aba6b16f49', 'a1212', 'kakoa', 'De Las Palmas', 'Centro', '102', 'Tsuru', 1, 'qwqwqw', 'Base 87'),
-(29, 'isaac', 'valenzuela', 'escobedo', 'aa@a.com', '/assets/img/default.png', 'asaa', '', 'asas', 'asas', 'Ca', 'aa', 'as', 'Tsuru', 1, 'asasa', 'Base 87');
+(29, 'isaac', 'valenzuela', 'escobedo', 'aa@a.com', '/assets/img/default.png', 'asaa', '', 'asas', 'asas', 'Ca', 'aa', 'as', 'Tsuru', 1, 'asasa', 'Base 87'),
+(30, 'Ivam', 'Esquivel', 'Medina', 'zsckare@gmail.com', '1', '1234567', '0ae98847dfc7eff7589d839e8a00510e70a8475b1172ef802d1b23e7e4ee7809', 'COD-oosp', 'ppallallal', 'a', 'a', 'a', 'Atos', 1, 'qwqwqw', 'Base Paseo Durango');
 
 -- --------------------------------------------------------
 
@@ -179,27 +180,38 @@ CREATE TABLE IF NOT EXISTS `servicio` (
   `disponible` int(1) NOT NULL,
   `inico` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `latitud` varchar(100) NOT NULL,
-  `longitud` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
+  `longitud` varchar(100) NOT NULL,
+  `dirfisica` varchar(100) NOT NULL,
+  `lat_driver` varchar(100) NOT NULL,
+  `lon_driver` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `servicio`
 --
 
-INSERT INTO `servicio` (`id_servico`, `id_cliente`, `fechainicio`, `fechafin`, `id_driver`, `disponible`, `inico`, `latitud`, `longitud`) VALUES
-(40, 51, '0000-00-00', '2015-08-16 22:55:47', 0, 2, '0000-00-00 00:00:00', '23.9944594', '-104.64739209999999'),
-(41, 51, '0000-00-00', '2015-08-17 01:25:08', 0, 1, '0000-00-00 00:00:00', '23.9945171', '-104.64732719999999'),
-(42, 51, '0000-00-00', '2015-08-17 01:45:56', 0, 1, '0000-00-00 00:00:00', '23.9944638', '-104.647357'),
-(43, 51, '0000-00-00', '2015-08-17 01:46:12', 0, 1, '0000-00-00 00:00:00', '23.994507499999997', '-104.6473465'),
-(44, 51, '0000-00-00', '2015-08-17 01:46:35', 0, 1, '0000-00-00 00:00:00', '23.994577099999997', '-104.64734179999999'),
-(45, 51, '0000-00-00', '2015-08-17 01:47:05', 0, 1, '0000-00-00 00:00:00', '23.994514499999998', '-104.64732359999999'),
-(46, 51, '0000-00-00', '2015-08-17 01:47:25', 0, 1, '0000-00-00 00:00:00', '23.9945095', '-104.6473116'),
-(47, 51, '0000-00-00', '2015-08-18 20:53:16', 0, 1, '0000-00-00 00:00:00', '24.0277598', '-104.64743440000001'),
-(48, 51, '0000-00-00', '2015-08-18 20:56:53', 14, 0, '0000-00-00 00:00:00', '24.0277113', '-104.6474775'),
-(49, 51, '0000-00-00', '2015-08-18 21:12:34', 0, 1, '0000-00-00 00:00:00', '24.0277162', '-104.6474082'),
-(50, 51, '0000-00-00', '2015-08-19 18:45:31', 0, 1, '0000-00-00 00:00:00', '24.0349097', '-104.6474173'),
-(51, 51, '0000-00-00', '2015-08-19 18:48:20', 0, 1, '0000-00-00 00:00:00', '24.034854199999998', '-104.6476301'),
-(52, 51, '0000-00-00', '2015-08-19 18:55:09', 0, 1, '0000-00-00 00:00:00', '24.0349228', '-104.64716639999999');
+INSERT INTO `servicio` (`id_servico`, `id_cliente`, `fechainicio`, `fechafin`, `id_driver`, `disponible`, `inico`, `latitud`, `longitud`, `dirfisica`, `lat_driver`, `lon_driver`) VALUES
+(79, 51, '0000-00-00', '2015-08-20 23:49:44', 30, 0, '0000-00-00 00:00:00', '23.9945401', '-104.64727189999999', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(80, 51, '0000-00-00', '2015-08-20 23:51:58', 30, 2, '0000-00-00 00:00:00', '23.994551899999998', '-104.6472969', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(81, 51, '0000-00-00', '2015-08-21 00:03:14', 30, 2, '0000-00-00 00:00:00', '23.9945038', '-104.6472361', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(82, 51, '0000-00-00', '2015-08-21 00:05:47', 30, 2, '0000-00-00 00:00:00', '23.994540900000004', '-104.6472701', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(83, 51, '0000-00-00', '2015-08-21 00:06:44', 30, 2, '0000-00-00 00:00:00', '23.994526', '-104.6472715', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(84, 51, '0000-00-00', '2015-08-21 00:15:39', 30, 2, '0000-00-00 00:00:00', '23.994518', '-104.64726859999999', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(85, 51, '0000-00-00', '2015-08-21 00:34:14', 30, 2, '0000-00-00 00:00:00', '23.9944925', '-104.6472373', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(86, 51, '0000-00-00', '2015-08-21 00:36:22', 30, 2, '0000-00-00 00:00:00', '23.994498800000002', '-104.64724779999999', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(87, 51, '0000-00-00', '2015-08-21 00:37:03', 30, 2, '0000-00-00 00:00:00', '23.994484099999998', '-104.6472285', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(88, 51, '0000-00-00', '2015-08-21 00:41:19', 30, 2, '0000-00-00 00:00:00', '23.994493799999997', '-104.6472483', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(89, 51, '0000-00-00', '2015-08-21 00:43:35', 30, 2, '0000-00-00 00:00:00', '23.9945147', '-104.6472673', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(90, 51, '0000-00-00', '2015-08-21 00:44:55', 30, 2, '0000-00-00 00:00:00', '23.994505099999998', '-104.64727409999999', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(91, 51, '0000-00-00', '2015-08-21 00:45:49', 30, 2, '0000-00-00 00:00:00', '23.9944857', '-104.6472312', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(92, 51, '0000-00-00', '2015-08-21 00:46:46', 30, 2, '0000-00-00 00:00:00', '23.994489899999998', '-104.64720469999999', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(93, 51, '0000-00-00', '2015-08-21 00:49:16', 30, 2, '0000-00-00 00:00:00', '23.9945092', '-104.647263', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(94, 51, '0000-00-00', '2015-08-21 00:50:40', 30, 2, '0000-00-00 00:00:00', '23.9945147', '-104.6472737', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(95, 51, '0000-00-00', '2015-08-21 00:52:52', 30, 2, '0000-00-00 00:00:00', '23.994515', '-104.647251', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(96, 51, '0000-00-00', '2015-08-21 00:55:16', 30, 2, '0000-00-00 00:00:00', '23.994550699999998', '-104.6472644', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(97, 51, '0000-00-00', '2015-08-21 14:23:38', 30, 2, '0000-00-00 00:00:00', '23.9944343', '-104.6472737', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(98, 51, '0000-00-00', '2015-08-21 14:25:04', 0, 1, '0000-00-00 00:00:00', '23.9944343', '-104.6472737', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
+(99, 51, '0000-00-00', '2015-08-21 14:25:22', 0, 1, '0000-00-00 00:00:00', '23.9944343', '-104.6472737', 'Valle Verde, Durango, Dgo., MÃ©xico', '', '');
 
 -- --------------------------------------------------------
 
@@ -304,7 +316,7 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de la tabla `driver`
 --
 ALTER TABLE `driver`
-  MODIFY `id_driver` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
+  MODIFY `id_driver` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT de la tabla `fotos`
 --
@@ -314,7 +326,7 @@ ALTER TABLE `fotos`
 -- AUTO_INCREMENT de la tabla `servicio`
 --
 ALTER TABLE `servicio`
-  MODIFY `id_servico` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=53;
+  MODIFY `id_servico` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=100;
 --
 -- AUTO_INCREMENT de la tabla `user`
 --

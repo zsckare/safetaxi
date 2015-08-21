@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="/assets/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/sweetalert.css">
 	
-	
+
 </head>
 <body>
 	
@@ -28,30 +28,43 @@
 	    	</ul>
 	    
 	        <ul class="side-nav" id="mobile-demo">
-        		<li><a href="/appdriver/">Inicio <i class=" ion-android-home left "></i></a></li>
-        		<li><a href="/appdriver/myubication" >Mi Ubicacion <i class=" ion-android-map left "></i></a></li>
-        		<li><a href="/appdriver/buscar">Buscar Servicio <i class="ion-android-car left "></i></a></li>
-        		<li><a href="/appdriver/account">Mi Cuenta <i class="ion-android-person left "></i></a></li>
-        		<li><a href="/appdriver/logout">Cerrar Sesión <i class="ion-android-exit left "></i></a></li>        		
-        		<li><a href="/appdriver/about">Acerca de <i class="ion-android-alert left "></i></a></li>
+        		<li><a href="/driver/">Inicio <i class=" ion-android-home left "></i></a></li>
+        		<li><a href="/driver/myubication" >Mi Ubicacion <i class=" ion-android-map left "></i></a></li>
+        		<li><a href="/driver/services">Buscar Servicio <i class="ion-android-car left "></i></a></li>
+        		<li><a href="/driver/account">Mi Cuenta <i class="ion-android-person left "></i></a></li>
+        		<li><a href="/driver/logout">Cerrar Sesión <i class="ion-android-exit left "></i></a></li>        		
+        		<li><a href="/driver/about">Acerca de <i class="ion-android-alert left "></i></a></li>
       		</ul>	
 
 	    </div>
 	</nav>
 
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+    <script src="/assets/js/init.js"></script> 	
+	<script src="/assets/js/messages.js"></script>	
+    <script src="/assets/js/sweetalert.min.js"></script>
+    <script src="/assets/js/appdrivers.js"></script>	
+	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script>
+	function getServicios(iddriver) {
+
+		url ="http://yoi.dev/service";
+			console.log("trayendo servicios disponibles");
+			texto="";
+
+			$.getJSON(url,function(datos){
+				$.each(datos.services, function(i, item){
+								
+				texto+="<div class='row'><div class='col s6 m6 l6'><div class='btn-large' onclick='mostrarmapa( "+iddriver+","+item.id_servicio+","+item.latitud+","+item.longitud+" )' >"+item.dirfisica+"</div></div></div>";
+				});
+				$("#tablebody").html(texto);
+			});
+	}
+	</script>
 	<section style="margin-top:1em;" class="card padding-largo">
 		<?=$yield ?>		
 	</section>
-
-	<script src="https://code.jquery.com/jquery-2.1.4.min.js" ></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
-    <script src="/assets/js/init.js"></script> 
-	<script src="/assets/js/messages.js"></script>	
-    <script src="/assets/js/sweetalert.min.js"></script>
-	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    </script>
-
-
 
 	
 </body>

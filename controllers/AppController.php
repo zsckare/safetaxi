@@ -7,7 +7,7 @@ class AppController{
         if (isset($_SESSION['user']) && $_SESSION['type']=="client" ) {
             return new View("app/index", ["title" => "", "layout" => "on", "nameLayout" => "app"]);       
         }else{
-            Redirection::go('app/signup');
+            Redirection::go('app/signin');
         }     
     }
 
@@ -17,7 +17,7 @@ class AppController{
         if (isset($_SESSION['user']) && $_SESSION['type']=="client" ) {
             return new View("app/myubication", ["title" => "Mi Ubicacion", "layout" => "on", "nameLayout" => "app"]);    
         }else{
-            Redirection::go('app/signup');
+            Redirection::go('app/signin');
         }  
     }
 
@@ -26,7 +26,7 @@ class AppController{
         if (isset($_SESSION['user']) && $_SESSION['type']=="client" ) {
             return new View("app/pedir", ["title" => "Pedir Taxi", "layout" => "on", "nameLayout" => "app"]);    
          }else{
-            Redirection::go('app/signup');
+            Redirection::go('app/signin');
         }  
     }
 
@@ -40,7 +40,7 @@ class AppController{
 
             return new View("app/account", ["title" => "", "layout" => "on", "nameLayout" => "app", "values"=>$values]);     
         }else{
-            Redirection::go('app/signup');
+            Redirection::go('app/signin');
         }  
     }
     public function SignupAction()
@@ -65,7 +65,7 @@ class AppController{
         if (isset($_SESSION['user']) && $_SESSION['type']=="client" ) {
             return new View("app/about", ["title" => "Acerca de ", "layout" => "on", "nameLayout" => "app"]);    
         }else{
-            Redirection::go('app/signup');
+            Redirection::go('app/signin');
         }  
     }
     public function LogoutAction()

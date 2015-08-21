@@ -26,7 +26,13 @@ class ApiController{
         $id=$_GET['id'];
         $consulta= new DriverModel();
         $values=$consulta->get($id);
-        return new View("api/driver", ["title" => "", "layout" => "off", "nameLayout" => "dash","values"=>$values]);
+        foreach ($values as $key) {
+                $id_foto=$key['image_driver'];
+            }
+        $fotos=new FotoModel();
+        $pic=$fotos->get($id_foto);
+
+        return new View("api/driver", ["title" => "", "layout" => "off", "nameLayout" => "dash","values"=>$values, "pic"=>$pic]);
     }
 
 

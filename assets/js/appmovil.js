@@ -43,7 +43,7 @@ function vaciarForm() {
 
 //funciones del usuario
 
-function solicitarTaxi(id_cliente,latitud,longitud) {
+function solicitarTaxi(id_cliente,latitud,longitud,dirfisica) {
 
 	url="http://yoi.dev/api/newservice";
 	console.log(""+id_cliente+" "+latitud+","+longitud);
@@ -59,10 +59,27 @@ function solicitarTaxi(id_cliente,latitud,longitud) {
 	  	
 	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	
-	ajax.send("id="+id_cliente+"&longitud="+longitud+"&latitud="+latitud);
+	ajax.send("id="+id_cliente+"&longitud="+longitud+"&latitud="+latitud+"&dirfisica="+dirfisica);
 
 
 		 	
 }
 
+function getDataDriver(id_driver) {
+	url="http://yoi.dev/api/driver/?id=";
+	url+=id_driver;
+	console.log("Ejecutando getDataDriver");
+	console.log("url"+url);
+	
+	$.getJSON(url,function(datos){
 
+		console.log("ejecuntando getJSON");
+		$.each(datos.driver, function(i, item){	
+			console.log("jalando datos");
+			console.log("id_driver="+item.id_driver);
+			console.log(item.nombre+" "+item.paterno+" "+item.materno);
+			console.log("imagen "+item.imagen);
+		});
+
+	});
+}

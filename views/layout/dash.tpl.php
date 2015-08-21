@@ -50,7 +50,7 @@
 		        <li><a href="/cars">Autos <i class="left material-icons">local_taxi</i></a></li>
 		        <li><a href="/base">Bases <i class="left material-icons">business</i></a></li>
 		        <li><a href="/fotos">Fotos <i class="left material-icons">collections</i></a></li>
-		        
+		        <li><a href="/services">Servicios<i class="left material-icons">airplanemode_active</i></a></li>
 		   </ul>
 		</div>
 		 

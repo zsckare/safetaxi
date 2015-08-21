@@ -8,7 +8,8 @@
 			"id"=> $_POST['id'],
 			"pass"=>"0",
 			"latitud"=>$_POST['latitud'],
-			"longitud"=>$_POST['longitud']
+			"longitud"=>$_POST['longitud'],
+			"dirfisica"=>$_POST['dirfisica']
 			]);
 	}
 	else{

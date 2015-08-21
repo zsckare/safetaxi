@@ -50,6 +50,12 @@
 						</div>
 					</form>
 				</div>
+
+				<div class="row">
+					<div class="center-align">
+						Aun no tienes cuenta... <a href="/app/signup" class="dosismedium" >Registrate</a>
+					</div>
+				</div>
 			</div>
 		</section>
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js" ></script>

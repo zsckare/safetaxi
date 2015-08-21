@@ -23,8 +23,11 @@
 			<p class="center-align">Esperando...</p>
 		</div>
 	</div>
+
 </div>
+<input type="hidden" value="1" id="disponible">
 <script>
+
 
 	
 		function localize()
@@ -52,14 +55,37 @@
 			var latitud = pos.coords.latitude;
 			var longitud = pos.coords.longitude;
 			var precision = pos.coords.accuracy;
+
+  			var geocoder = new google.maps.Geocoder;
 			//asigno los valores a sus correspondientes input
 			document.getElementById("latitud").value=latitud;
 			document.getElementById("longitud").value=longitud;
 			console.log(""+latitud+","+longitud);
-			solicitarTaxi(<?= $_SESSION['id_user'];?>,latitud,longitud);
+// var latlngStr = input.split(',', 2);
+			input = latitud+","+longitud;
+			var latlngStr = input.split(',', 2);
+			var latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
+			geocoder.geocode({'location': latlng}, function(results, status) {
+			    if (status === google.maps.GeocoderStatus.OK) {
+			      if (results[1]) {
 
-			esperando(<?= $_SESSION['id_user'];?>);
-			console.log("ya");
+			        alert(""+results[1].formatted_address);
+			        dirfisica=results[1].formatted_address;
+					solicitarTaxi(<?= $_SESSION['id_user'];?>,latitud,longitud,dirfisica);
+
+					wait(<?= $_SESSION['id_user'];?>);
+					console.log("ya");
+			        
+			      } else {
+			        window.alert('No results found');
+			      }
+			    } else {
+			      window.alert('Geocoder failed due to: ' + status);
+			    }
+			  });
+
+
+
 			/* A través del DOM obtenemos el div que va a contener el mapa */
 			var contenedor = document.getElementById("map");
 
@@ -77,17 +103,18 @@
 			
 		}
 
-		/* Gestion de errores */
-		function error(errorCode)
-		{
-			if(errorCode.code == 1)
-				alert("No has permitido buscar tu localizacion")
-			else if (errorCode.code==2)
-				alert("Posicion no disponible")
-			else
-				alert("Ha ocurrido un error")
-		}
+/* Gestion de errores */
+	function error(errorCode)
+	{
+	if(errorCode.code == 1)
+		alert("No has permitido buscar tu localizacion")
+	else if (errorCode.code==2)
+		alert("Posicion no disponible")
+	else
+		alert("Ha ocurrido un error")
+	}
  	
+
 function modalespera() {
 	$("#cortina").removeClass("no-mostrar");
 	$("#cortina").addClass("mostrar");
@@ -97,11 +124,18 @@ function modalespera() {
 
 }
 
-
+function wait (id_cliente) {
+	id=id_cliente;
+	setInterval('esperando(id)',3000);
+}
 function esperando (id_cliente) {
 	url="http://yoi.dev/api/service/?id_cliente=";
 	url+=id_cliente;
-	setInterval('getEstado(url)',3000);
+	estado=document.getElementById('disponible').value;
+	if (estado==1) {
+
+	getEstado(url);
+	}
 
 	
 }
@@ -113,9 +147,14 @@ function getEstado(url) {
 			console.log("trayendo datos");
 			console.log("disponible "+item.disponible);
 			if(item.disponible==2){
-				traerDatosDriver();
+				id_driver=item.id_driver;
+				document.getElementById('disponible').value=2;
+				getDataDriver(id_driver);
 			}
 		});
 	});
 }
+
+
+
 </script>
