@@ -22,10 +22,30 @@
 		<div class="row">
 			<p class="center-align">Esperando...</p>
 		</div>
+		<div class="row">
+			<div class="cssload-container">
+				<div class="cssload-whirlpool"></div>
+			</div>
+		</div>
+	</div>
+
+<!--seccion para mostrar al usuario los datos del taxista que irá por el-->
+	<div id="modalincoming" class="no-mostrar mapa">
+		<div class="row">
+			<div class="col s3 m3 l3" id="fotodriver">
+				
+			</div>
+			<div class="col s6 offset-s2" id="nombredriver" >
+				
+			</div>
+		</div>
 	</div>
 
 </div>
 <input type="hidden" value="1" id="disponible">
+
+
+
 <script>
 
 
@@ -68,8 +88,8 @@
 			geocoder.geocode({'location': latlng}, function(results, status) {
 			    if (status === google.maps.GeocoderStatus.OK) {
 			      if (results[1]) {
-
-			        alert(""+results[1].formatted_address);
+                    Materialize.toast(""+results[1].formatted_address, 4000);
+			      
 			        dirfisica=results[1].formatted_address;
 					solicitarTaxi(<?= $_SESSION['id_user'];?>,latitud,longitud,dirfisica);
 
@@ -147,6 +167,8 @@ function getEstado(url) {
 			console.log("trayendo datos");
 			console.log("disponible "+item.disponible);
 			if(item.disponible==2){
+				$("#modalespera").removeClass("mostrar");
+				$("#modalespera").addClass("no-mostrar");
 				id_driver=item.id_driver;
 				document.getElementById('disponible').value=2;
 				getDataDriver(id_driver);

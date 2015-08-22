@@ -105,13 +105,11 @@
 									<h3>Seleccionar Imagen</h3>
 									<div class="imagenes">
 										<div class="row">
-											
-											<?php foreach ($fotos as $foto) {?>
-											<div class="col s3 m3 l3">
-												<img src="<?=$foto["ruta"]; ?>" alt="" class="responsive-img hand" style="cursor:pointer;" onclick="selectImage(<?=$foto["id_foto"]; ?>)">
-											</div>
+											<ul>
+											<?php foreach ($fotos as $foto) {?>											
+												<li style="cursor:pointer;" onclick="selectImage(<?=$foto["id_foto"]; ?>)" ><?=$foto["ruta"]; ?></li>
 											<?php } ?>
-											
+											</ul>
 										</div>
 									</div>
 								</div>

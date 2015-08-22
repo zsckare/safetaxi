@@ -58,11 +58,22 @@
     top: 10%;   
     left: 5%;
     width: 90%;
-    z-index: 10000;   
+    z-index: 10000;  
+     
 }
 .mapa{
     background-color: #fff;
 }
+#modalincoming{
+    position: fixed;
+    top: 10%;   
+    left: 5%;
+    width: 90%;
+    z-index: 10000;   
+}
+
+
+
 #servicioactivo{
     position: fixed;
     top: 0;

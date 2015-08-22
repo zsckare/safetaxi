@@ -111,7 +111,7 @@
 		}
 		else{
 			echo '
-<script>sweetAlert("EL Correo que intentas registrar","Ya existe","warning");</script>';
+<script>Materialize.toast("El Correo usar ya se encuentra registrado!", 4000)</script>';
 		}
 	}
 ?>

@@ -78,7 +78,7 @@
       extract($values);
 
       if($this->consult->getConsultar("
-        UPDATE servicio SET id_driver = '$id_driver', disponible = '2' WHERE id_servico = '$id_servicio';
+        UPDATE servicio SET id_driver = '$id_driver', disponible = '2' , lat_driver = '$lat_driver', lon_driver= '$lon_driver' WHERE id_servico = '$id_servicio';
       "))
       {
         Cookies::set("complete","Se ha editado el usuario correctamente","20-s");

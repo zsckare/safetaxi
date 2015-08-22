@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.3.11
+-- version 4.4.12
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-08-2015 a las 16:54:49
--- Versión del servidor: 5.6.24
--- Versión de PHP: 5.6.8
+-- Tiempo de generación: 22-08-2015 a las 18:55:20
+-- Versión del servidor: 5.6.25
+-- Versión de PHP: 5.6.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `safetaxi`
@@ -145,7 +145,7 @@ INSERT INTO `driver` (`id_driver`, `name_driver`, `paterno_driver`, `materno_dri
 (27, 'Carlos Gerardo', 'Villa', 'Avila', 'okyo.blue.tsubasa@gmaill.com', '/assets/img/logo.png', '123456723', 'fdddf0d3ba91e98a8b9a7fafb9b6ae7f5704e9b34443b37e4799c508b57d3a26', 'COD-oospa', 'ppallallala', 'Por ahi', 'Vaalle Verde', '112', 'Spark', 1, 'qaqqaqa', 'Base PAseo Durango'),
 (28, 'Isaias', 'Medina', 'Beltran', 'tokyo.blue.tsubasa@gmaill.com', '/assets/img/default.png', '6181138046', 'a20d2e01959dc2b755f8cd1dd2e2b09b319ed65f8c43f1a0dfe532aba6b16f49', 'a1212', 'kakoa', 'De Las Palmas', 'Centro', '102', 'Tsuru', 1, 'qwqwqw', 'Base 87'),
 (29, 'isaac', 'valenzuela', 'escobedo', 'aa@a.com', '/assets/img/default.png', 'asaa', '', 'asas', 'asas', 'Ca', 'aa', 'as', 'Tsuru', 1, 'asasa', 'Base 87'),
-(30, 'Ivam', 'Esquivel', 'Medina', 'zsckare@gmail.com', '1', '1234567', '0ae98847dfc7eff7589d839e8a00510e70a8475b1172ef802d1b23e7e4ee7809', 'COD-oosp', 'ppallallal', 'a', 'a', 'a', 'Atos', 1, 'qwqwqw', 'Base Paseo Durango');
+(30, 'Antonio', 'Alvarez', 'Guevara', 'zsckare@gmail.com', '1', '6181711038', '0ae98847dfc7eff7589d839e8a00510e70a8475b1172ef802d1b23e7e4ee7809', 'COD-oosp', 'ppallallal', 'a', 'a', 'a', 'Atos', 1, 'qwqwqw', 'Base Paseo Durango');
 
 -- --------------------------------------------------------
 
@@ -184,34 +184,23 @@ CREATE TABLE IF NOT EXISTS `servicio` (
   `dirfisica` varchar(100) NOT NULL,
   `lat_driver` varchar(100) NOT NULL,
   `lon_driver` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `servicio`
 --
 
 INSERT INTO `servicio` (`id_servico`, `id_cliente`, `fechainicio`, `fechafin`, `id_driver`, `disponible`, `inico`, `latitud`, `longitud`, `dirfisica`, `lat_driver`, `lon_driver`) VALUES
-(79, 51, '0000-00-00', '2015-08-20 23:49:44', 30, 0, '0000-00-00 00:00:00', '23.9945401', '-104.64727189999999', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(80, 51, '0000-00-00', '2015-08-20 23:51:58', 30, 2, '0000-00-00 00:00:00', '23.994551899999998', '-104.6472969', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(81, 51, '0000-00-00', '2015-08-21 00:03:14', 30, 2, '0000-00-00 00:00:00', '23.9945038', '-104.6472361', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(82, 51, '0000-00-00', '2015-08-21 00:05:47', 30, 2, '0000-00-00 00:00:00', '23.994540900000004', '-104.6472701', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(83, 51, '0000-00-00', '2015-08-21 00:06:44', 30, 2, '0000-00-00 00:00:00', '23.994526', '-104.6472715', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(84, 51, '0000-00-00', '2015-08-21 00:15:39', 30, 2, '0000-00-00 00:00:00', '23.994518', '-104.64726859999999', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(85, 51, '0000-00-00', '2015-08-21 00:34:14', 30, 2, '0000-00-00 00:00:00', '23.9944925', '-104.6472373', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(86, 51, '0000-00-00', '2015-08-21 00:36:22', 30, 2, '0000-00-00 00:00:00', '23.994498800000002', '-104.64724779999999', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(87, 51, '0000-00-00', '2015-08-21 00:37:03', 30, 2, '0000-00-00 00:00:00', '23.994484099999998', '-104.6472285', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(88, 51, '0000-00-00', '2015-08-21 00:41:19', 30, 2, '0000-00-00 00:00:00', '23.994493799999997', '-104.6472483', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(89, 51, '0000-00-00', '2015-08-21 00:43:35', 30, 2, '0000-00-00 00:00:00', '23.9945147', '-104.6472673', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(90, 51, '0000-00-00', '2015-08-21 00:44:55', 30, 2, '0000-00-00 00:00:00', '23.994505099999998', '-104.64727409999999', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(91, 51, '0000-00-00', '2015-08-21 00:45:49', 30, 2, '0000-00-00 00:00:00', '23.9944857', '-104.6472312', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(92, 51, '0000-00-00', '2015-08-21 00:46:46', 30, 2, '0000-00-00 00:00:00', '23.994489899999998', '-104.64720469999999', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(93, 51, '0000-00-00', '2015-08-21 00:49:16', 30, 2, '0000-00-00 00:00:00', '23.9945092', '-104.647263', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(94, 51, '0000-00-00', '2015-08-21 00:50:40', 30, 2, '0000-00-00 00:00:00', '23.9945147', '-104.6472737', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(95, 51, '0000-00-00', '2015-08-21 00:52:52', 30, 2, '0000-00-00 00:00:00', '23.994515', '-104.647251', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(96, 51, '0000-00-00', '2015-08-21 00:55:16', 30, 2, '0000-00-00 00:00:00', '23.994550699999998', '-104.6472644', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(97, 51, '0000-00-00', '2015-08-21 14:23:38', 30, 2, '0000-00-00 00:00:00', '23.9944343', '-104.6472737', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(98, 51, '0000-00-00', '2015-08-21 14:25:04', 0, 1, '0000-00-00 00:00:00', '23.9944343', '-104.6472737', 'Valle Verde, Durango, Dgo., MÃ©xico', '', ''),
-(99, 51, '0000-00-00', '2015-08-21 14:25:22', 0, 1, '0000-00-00 00:00:00', '23.9944343', '-104.6472737', 'Valle Verde, Durango, Dgo., MÃ©xico', '', '');
+(108, 51, '0000-00-00', '2015-08-22 16:29:26', 30, 2, '0000-00-00 00:00:00', '23.994602099999998', '-104.6472804', 'Valle Verde, Durango, Dgo., MÃ©xico', '23.994602099999998', '23.994602099999998'),
+(109, 51, '0000-00-00', '2015-08-22 16:31:13', 30, 2, '0000-00-00 00:00:00', '23.9945512', '-104.64728029999999', 'Valle Verde, Durango, Dgo., MÃ©xico', '23.994449499999998', '23.994449499999998'),
+(110, 51, '0000-00-00', '2015-08-22 16:32:40', 30, 2, '0000-00-00 00:00:00', '23.994449499999998', '-104.6472465', 'Valle Verde, Durango, Dgo., MÃ©xico', '23.994449499999998', '23.994449499999998'),
+(111, 51, '0000-00-00', '2015-08-22 16:34:07', 30, 2, '0000-00-00 00:00:00', '23.9945074', '-104.6473496', 'Valle Verde, Durango, Dgo., MÃ©xico', '23.9945074', '23.9945074'),
+(112, 51, '0000-00-00', '2015-08-22 16:34:54', 30, 2, '0000-00-00 00:00:00', '23.9945398', '-104.6472855', 'Valle Verde, Durango, Dgo., MÃ©xico', '23.9945398', '23.9945398'),
+(113, 51, '0000-00-00', '2015-08-22 16:37:44', 30, 2, '0000-00-00 00:00:00', '23.994631899999998', '-104.6473429', 'Valle Verde, Durango, Dgo., MÃ©xico', '23.9945314', '23.9945314'),
+(114, 51, '0000-00-00', '2015-08-22 16:39:33', 30, 2, '0000-00-00 00:00:00', '23.9945931', '-104.6473111', 'Valle Verde, Durango, Dgo., MÃ©xico', '23.9945872', '23.9945872'),
+(115, 51, '0000-00-00', '2015-08-22 16:44:30', 30, 2, '0000-00-00 00:00:00', '23.994521600000002', '-104.6472903', 'Valle Verde, Durango, Dgo., MÃ©xico', '23.9944915', '23.9944915'),
+(116, 51, '0000-00-00', '2015-08-22 16:47:25', 30, 2, '0000-00-00 00:00:00', '23.9945894', '-104.6472917', 'Valle Verde, Durango, Dgo., MÃ©xico', '23.9945502', '23.9945502'),
+(117, 51, '0000-00-00', '2015-08-22 16:48:20', 30, 2, '0000-00-00 00:00:00', '23.9944505', '-104.6473544', 'Valle Verde, Durango, Dgo., MÃ©xico', '23.994428799999998', '23.994428799999998');
 
 -- --------------------------------------------------------
 
@@ -286,7 +275,8 @@ ALTER TABLE `servicio`
 -- Indices de la tabla `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_user`), ADD KEY `id_user` (`id_user`);
+  ADD PRIMARY KEY (`id_user`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -326,7 +316,7 @@ ALTER TABLE `fotos`
 -- AUTO_INCREMENT de la tabla `servicio`
 --
 ALTER TABLE `servicio`
-  MODIFY `id_servico` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=100;
+  MODIFY `id_servico` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=118;
 --
 -- AUTO_INCREMENT de la tabla `user`
 --

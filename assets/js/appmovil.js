@@ -70,7 +70,11 @@ function getDataDriver(id_driver) {
 	url+=id_driver;
 	console.log("Ejecutando getDataDriver");
 	console.log("url"+url);
-	
+	var nombre = null;
+	var foto =null;
+	var lat=null;
+	var lon=null;
+	var telefono=null;
 	$.getJSON(url,function(datos){
 
 		console.log("ejecuntando getJSON");
@@ -78,8 +82,26 @@ function getDataDriver(id_driver) {
 			console.log("jalando datos");
 			console.log("id_driver="+item.id_driver);
 			console.log(item.nombre+" "+item.paterno+" "+item.materno);
+			nombre=item.nombre+" "+item.paterno+" "+item.materno;
+			foto=item.imagen;
+			telefono=item.phone;
 			console.log("imagen "+item.imagen);
+			
 		});
+formato(nombre,foto,telefono);
 
 	});
+}
+
+function formato (nombre,foto,telefono) {
+	console.log("ruta"+foto+" nombre "+nombre);
+	ruta = "http://" + window.location.hostname+foto;
+	img="<img src=" +ruta +' alt="" class="responsive-img" style="margin-top:15px;">';
+	datos="<p>"+nombre+"</p>"+"<p>"+telefono+"</p>"
+
+	$("#fotodriver").html(img);
+	$("#nombredriver").html(datos);
+	$("#modalincoming").removeClass("no-mostrar");
+	$("#modalincoming").addClass("mostrar");
+
 }

@@ -43,9 +43,12 @@ var latitud = pos.coords.latitude;
 var longitud = pos.coords.longitude;
 var precision = pos.coords.accuracy;
 
-latitudservicio=parseFloat(document.getElementById('latitud').value);
+	document.getElementById('milatitud').value=latitud;
+	document.getElementById('milongitud').value=longitud;
 
+latitudservicio=parseFloat(document.getElementById('latitud').value);
 longitudservicio=parseFloat(document.getElementById('longitud').value);
+
 console.log("latitud "+latitudservicio+" longitud"+longitudservicio);
 			/* A través del DOM obtenemos el div que va a contener el mapa */
 var contenedor = document.getElementById("map");
@@ -95,6 +98,9 @@ function tomarservicio(id_driver,id_service) {
 	val = document.getElementById('libre').value;
 	console.log("libre 2"+val);
 
+	milatitud=document.getElementById('milatitud').value;
+	milongitud=document.getElementById('milongitud').value;
+	console.log("lat "+milongitud+" lon "+milongitud);
 	//$("#terminarservicio").removeClass("no-mostrar");
 	//$("#terminarservicio").addClass("mostrar");
 	var ajax = new XMLHttpRequest();
@@ -111,7 +117,7 @@ function tomarservicio(id_driver,id_service) {
 	  	
 	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   	
-	ajax.send("id_driver="+id_driver+"&id_servicio="+id_service);
+	ajax.send("id_driver="+id_driver+"&id_servicio="+id_service+"&lat_driver="+milatitud+"&lon_driver="+milatitud);
 
 
 

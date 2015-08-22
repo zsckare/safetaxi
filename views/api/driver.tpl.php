@@ -15,7 +15,8 @@
         $materno =$row["materno_driver"];
         $correo=$row["emails_driver"];
         $imagen=$row["image_driver"];
-        $cliente_array[]= array('id_driver' => $id , 'nombre' => $nombre, 'paterno' => $paterno ,'materno' => $materno, 'correo' => $correo, 'imagen'=>$ruta);
+        $telefono=$row['phone_driver'];
+        $cliente_array[]= array('id_driver' => $id , 'nombre' => $nombre, 'paterno' => $paterno ,'materno' => $materno, 'correo' => $correo, 'imagen'=>$ruta, 'phone'=>$telefono);
     }
     $clientes = array('driver' => $cliente_array );
     $json =json_encode($clientes);
