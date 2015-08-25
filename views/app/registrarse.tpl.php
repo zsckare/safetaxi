@@ -14,9 +14,12 @@
 		<link rel="stylesheet" href="/assets/css/styles.css">
 		<link rel="stylesheet" type="text/css" href="/assets/css/sweetalert.css">
 		<link href='http://fonts.googleapis.com/css?family=Dosis:400,600,500' rel='stylesheet' type='text/css'>
+		<!--Scripts de Facebook-->
+		<script src="//connect.facebook.net/es_ES/sdk.js"></script>
+		<script src="/assets/js/autenticacion.js" ></script>
 		
 	</head>
-	<body class="dosisnormal" >
+	<body class="dosisnormal" onload="estadoActual();">
 		
 		<nav class="light-blue top-nav">
 			<div class="light-blue nav-wrapper container" >
@@ -31,7 +34,7 @@
 						<p class="center-align disosmedium" style="">Alianza Taxi Seguro</p>
 					</div>
 					<div class="row">
-						<div class="col s10 m10 l2  offset-l5 offset-m1 offset-s1">
+						<div class="col s10 m10 l2  offset-l5 offset-m1 offset-s1" onclick="LogIn();">
 							<img src="/assets/img/btnfb.png" alt="" class="responsive-img">
 						</div>
 					</div>

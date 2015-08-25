@@ -28,12 +28,12 @@
 	    	</ul>
 	    
 	        <ul class="side-nav" id="mobile-demo">
-        		<li><a href="/driver/">Inicio <i class=" ion-android-home left "></i></a></li>
-        		<li><a href="/driver/myubication" >Mi Ubicacion <i class=" ion-android-map left "></i></a></li>
-        		<li><a href="/driver/services">Buscar Servicio <i class="ion-android-car left "></i></a></li>
-        		<li><a href="/driver/account">Mi Cuenta <i class="ion-android-person left "></i></a></li>
-        		<li><a href="/driver/logout">Cerrar Sesión <i class="ion-android-exit left "></i></a></li>        		
-        		<li><a href="/driver/about">Acerca de <i class="ion-android-alert left "></i></a></li>
+        		<li><a href="/app/indexdriver">Inicio <i class=" ion-android-home left "></i></a></li>
+        		<li><a href="/app/myubicationdriver" >Mi Ubicacion <i class=" ion-android-map left "></i></a></li>
+        		<li><a href="/app/servicesdriver">Buscar Servicio <i class="ion-android-car left "></i></a></li>
+        		<li><a href="/app/accountdriver">Mi Cuenta <i class="ion-android-person left "></i></a></li>
+        		<li><a href="/app/logoutdriver">Cerrar Sesión <i class="ion-android-exit left "></i></a></li>        		
+        		<li><a href="/app/aboutdriver">Acerca de <i class="ion-android-alert left "></i></a></li>
       		</ul>	
 
 	    </div>
@@ -56,7 +56,7 @@
 			$.getJSON(url,function(datos){
 				$.each(datos.services, function(i, item){
 								
-				texto+="<div class='row'><div class='col s6 m6 l6'><div class='btn-large' onclick='mostrarmapa( "+iddriver+","+item.id_servicio+","+item.latitud+","+item.longitud+" )' >"+item.dirfisica+"</div></div></div>";
+				texto+="<div class='row'><div class='col s12 m12 l6 btn-large'><div class='' onclick='mostrarmapa( "+iddriver+","+item.id_servicio+","+item.latitud+","+item.longitud+" )' >"+item.dirfisica+"</div></div></div>";
 				});
 				$("#tablebody").html(texto);
 			});

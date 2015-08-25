@@ -1,13 +1,24 @@
+<?php 
+	include("conexionFB.php");
+	$obj= new conect();
+	$conectar= $obj-> taxis();
+	$id_client= $_SESSION['id_user'];
+	$ubicacion=$obj-> getAddress($id_client,$conectar);
+	$miUbicacion=$obj->getMyAddress($id_client,$conectar);
+?>
 <div id="driver" class="card mostrar padding-largo">
 	<div class="row ">
 		<h4 class="center-align">Buscar Chofer</h4>
 	</div>
-
-	<div class="row"></div>
 	<div class="row"></div>
 	<div class="row">
+		<div class="input-field col s8 m8 l8 offset-s2">
+			<label for="referencia">Referencia (Opcional)</label>
+			<input type="text" id="referencia">
+		</div>
+	</div>
+	<div class="row">
 		<div class="col s8 m4 l3 offset-s2 offset-m4" style="cursor:pointer !important;" onclick="localize();" ><img src="/assets/img/btn-pedir.png" alt="" class="responsive-img"></div>
-
 	</div>
 
 
@@ -32,20 +43,24 @@
 <!--seccion para mostrar al usuario los datos del taxista que irá por el-->
 	<div id="modalincoming" class="no-mostrar mapa">
 		<div class="row">
-			<div class="col s3 m3 l3" id="fotodriver">
+			<div class="col s3 m3 l3" id="fotodriver" style="margin-top:10px;" >
 				
 			</div>
 			<div class="col s6 offset-s2" id="nombredriver" >
 				
 			</div>
+			<div class="col s6 offset-s2" id="ubicacion"></div>
 		</div>
+		<div class="row"><div id="map_cliente" class=""></div>
+		<div class="row no-mostrar" id="panel"></div>
+		</div>
+		
 	</div>
 
 </div>
 <input type="hidden" value="1" id="disponible">
 
-
-
+<script src="/assets/js/appmovil.js"></script>
 <script>
 
 
@@ -91,6 +106,7 @@
                     Materialize.toast(""+results[1].formatted_address, 4000);
 			      
 			        dirfisica=results[1].formatted_address;
+
 					solicitarTaxi(<?= $_SESSION['id_user'];?>,latitud,longitud,dirfisica);
 
 					wait(<?= $_SESSION['id_user'];?>);
@@ -153,7 +169,6 @@ function esperando (id_cliente) {
 	url+=id_cliente;
 	estado=document.getElementById('disponible').value;
 	if (estado==1) {
-
 	getEstado(url);
 	}
 
@@ -161,6 +176,8 @@ function esperando (id_cliente) {
 }
 
 function getEstado(url) {
+	var ubi="<?php echo $ubicacion; ?>";
+	var miubi="<?php echo $miUbicacion; ?>";
 	$.getJSON(url,function(datos) {
 		console.log("ejecutando get json");
 		$.each(datos.services, function (i, item) {
@@ -171,7 +188,7 @@ function getEstado(url) {
 				$("#modalespera").addClass("no-mostrar");
 				id_driver=item.id_driver;
 				document.getElementById('disponible').value=2;
-				getDataDriver(id_driver);
+				getDataDriver(id_driver,ubi,miubi);
 			}
 		});
 	});

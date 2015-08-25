@@ -73,5 +73,70 @@ class AppController{
         session_destroy();
         Redirection::go("app"); 
     }
+    /*------------------ Acciones de la APP de Tacistas---------------------------- */
+
+    public function IndexDriverAction($value='')
+    {
+        if (isset($_SESSION['user']) && $_SESSION['type']=="driver" ) {
+            return new View("appdriver/index", ["title" => "Taxi Seguro Alianza APP 
+                Driver", "layout" => "on", "nameLayout" => "appdriver"]); 
+        }else{
+            Redirection::go('app/logindriver');
+        }        
+    }
+
+
+    public function MyUbicationDriverAction()
+    {
+
+        if (isset($_SESSION['user']) && $_SESSION['type']=="driver" ) {
+            return new View("appdriver/myubication", ["title" => "Mi Ubicacion", "layout" => "on", "nameLayout" => "appdriver"]);    
+        }else{
+            Redirection::go('app/logindriver');
+        }  
+    }
+    public function ServicesDriverAction()
+    {
+
+        if (isset($_SESSION['user']) && $_SESSION['type']=="driver" ) {
+            return new View("appdriver/services", ["title" => "Buscando Servicios", "layout" => "on", "nameLayout" => "appdriver"]);    
+        }else{
+            Redirection::go('app/logindriver');
+        }  
+    }
+    public function AccountDriverAction()
+    {
+        if (isset($_SESSION['user']) && $_SESSION['type']=="driver" ) {
+
+            $cliente = new DriverModel();
+
+            $values=$cliente->get($_SESSION['id_user']);
+
+            return new View("appdriver/account", ["title" => "", "layout" => "on", "nameLayout" => "appdriver", "values"=>$values]);     
+        }else{
+            Redirection::go('app/logindriver');
+        }  
+    }
+
+    public function AboutDriverAction()
+    {
+
+        if (isset($_SESSION['user']) && $_SESSION['type']=="driver" ) {
+            return new View("appdriver/about", ["title" => "Acerca de ", "layout" => "on", "nameLayout" => "appdriver"]);    
+        }else{
+            Redirection::go('driver/signup');
+        }  
+    }
+    // ----------------------------------- manejo de sesiones --------------------------------------
+    public function LoginDriverAction()
+    {
+      return new View("appdriver/login", ["title" => "", "layout" => "off", "nameLayout" => "app"]);     
+    }
+    public function LogoutDriverAction()
+    {
+        session_destroy();
+        Redirection::go("driver"); 
+    }
+
     
 }

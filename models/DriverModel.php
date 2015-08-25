@@ -112,7 +112,7 @@
       "))
       {
         Cookies::set("complete","Se ha editado el usuario".$pass." correctamente","20-s");
-        Redirection::go("cars");
+        Redirection::go("drivers");
       }else{
         Cookies::set("alert","Error: por algun motivo no se pudo editar el usuario intenta de nuevo","20-s");
         Redirection::go("drivers");

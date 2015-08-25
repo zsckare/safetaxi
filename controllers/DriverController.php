@@ -21,7 +21,7 @@ class DriverController{
         if (isset($_SESSION['user']) && $_SESSION['type']=="driver" ) {
             return new View("appdriver/myubication", ["title" => "Mi Ubicacion", "layout" => "on", "nameLayout" => "appdriver"]);    
         }else{
-            Redirection::go('driver/signup');
+            Redirection::go('driver/login');
         }  
     }
     public function ServicesAction()

@@ -117,7 +117,7 @@ function tomarservicio(id_driver,id_service) {
 	  	
 	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   	
-	ajax.send("id_driver="+id_driver+"&id_servicio="+id_service+"&lat_driver="+milatitud+"&lon_driver="+milatitud);
+	ajax.send("id_driver="+id_driver+"&id_servicio="+id_service+"&lat_driver="+milatitud+"&lon_driver="+milongitud);
 
 
 

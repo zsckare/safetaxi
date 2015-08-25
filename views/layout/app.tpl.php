@@ -14,10 +14,13 @@
 	<link rel="stylesheet" href="/assets/css/style.css">
 	<link rel="stylesheet" href="/assets/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/sweetalert.css">
+	<!--Scripts de Facebook-->
+	<script src="//connect.facebook.net/es_ES/sdk.js"></script>
+	<script src="/assets/js/autenticacion.js" ></script>
 	
 	
 </head>
-<body>
+<body >
 	
 	<nav class="light-blue top-nav">
 	    <div class="light-blue nav-wrapper container" >
@@ -36,7 +39,7 @@
         		<li><a href="/app/myubication" >Mi Ubicacion <i class=" ion-android-map left "></i></a></li>
         		<li><a href="/app/pedir">Buscar Chofer <i class="ion-android-car left "></i></a></li>
         		<li><a href="/app/account">Mi Cuenta <i class="ion-android-person left "></i></a></li>
-        		<li><a href="/app/logout">Cerrar Sesión <i class="ion-android-exit left "></i></a></li>        		
+        		<li><a href="/app/logout" onclick="LogOut();">Cerrar Sesión <i class="ion-android-exit left "></i></a></li>        		
         		<li><a href="/app/about">Acerca de <i class="ion-android-alert left "></i></a></li>
       		</ul>	
 
@@ -56,7 +59,7 @@
     <script src="/assets/js/sweetalert.min.js"></script>
 	<script src="/assets/js/appmovil.js"></script>
 	<script>
-		url ="http://safetaxizsckare.esy.es/client";
+		url ="http://yoi.dev/client";
 		$(document).on("ready",main	);
 		function main () {
 			$("#get").on("click", function () {

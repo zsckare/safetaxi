@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-08-2015 a las 18:55:20
+-- Tiempo de generación: 22-08-2015 a las 23:34:18
 -- Versión del servidor: 5.6.25
 -- Versión de PHP: 5.6.11
 
@@ -133,18 +133,7 @@ CREATE TABLE IF NOT EXISTS `driver` (
 --
 
 INSERT INTO `driver` (`id_driver`, `name_driver`, `paterno_driver`, `materno_driver`, `emails_driver`, `image_driver`, `phone_driver`, `password_driver`, `code_taxi`, `placas_taxi`, `calle`, `colonia`, `numero`, `tipo_auto`, `activo`, `sindical`, `base`) VALUES
-(22, 'Edga', 'Alan', 'Poe', 'sa@a.com', '1', '123456723', 'd4b30990581becf79a73ae93d83e0c7b22a37a138df7766b2378f7749adb52b3', 'COD-okmn', 'ppappap', 'amuerto', 'eres', '219', '1', 1, 'asdfk', 'plpl'),
-(20, 'Pedro', 'Castro', 'Quintanilla', 'a@a.com', '/assets/img/default.png', '6181138046', 'a20d2e01959dc2b755f8cd1dd2e2b09b319ed65f8c43f1a0dfe532aba6b16f49', 'COD-oosp', 'ppallallal', 'a', 'Centro', '11', '', 1, '', ''),
-(19, 'Eduardo', 'Pinedo', 'Velarde', 'a@a.com', '/assets/img/default.png', '123456789', 'a9bf4e7f2638db57b50fe8f3299b5efe30dfefb355745c63b3ce754cbb172e31', 'COD-oosp', 'ppallallal', '20 de Noviembre', 'Centro', '1', '', 0, '', ''),
-(18, 'Samael', 'Romero', 'Zubia', 'a@a.com', '/assets/img/default.png', '123456789', '2b4539bab4d2a10dd607f82e9bf93fd388ca48ea56e6ddd522fe02a0c917d5a7', 'a1212', 'wweweaa', 'asdfg', 'asdfghjkl', '11', '', 0, '', ''),
-(14, 'Antonio', 'Alvarez', 'Guevara', 'tokyo.blue.tsubasa@gmaill.com', '/assets/img/default.png', '6181138046', '917c7d6ddc0fcc89933a3fb988442fdd00d14972b8b9369f6e7c45e9e5dd46b4', 'COD-oosp', 'ppallallal', 'De Las Palmas', 'Valle Verde', '102', '', 0, '', ''),
-(23, 'Carlos', 'Villa', 'Avila', 'a@a.com', '/assets/img/default.png', '123456789', '8a548594aed570d5bdb61edf78975fdb4ef67e236121645af71c8a2ac3c86b94', 'COD-oosp', 'ppallallal', '20 de Noviembre', 'aaa', '102', '', 0, '', ''),
-(21, 'Jorge Orlando', 'Carrasco', 'Poe', 'a@a.com', '/assets/img/default.png', '6181138046', 'f16f9df4639c36e36f524ceeb0604f7cd2fb8bf2c6aeb53cd3436b54a1800b59', 'COD-oosp', 'ppallallal', '20 de Noviembre', 'Centro', '12', '', 0, '', ''),
-(24, 'Diego', 'Acosta', 'Simental', 'a@a.com', '/assets/img/default.png', '6181138046', 'd6f2b43c801b857ac114c8de688bcf1f0d8680ed80501c75a2d7919262e3b6ee', 'COD-oosp', 'ppallallal', '20 de Noviembre', 'Centro', '200', '', 0, '', ''),
-(26, 'Aldo', 'Garcia', 'Urbina', 'a@a.com', '/assets/img/default.png', '6181138046', 'a20d2e01959dc2b755f8cd1dd2e2b09b319ed65f8c43f1a0dfe532aba6b16f49', 'COD-oosp', 'plplpl', 'a', 'Valle Verde', '102', 'Atos', 1, '', ''),
-(27, 'Carlos Gerardo', 'Villa', 'Avila', 'okyo.blue.tsubasa@gmaill.com', '/assets/img/logo.png', '123456723', 'fdddf0d3ba91e98a8b9a7fafb9b6ae7f5704e9b34443b37e4799c508b57d3a26', 'COD-oospa', 'ppallallala', 'Por ahi', 'Vaalle Verde', '112', 'Spark', 1, 'qaqqaqa', 'Base PAseo Durango'),
-(28, 'Isaias', 'Medina', 'Beltran', 'tokyo.blue.tsubasa@gmaill.com', '/assets/img/default.png', '6181138046', 'a20d2e01959dc2b755f8cd1dd2e2b09b319ed65f8c43f1a0dfe532aba6b16f49', 'a1212', 'kakoa', 'De Las Palmas', 'Centro', '102', 'Tsuru', 1, 'qwqwqw', 'Base 87'),
-(29, 'isaac', 'valenzuela', 'escobedo', 'aa@a.com', '/assets/img/default.png', 'asaa', '', 'asas', 'asas', 'Ca', 'aa', 'as', 'Tsuru', 1, 'asasa', 'Base 87'),
+(22, 'Edgar', 'Alan', 'Poe', 'admin@admin.com', '1', '6181138046', '94d161f749f18733975b26771504ef69ef74533968cd0fcab720adc3beabd09c', 'COD-okmn', 'ppappap', 'amuerto', 'eres', '219', '1', 1, 'asdfk', 'plpl'),
 (30, 'Antonio', 'Alvarez', 'Guevara', 'zsckare@gmail.com', '1', '6181711038', '0ae98847dfc7eff7589d839e8a00510e70a8475b1172ef802d1b23e7e4ee7809', 'COD-oosp', 'ppallallal', 'a', 'a', 'a', 'Atos', 1, 'qwqwqw', 'Base Paseo Durango');
 
 -- --------------------------------------------------------
