@@ -92,8 +92,8 @@
     public function destroy($id)
     {
         if($this->consult->getConsultar("
-            DELETE FROM user
-            WHERE id_user = '$id'
+            DELETE FROM servicio
+            WHERE id_servico = '$id'
         ")){
            Cookies::set("delete","Se ha eliminado el usuario correctamente","20-s");
            Redirection::go("user");
