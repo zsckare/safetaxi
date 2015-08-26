@@ -38,6 +38,10 @@
 				<div class="cssload-whirlpool"></div>
 			</div>
 		</div>
+		<div class="row"></div>
+		<div class="row">
+			<div class="btn col s8 offset-s2 red" onclick="destroyService(<?=$_SESSION['id_user'];?>);">Cancelar</div>
+		</div>
 	</div>
 
 <!--seccion para mostrar al usuario los datos del taxista que irá por el-->

@@ -46,10 +46,6 @@
 	    </div>
 	</nav>
 
-	<section style="margin-top:1em;" class="">
-		<?=$yield ?>
-		
-	</section>
 
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
@@ -90,6 +86,10 @@
 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
     </script>
 
+	<section style="margin-top:1em;" class="">
+		<?=$yield ?>
+		
+	</section>
 
 
 	

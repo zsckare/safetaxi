@@ -5,6 +5,7 @@ function modalbusqueda () {
 	$("#cortina").addClass("mostrar");
 	$("#modalbusqueda").removeClass("no-mostrar");
 	$("#modalbusqueda").addClass("mostrar");
+	document.getElementById('icon_prefix').focus();
 }
 function ocultar() {
 	$("#cortina").removeClass("mostrar");

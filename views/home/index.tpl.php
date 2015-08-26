@@ -38,8 +38,8 @@
 			<div class="row">
 				<form method="post" action="/search">
 		        	<div class="input-field col s8 m8 l8 ofset-m2 offset-l2">
-		          <i class="material-icons prefix">search</i>
-		          <input id="icon_prefix" type="text" class="validate buscar" name="buscar">
+		        	<i class="material-icons prefix">search</i>
+		        	<input id="icon_prefix" type="text" class="validate buscar" name="buscar" >
 		        </div>
 		    	</form>
 			</div>

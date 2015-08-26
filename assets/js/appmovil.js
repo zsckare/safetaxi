@@ -53,7 +53,7 @@ function solicitarTaxi(id_cliente,latitud,longitud,dirfisica) {
 	ajax.onreadystatechange=function () {
 		if (ajax.readyState==4){
 			console.log("!!!!!!!!!!!!!!!!");
-			
+			contar();		
 		
 		}
 	}
@@ -106,7 +106,7 @@ function formato (nombre,foto,telefono,ubicacion,miubicacion) {
 	$("#nombredriver").html(datos);
 	$("#modalincoming").removeClass("no-mostrar");
 	$("#modalincoming").addClass("mostrar");
-
+	
 }
 function getAddress(ubicacion) {
  		var latlngStr = ubicacion.split(',', 2);
@@ -183,4 +183,47 @@ var mystr="";
 			load.innerHTML="No hay rutas disponibles.";*/
 	        }
 	    });
+	}
+
+
+
+	var contador;
+	function contar() {
+		var s=0;
+		contador=setInterval(function() {
+			console.log("segundos"+s);
+			if (s==60) {
+				console.log("destroy");
+				stop();
+				destroyService('<?=$_SESSION["id_user"];?>');
+			};	
+			s++;
+		},1000);
+	}
+	function stop () {
+		clearInterval(contador);
+	}
+	function destroyService (id_cliente) {
+		url="http://yoi.dev/api/destroyservice/?id_cliente=";
+		console.log("destruyendo");
+		console.log(""+id_cliente);
+		url+=id_cliente;
+		var ajax = new XMLHttpRequest();
+		ajax.open("POST",url,true);
+		ajax.onreadystatechange=function () {
+			if (ajax.readyState==4){
+				console.log("!!!!!!!!!!!!!!!!");
+				stop();							
+
+				$("#cortina").removeClass("mostrar");
+				$("#cortina").addClass("no-mostrar");
+				$("#modalespera").removeClass("mostrar");
+				$("#modalespera").addClass("no-mostrar");
+				 Materialize.toast('Servicio Cancelado', 1000);
+			}
+		}
+	
+		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");	
+		ajax.send("id_cliente="+id_cliente);
+
 	}

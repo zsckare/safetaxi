@@ -48,5 +48,13 @@ class ApiController{
         return new View("api/service", ["title" => "", "layout" => "off", "nameLayout" => "dash", "values"=>$values]);  
     }
     
+    public function destroyServiceAction()
+    {
+        $id_cliente=$_REQUEST['id_cliente'];
 
+        $servicio=new ServiceModel();
+        $values = $servicio->ultimo($_GET['id_cliente']);
+
+        return new View("api/destroyservice", ["title" => "", "layout" => "off", "nameLayout" => "dash", "values"=>$values]); 
+    }
 }

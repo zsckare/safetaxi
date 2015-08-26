@@ -100,7 +100,7 @@ function tomarservicio(id_driver,id_service) {
 
 	milatitud=document.getElementById('milatitud').value;
 	milongitud=document.getElementById('milongitud').value;
-	console.log("lat "+milongitud+" lon "+milongitud);
+	console.log("lat "+milatitud+" lon "+milongitud);
 	//$("#terminarservicio").removeClass("no-mostrar");
 	//$("#terminarservicio").addClass("mostrar");
 	var ajax = new XMLHttpRequest();

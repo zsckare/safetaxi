@@ -95,12 +95,9 @@
             DELETE FROM servicio
             WHERE id_servico = '$id'
         ")){
-           Cookies::set("delete","Se ha eliminado el usuario correctamente","20-s");
-           Redirection::go("user");
+
         }else
         {
-           Cookies::set("alert","Error: No se ha podido eliminar el usuario intenta de nuevo","20-s");
-          Redirection::go("user");
         }
     }
   }
