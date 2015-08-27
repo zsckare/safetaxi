@@ -63,7 +63,7 @@
 
 </div>
 <input type="hidden" value="1" id="disponible">
-
+<input type="hidden" value="<?=$_SESSION['id_user'];?>" id="id_cliente">
 <script src="/assets/js/appmovil.js"></script>
 <script>
 

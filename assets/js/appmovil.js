@@ -53,17 +53,11 @@ function solicitarTaxi(id_cliente,latitud,longitud,dirfisica) {
 	ajax.onreadystatechange=function () {
 		if (ajax.readyState==4){
 			console.log("!!!!!!!!!!!!!!!!");
-			contar();		
-		
+			//contar();			
 		}
-	}
-	  	
-	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-	
-	ajax.send("id="+id_cliente+"&longitud="+longitud+"&latitud="+latitud+"&dirfisica="+dirfisica);
-
-
-		 	
+	}	  	
+	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");	
+	ajax.send("id="+id_cliente+"&longitud="+longitud+"&latitud="+latitud+"&dirfisica="+dirfisica);		 	
 }
 
 function getDataDriver(id_driver,ubicacion,miubicacion) {
@@ -188,14 +182,15 @@ var mystr="";
 
 
 	var contador;
+	var idcliente=$("#id_cliente").val();
 	function contar() {
 		var s=0;
 		contador=setInterval(function() {
 			console.log("segundos"+s);
-			if (s==60) {
+			if (s==30) {
 				console.log("destroy");
 				stop();
-				destroyService('<?=$_SESSION["id_user"];?>');
+				destroyService(idcliente);
 			};	
 			s++;
 		},1000);
