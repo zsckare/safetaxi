@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="/assets/css/materialize.css">
 	<link rel="stylesheet" href="/assets/css/style.css">
 	<link rel="stylesheet" href="/assets/css/styles.css">
+
+	<link rel="stylesheet" href="/assets/css/spiner.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/sweetalert.css">
 	
 
@@ -47,11 +49,12 @@
     <script src="/assets/js/appdrivers.js"></script>	
 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script>
+	var texto="";
 	function getServicios(iddriver) {
-
+		texto="";
 		url ="http://yoi.dev/service";
 			console.log("trayendo servicios disponibles");
-			texto="";
+			
 
 			$.getJSON(url,function(datos){
 				$.each(datos.services, function(i, item){

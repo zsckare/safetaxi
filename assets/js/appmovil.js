@@ -5,7 +5,7 @@ $( "a" ).click(function( event ) {
 
 });
 */
-
+var urlgeneral="http://" + window.location.hostname;
 //variables
 var geocoder;
 //funciones para registrar nuevo usuario
@@ -17,8 +17,8 @@ function registrar() {
   	materno=document.registro.materno.value;
   	correo=document.registro.correo.value;
   	pass=document.registro.pass.value;
-
-  	ajax.open("POST","http://yoi.dev/client/new",true);
+  	uri=urlgeneral+"/client/new";
+  	ajax.open("POST",uri,true);
   	ajax.onreadystatechange=function () {
   		if (ajax.readyState==4){
   			console.log("!!!!!!!!!!!!!!!!");
@@ -45,8 +45,8 @@ function vaciarForm() {
 //funciones del usuario
 
 function solicitarTaxi(id_cliente,latitud,longitud,dirfisica) {
-
-	url="http://yoi.dev/api/newservice";
+	
+	url=urlgeneral+"/api/newservice";
 	console.log(""+id_cliente+" "+latitud+","+longitud);
 	var ajax = new XMLHttpRequest();
 	ajax.open("POST",url,true);
@@ -61,7 +61,7 @@ function solicitarTaxi(id_cliente,latitud,longitud,dirfisica) {
 }
 
 function getDataDriver(id_driver,ubicacion,miubicacion) {
-	url="http://yoi.dev/api/driver/?id=";
+	url=urlgeneral+"/api/driver/?id=";
 	url+=id_driver;
 	console.log("Ejecutando getDataDriver");
 	console.log("url"+url);

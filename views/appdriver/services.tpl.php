@@ -1,4 +1,4 @@
-<div class="row padding-largo">
+<div class="row padding-largo mostrar" id="panelservicios">
 	<div class="row"><h4 class="center-align">Servicios Disponibles</h4></div>
 	<div id="tablebody" class="row"></div>
 </div>
@@ -9,7 +9,35 @@
 	<div class="row" id="btntake">
 	</div>
 </div>
-<div id="servicioactivo" class="no-mostrar">
+
+<div id="servicioactivo" class="no-mostrar ">
+	<div class="row card">
+		<div class="row"></div>
+		<div class="row"></div>
+		<div class="row"></div>
+		<div class="row">
+			<div class="row">
+				<div class="col s4 offset-s8 btn red">panic</div>
+			</div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row" >
+				<div class="center-align">
+					<div class="hexdots-loader">			  
+					</div>
+				</div>
+			</div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row">
+				<div class="center-align">
+					<div class="btn" onclick="terminarservicio();">Terminar Servicio</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <input type="hidden" id="latitud">

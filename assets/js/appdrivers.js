@@ -1,4 +1,4 @@
-
+var urlgeneral = "http://" + window.location.hostname;
 function mostrarmapa(iddriver,id_servicio,latitud,longitud) {
 	console.log("!!!!!!!!!!!!");
 
@@ -104,8 +104,8 @@ function tomarservicio(id_driver,id_service) {
 	//$("#terminarservicio").removeClass("no-mostrar");
 	//$("#terminarservicio").addClass("mostrar");
 	var ajax = new XMLHttpRequest();
-	
-	ajax.open("POST","http://yoi.dev/service/tomarServico",true);
+	uri=urlgeneral+"/service/tomarServico";
+	ajax.open("POST",uri,true);
 	ajax.onreadystatechange=function () {
 		if (ajax.readyState==4){
 			console.log("----");
@@ -124,8 +124,22 @@ function tomarservicio(id_driver,id_service) {
 }
 
 function activo (id_servicio) {
+	
+
+	$("#panelservicios").removeClass('mostrar');
+	$("#panelservicios").addClass("no-mostrar");	
 	$("#servicioactivo").removeClass('no-mostrar');
 	$("#servicioactivo").addClass("mostrar");
-	btn='<div class="panic red accent-4" onclick=("'+id_servicio+'");><i class="medium material-icons">report_problem</i></div>'
-	$("#servicioactivo").html(btn);
+}
+function terminarservicio () {
+	$("#cortina").removeClass('mostrar');
+	$("#cortina").addClass("no-mostrar");
+
+	$("#panelservicios").removeClass('no-mostrar');
+	$("#panelservicios").addClass("mostrar");
+
+	$("#servicioactivo").removeClass('mostrar');
+	$("#servicioactivo").addClass("no-mostrar");
+
+	window.location=urlgeneral+"/app/servicesdriver";
 }

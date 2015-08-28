@@ -68,7 +68,7 @@
          
          
       }else{
-         Cookies::set("alert","Error: por algun motivo no se pudo crear el servicio intenta de nuevo","20-s");
+        
          
       }
     }
@@ -81,11 +81,9 @@
         UPDATE servicio SET id_driver = '$id_driver', disponible = '2' , lat_driver = '$lat_driver', lon_driver= '$lon_driver' WHERE id_servico = '$id_servicio';
       "))
       {
-        Cookies::set("complete","Se ha editado el usuario correctamente","20-s");
-        Redirection::go("drivers");
+
       }else{
-        Cookies::set("alert","Error: por algun motivo no se pudo editar el usuario intenta de nuevo","20-s");
-        Redirection::go("drivers");
+        
       }   
     }
 

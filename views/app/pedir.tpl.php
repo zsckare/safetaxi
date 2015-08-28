@@ -67,10 +67,11 @@
 <script src="/assets/js/appmovil.js"></script>
 <script>
 
-
+var urlgeneral = "http://" + window.location.hostname;
 	
 		function localize()
 		{
+			navigator.vibrate(100);
 			console.log("---!!!---");
 			/* Si se puede obtener la localización */
 		 	if (navigator.geolocation)
@@ -169,7 +170,7 @@ function wait (id_cliente) {
 	setInterval('esperando(id)',3000);
 }
 function esperando (id_cliente) {
-	url="http://yoi.dev/api/service/?id_cliente=";
+	url=urlgeneral+"/api/service/?id_cliente=";
 	url+=id_cliente;
 	estado=document.getElementById('disponible').value;
 	if (estado==1) {
@@ -192,6 +193,7 @@ function getEstado(url) {
 				$("#modalespera").addClass("no-mostrar");
 				id_driver=item.id_driver;
 				document.getElementById('disponible').value=2;
+				navigator.vibrate(200);
 				getDataDriver(id_driver,ubi,miubi);
 			}
 		});
