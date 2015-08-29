@@ -6,6 +6,7 @@
 		$user ='root';
 		$pass ='';
 		$db ='safetaxi';
+		
 		$conectar=mysqli_connect($host,$user,$pass,$db);
 		mysqli_select_db($conectar,$db);
 		return $conectar;

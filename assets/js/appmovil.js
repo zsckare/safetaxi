@@ -199,7 +199,8 @@ var mystr="";
 		clearInterval(contador);
 	}
 	function destroyService (id_cliente) {
-		url="http://yoi.dev/api/destroyservice/?id_cliente=";
+
+		url=urlgeneral+"/api/destroyservice/?id_cliente=";
 		console.log("destruyendo");
 		console.log(""+id_cliente);
 		url+=id_cliente;
@@ -214,7 +215,8 @@ var mystr="";
 				$("#cortina").addClass("no-mostrar");
 				$("#modalespera").removeClass("mostrar");
 				$("#modalespera").addClass("no-mostrar");
-				 Materialize.toast('Servicio Cancelado', 1000);
+				Materialize.toast('Servicio Cancelado', 1000);
+				window.location=urlgeneral+"/app/pedir";
 			}
 		}
 	

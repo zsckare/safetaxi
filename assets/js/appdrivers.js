@@ -11,7 +11,7 @@ function mostrarmapa(iddriver,id_servicio,latitud,longitud) {
     document.getElementById('longitud').value=longitud;
 
 	localize();
-	btn='<div class="col s5 offset-s3 btn" onclick="tomarservicio('+iddriver+","+id_servicio+');">Aceptar Servicio</div>';
+	btn='<div class="col s5 offset-s3 btn" onclick="tomarservicio('+iddriver+","+id_servicio+');">Aceptar</div><div class="col s2 offset-s1 btn red" onclick="ocultar();">X</div>';
 	$('#btntake').html(btn);
 }
 

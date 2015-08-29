@@ -71,7 +71,10 @@ var urlgeneral = "http://" + window.location.hostname;
 	
 		function localize()
 		{
-			navigator.vibrate(100);
+			if (window.navigator && window.navigator.vibrate) {
+				navigator.vibrate(100);	
+			} else {
+			}
 			console.log("---!!!---");
 			/* Si se puede obtener la localización */
 		 	if (navigator.geolocation)
@@ -193,7 +196,10 @@ function getEstado(url) {
 				$("#modalespera").addClass("no-mostrar");
 				id_driver=item.id_driver;
 				document.getElementById('disponible').value=2;
-				navigator.vibrate(200);
+				if (window.navigator && window.navigator.vibrate) {
+				navigator.vibrate(200);	
+			} else {
+			}
 				getDataDriver(id_driver,ubi,miubi);
 			}
 		});

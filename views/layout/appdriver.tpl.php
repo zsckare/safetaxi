@@ -52,7 +52,7 @@
 	var texto="";
 	function getServicios(iddriver) {
 		texto="";
-		url ="http://yoi.dev/service";
+		url ="http://"+window.location.hostname +"/service";
 			console.log("trayendo servicios disponibles");
 			
 

@@ -39,7 +39,6 @@
 		</div>
 	</div>
 </div>
-
 <input type="hidden" id="latitud">
 <input type="hidden" id="longitud">
 <input type="hidden" id="milatitud">
