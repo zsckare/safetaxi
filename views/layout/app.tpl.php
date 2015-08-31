@@ -26,18 +26,12 @@
 	    <div class="light-blue nav-wrapper container" >
 		    <a href="" class="brand-logo center " >Taxi Seguro</a>
 		    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-	    	<ul class="right hide-on-med-and-down">	   			
-        		<li><a href="" onclick="menu(1);">Inicio <i class="left small  material-icons">home</i></a></li>
-        		<li><a href="" onclick="menu(2);">Mi Ubicacion <i class="left small  material-icons">ic_map</i></a></li>
-        		<li><a href="" onclick="menu(3);">Buscar Chofer <i class="left  small material-icons">local_taxi</i></a></li>
-        		<li><a href="" onclick="menu(4);">Mi Cuenta <i class="left small material-icons">perm_identity</i></a></li>
-        		<li><a href="" onclick="menu(5);">Acerca de <i class="left  small material-icons">info_outline</i></a></li>
+	    	<ul class="right hide-on-med-and-down">
 	    	</ul>
 	    
-	        <ul class="side-nav" id="mobile-demo">
-        		<li><a href="/app/">Inicio <i class=" ion-android-home left "></i></a></li>
+	        <ul class="side-nav" id="mobile-demo">	        
+        		<li><a href="/app/pedir">Inicio	 <i class="ion-android-car left "></i></a></li>
         		<li><a href="/app/myubication" >Mi Ubicacion <i class=" ion-android-map left "></i></a></li>
-        		<li><a href="/app/pedir">Buscar Chofer <i class="ion-android-car left "></i></a></li>
         		<li><a href="/app/account">Mi Cuenta <i class="ion-android-person left "></i></a></li>
         		<li><a href="/app/logout" onclick="LogOut();">Cerrar Sesión <i class="ion-android-exit left "></i></a></li>        		
         		<li><a href="/app/about">Acerca de <i class="ion-android-alert left "></i></a></li>

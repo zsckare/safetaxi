@@ -94,7 +94,7 @@ function buscar(nombre, mail, apellido,img)
 		if(ajax.readyState ==4)
 		{
 			//result.innerHTML= ajax.responseText;
-			window.location.href ="http://yoi.dev/app";
+			window.location.href ="http://" + window.location.hostname+"/app/pedir";
 		}
 	}
 	ajax.send(null);

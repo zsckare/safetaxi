@@ -131,7 +131,7 @@ function getAddress(ubicacion) {
 		function getMap(miubicacion, ubicaciontaxista){
 		var centro = new google.maps.LatLng(miubicacion);
 		var myOptions = {
-	        zoom: 10,
+	        zoom: 16,
 	        center: centro,
 	        mapTypeId: google.maps.MapTypeId.ROADMAP
 	    };

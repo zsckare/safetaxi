@@ -30,10 +30,8 @@
 	    	</ul>
 	    
 	        <ul class="side-nav" id="mobile-demo">
-        		<li><a href="/app/indexdriver">Inicio <i class=" ion-android-home left "></i></a></li>
+        		<li><a href="/app/servicesdriver">Inicio <i class=" ion-android-home left "></i></a></li>
         		<li><a href="/app/myubicationdriver" >Mi Ubicacion <i class=" ion-android-map left "></i></a></li>
-        		<li><a href="/app/servicesdriver">Buscar Servicio <i class="ion-android-car left "></i></a></li>
-        		<li><a href="/app/accountdriver">Mi Cuenta <i class="ion-android-person left "></i></a></li>
         		<li><a href="/app/logoutdriver">Cerrar Sesión <i class="ion-android-exit left "></i></a></li>        		
         		<li><a href="/app/aboutdriver">Acerca de <i class="ion-android-alert left "></i></a></li>
       		</ul>	

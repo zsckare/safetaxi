@@ -70,7 +70,7 @@
 
 #modalespera{ 
     position: fixed;
-    top: 6%;   
+    top: 0%;   
     left: 5%;
     width: 90%;
     z-index: 10000;  
@@ -81,7 +81,7 @@
 }
 #modalincoming{
     position: fixed;
-    top: 10%;   
+    top: 0%;   
     left: 5%;
     width: 90%;
     z-index: 10000;   
@@ -109,3 +109,24 @@
     padding: .3em;
     cursor: pointer;
 }
+
+#modalincoming{
+    position: fixed;
+    top: 0%;   
+    left: 5%;
+    width: 90%;
+    z-index: 10000;   
+}
+
+#modalterminos{
+    position: fixed;
+    top: 0%;   
+    left: 2%;
+    width: 96%;
+    z-index: 10000; 
+    background-color: #FFF;  
+}
+.azuloso{
+    color: #2979ff ;
+}
+

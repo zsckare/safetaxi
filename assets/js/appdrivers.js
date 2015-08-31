@@ -59,7 +59,7 @@ var servicio = new google.maps.LatLng(latitudservicio,longitudservicio);
 			/* Definimos las propiedades del mapa */
 	var propiedades =
 	{
-		zoom: 17,
+		zoom: 16,
 		center: centro,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};

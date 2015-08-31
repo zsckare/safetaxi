@@ -17,23 +17,23 @@ getItem: function (sKey) {
 var values = ["alert", "delete", "edit", "complete"];
 var cookies = docCookies.keys();
 for (var i = 0; i < cookies.length;  i++){
-	for (var j = 0; j < values.length;  j++) {
-		if(cookies[i] === values[j]){
+  for (var j = 0; j < values.length;  j++) {
+    if(cookies[i] === values[j]){
          nameCookie = values[j];
-			$("#msj").attr("class",values[j]+"_msj");
-			$("#msj figure img").attr("src","/assets/img/messages/"+values[j]+".png");
-			var texto = String(docCookies.getItem(values[j]));
-			var patron = "+";
-			texto = texto.replace(/\+/g," ");
-			$("#msj p").text(texto);
-			$(".hide").css("display","block");
+      $("#msj").attr("class",values[j]+"_msj");
+      $("#msj figure img").attr("src","/assets/img/messages/"+values[j]+".png");
+      var texto = String(docCookies.getItem(values[j]));
+      var patron = "+";
+      texto = texto.replace(/\+/g," ");
+      $("#msj p").text(texto);
+      $(".hide").css("display","block");
          setInterval(function(){
             docCookies.deleteCookie( nameCookie );
             $("#msj").animate({
                opacity : 0
             },1000);
          },1700);
-		}
-	}
+    }
+  }
 }
 })($,window)

@@ -12,7 +12,7 @@
 	</div>
 	<div class="row"></div>
 	<div class="row">
-		<div class="input-field col s8 m8 l8 offset-s2">
+		<div class="input-field col s8 m4 l8 offset-s2 offset-m4">
 			<label for="referencia">Referencia (Opcional)</label>
 			<input type="text" id="referencia">
 		</div>
@@ -56,6 +56,11 @@
 			<div class="col s6 offset-s2" id="ubicacion"></div>
 		</div>
 		<div class="row"><div id="map_cliente" class=""></div>
+		<div class="row">
+			<div class="center-align">
+				<div class="btn" style="margin-top:1em;" >YA ABORDÉ</div>
+			</div>
+		</div>
 		<div class="row no-mostrar" id="panel"></div>
 		</div>
 		
@@ -139,7 +144,7 @@ var urlgeneral = "http://" + window.location.hostname;
 			/* Definimos las propiedades del mapa */
 			var propiedades =
 			{
-                zoom: 17,
+                zoom: 16,
                 center: centro,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
 			};

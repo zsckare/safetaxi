@@ -26,6 +26,16 @@
 				<a href="" class="brand-logo center " >Taxi Seguro</a>
 			</div>
 		</nav>
+	<div id="modalterminos" class="no-mostrar" onclick="ocultamodal();">
+			<div class="row padding-largo">
+			<p class="center-align dosisbold" style="font-size:1.2em;" >Terminos y Condiciones de uso del Servicio</p>
+				<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A magnam quibusdam eligendi amet dolores quos molestias aperiam praesentium. Sed necessitatibus dolor quasi! Quos ipsa consequuntur molestiae! Tempora iste deleniti non!</p>
+				<p>1.- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur itaque delectus autem, deleniti, possimus ex illo repellat consectetur corrupti quas quo debitis ducimus harum tenetur, a temporibus voluptatem et aliquid.</p>
+				<p>2.- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur itaque delectus autem, deleniti, possimus ex illo repellat consectetur corrupti quas quo debitis ducimus harum tenetur, a temporibus voluptatem et aliquid.</p>
+				<p>3.- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur itaque delectus autem, deleniti, possimus ex illo repellat consectetur corrupti quas quo debitis ducimus harum tenetur, a temporibus voluptatem et aliquid.</p>
+			</div>
+		</div>
+
 		<section style="margin-top:1em;" class="">
 			<div class="card pading-largo">
 				<div class="container">
@@ -69,7 +79,7 @@
 								</div>
 								<div class="row">
 									<p class="center-align">
-										Al Resgistrarte Aceptas Nuestros <a href="">Terminos de Privacidad y Condiciones de Uso</a>
+										Al Resgistrarte Aceptas Nuestros <span onclick="modalterminos();"  style="cursor:pointer;" class="azuloso" >Terminos de Privacidad y Condiciones de Uso</span>
 									</p>
 								</div>
 							</div>
@@ -78,7 +88,7 @@
 
 				</div>
 			</div>
-			
+
 		</section>
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js" ></script>
 		<script src="/assets/js/materialize.js"></script>

@@ -84,10 +84,11 @@
 	if ($password==$pasbd) {
 		$_SESSION['user']=$name;
 		$_SESSION['type']=$type;
-		Redirection::go('driver');
+		Redirection::go('/app/servicesdriver');
+		
 	}else{
 		session_destroy();
-		Redirection::go('driver');
+		Redirection::go('app/logindriver');
 	}
 	
 	}

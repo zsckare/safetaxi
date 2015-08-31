@@ -98,7 +98,7 @@
 	if ($password==$pasbd) {
 		$_SESSION['user']=$name;
 		$_SESSION['type']=$type;
-		Redirection::go('app');
+		Redirection::go('app/pedir');
 	}else{
 		session_destroy();
 		Redirection::go('app');
