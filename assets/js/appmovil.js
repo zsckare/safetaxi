@@ -224,3 +224,35 @@ var mystr="";
 		ajax.send("id_cliente="+id_cliente);
 
 	}
+
+function aborde() {
+	
+	vibrar();
+	$("#modalincoming").removeClass("mostrar");
+	$("#modalincoming").addClass("no-mostrar");
+	$("#modalarrived").removeClass("no-mostrar");
+	$("#modalarrived").addClass("mostrar");
+}
+
+function arrived() {
+	vibrar();
+	$("#modalarrived").removeClass("mostrar");
+	$("#modalarrived").addClass("no-mostrar");
+	
+
+	$("#modalcalificar").removeClass("no-mostrar");
+	$("#modalcalificar").addClass("mostrar");
+}
+function ahorano () {
+
+	$("#cortina").removeClass("mostrar");
+	$("#cortina").addClass("no-mostrar");
+	$("#modalcalificar").removeClass("mostrar");
+	$("#modalcalificar").addClass("no-mostrar");
+}
+
+function vibrar () {
+	if (window.navigator && window.navigator.vibrate) {
+		navigator.vibrate(100);	
+	}else{}
+}

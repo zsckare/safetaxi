@@ -6,6 +6,36 @@
 	$ubicacion=$obj-> getAddress($id_client,$conectar);
 	$miUbicacion=$obj->getMyAddress($id_client,$conectar);
 ?>
+	<div id="modalarrived" class="no-mostrar"style="position: fixed;top: 9%;left: 0%;width: 100%;z-index: 997;background-color: #FFF;">
+		<div class="row"></div>
+		<div class="row"></div>	
+		<div class="row"></div>
+		<div class="row">
+			<p class="center-align">Rumbo a Tu Destino</p>
+		</div>
+			<div class="row">			
+			<div class="center-align">
+				<div class="hexdots-loader">			  
+				</div>
+			</div>
+		</div>
+		<div class="row"></div>
+		<div class="row">
+			<div class="spiner"></div>
+		</div>
+
+		<div class="row"></div>
+		<div class="row">
+			<div class="col s6 offset-s3 btn" onclick="arrived();" >He Llegado!</div>
+		</div>
+		<div class="row"></div>
+		<div class="row"></div>
+		<div class="row"></div>
+		<div class="row"></div>
+		<div class="row"></div>
+		<div class="row"></div>
+	</div>
+
 <div id="driver" class="card mostrar padding-largo">
 	<div class="row ">
 		<h4 class="center-align">Buscar Chofer</h4>
@@ -58,7 +88,7 @@
 		<div class="row"><div id="map_cliente" class=""></div>
 		<div class="row">
 			<div class="center-align">
-				<div class="btn" style="margin-top:1em;" >YA ABORDÉ</div>
+				<div class="btn" style="margin-top:1em;" onclick="aborde();">YA ABORDÉ</div>
 			</div>
 		</div>
 		<div class="row no-mostrar" id="panel"></div>
@@ -66,7 +96,34 @@
 		
 	</div>
 
+	<div id="modalcalificar" class="no-mostrar">
+		<div class="row"><p class="center-align" style="font-size:1.2em;">Califica Nuestro Servicios</p></div>
+		<div class="row">
+			<div class="col s1 offset-s3">1</div>
+			<div class="col s1">2</div>
+			<div class="col s1">3</div>
+			<div class="col s1">4</div>
+			<div class="col s1">5</div>
+		</div>
+		<div class="row">
+			<div class="col s4 offset-s1 btn blue" onclick="ahorano();">Ahora no </div>
+			<div class="col s4 offset-s2 btn  blue darken-4">Calificar</div>
+		</div>
+		<div class="row"></div>
+		<div class="row">
+			<p class="center-align">¡Agradecemos Su Preferencia!</p>
+		</div>
+		<div class="row">
+			<div class="row">
+			<div class="col s3 m3 l3 offset-s2 offset-m2"><img src="/assets/img/logo.png" alt="" class="responsive-img"></div>
+			<div class="col s3 m3 l3 offset-s2 offset-m2"><img src="/assets/img/logo-alianza.png" alt="" class="responsive-img"></div>
+		</div>
+		</div>
+	</div>
+
 </div>
+
+
 <input type="hidden" value="1" id="disponible">
 <input type="hidden" value="<?=$_SESSION['id_user'];?>" id="id_cliente">
 <script src="/assets/js/appmovil.js"></script>

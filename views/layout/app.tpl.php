@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="/assets/css/style.css">
 	<link rel="stylesheet" href="/assets/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/sweetalert.css">
+	<link rel="stylesheet" href="/assets/css/spiner.css">
 	<!--Scripts de Facebook-->
 	<script src="//connect.facebook.net/es_ES/sdk.js"></script>
 	<script src="/assets/js/autenticacion.js" ></script>
