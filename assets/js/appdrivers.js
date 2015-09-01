@@ -24,12 +24,10 @@ function ocultar () {
 function localize()
 {
 	console.log("---!!!---");
-			/* Si se puede obtener la localización */
  	if (navigator.geolocation)
 	{
         navigator.geolocation.getCurrentPosition(mapa,error);
     }
-            /* Si el navegador no soporta la recuperación de la geolocalización */
     else
     {
     	alert('¡Oops! Tu navegador no soporta geolocalización.');
@@ -109,8 +107,8 @@ function tomarservicio(id_driver,id_service) {
 	ajax.onreadystatechange=function () {
 		if (ajax.readyState==4){
 			console.log("----");
-			$("#modalespera").removeClass('mostrar');
-			$("#modalespera").addClass('no-mostrar');
+			//$("#modalespera").removeClass('mostrar');
+			//$("#modalespera").addClass('no-mostrar');
 			activo(id_service);
   		}
 	}
@@ -124,12 +122,31 @@ function tomarservicio(id_driver,id_service) {
 }
 
 function activo (id_servicio) {
-	
+	console.log("id_servicio: "+id_servicio);
 
 	$("#panelservicios").removeClass('mostrar');
 	$("#panelservicios").addClass("no-mostrar");	
-	$("#servicioactivo").removeClass('no-mostrar');
-	$("#servicioactivo").addClass("mostrar");
+	//$("#servicioactivo").removeClass('no-mostrar');
+	//$("#servicioactivo").addClass("mostrar");
+
+	$("#btntake").removeClass('mostrar');
+	$("#btntake").addClass("no-mostrar");	
+	$("#end").removeClass('no-mostrar');
+	$("#end").addClass("mostrar");
+
+	url=urlgeneral+"/api/dataservice/?id_servicio=";
+	url+=id_servicio;
+	console.log("url:"+url);
+	$.getJSON(url,function(datos) {
+		$.each(datos.services, function (i, item) {
+			console.log("referencias: "+item.referencias);
+			referencia='<p class="center-align" style="font-size:1.2em;" >'+item.referencias+"</p>";
+			
+			$("#refservicio").html(referencia);
+		});
+	});
+
+
 }
 function terminarservicio () {
 	$("#cortina").removeClass('mostrar');

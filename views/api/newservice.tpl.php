@@ -9,7 +9,8 @@
 			"pass"=>"0",
 			"latitud"=>$_POST['latitud'],
 			"longitud"=>$_POST['longitud'],
-			"dirfisica"=>$_POST['dirfisica']
+			"dirfisica"=>$_POST['dirfisica'],
+			"referencias"=>$_POST['ref']
 			]);
 	}
 	else{

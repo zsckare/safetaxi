@@ -11,6 +11,7 @@
 		<!--css-->
 		<link rel="stylesheet" href="/assets/css/materialize.css">
 		<link rel="stylesheet" href="/assets/css/style.css">
+		<link rel="stylesheet" href="/assets/webfonts/style.css">
 		<link rel="stylesheet" href="/assets/css/styles.css">
 		<link rel="stylesheet" type="text/css" href="/assets/css/sweetalert.css">
 		<link href='http://fonts.googleapis.com/css?family=Dosis:400,600,500' rel='stylesheet' type='text/css'>
@@ -28,11 +29,11 @@
 		</nav>
 	<div id="modalterminos" class="no-mostrar" onclick="ocultamodal();">
 			<div class="row padding-largo">
-			<p class="center-align dosisbold" style="font-size:1.2em;" >Terminos y Condiciones de uso del Servicio</p>
-				<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A magnam quibusdam eligendi amet dolores quos molestias aperiam praesentium. Sed necessitatibus dolor quasi! Quos ipsa consequuntur molestiae! Tempora iste deleniti non!</p>
-				<p>1.- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur itaque delectus autem, deleniti, possimus ex illo repellat consectetur corrupti quas quo debitis ducimus harum tenetur, a temporibus voluptatem et aliquid.</p>
-				<p>2.- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur itaque delectus autem, deleniti, possimus ex illo repellat consectetur corrupti quas quo debitis ducimus harum tenetur, a temporibus voluptatem et aliquid.</p>
-				<p>3.- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur itaque delectus autem, deleniti, possimus ex illo repellat consectetur corrupti quas quo debitis ducimus harum tenetur, a temporibus voluptatem et aliquid.</p>
+			<p class="center-align " style="font-size:1.2em;" >Terminos y Condiciones de uso del Servicio</p>
+				<p class="blok"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A magnam quibusdam eligendi amet dolores quos molestias aperiam praesentium. Sed necessitatibus dolor quasi! Quos ipsa consequuntur molestiae! Tempora iste deleniti non!</p>
+				<p class="blok">1.- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur itaque delectus autem, deleniti, possimus ex illo repellat consectetur corrupti quas quo debitis ducimus harum tenetur, a temporibus voluptatem et aliquid.</p>
+				<p class="blok">2.- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur itaque delectus autem, deleniti, possimus ex illo repellat consectetur corrupti quas quo debitis ducimus harum tenetur, a temporibus voluptatem et aliquid.</p>
+				<p class="blok">3.- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur itaque delectus autem, deleniti, possimus ex illo repellat consectetur corrupti quas quo debitis ducimus harum tenetur, a temporibus voluptatem et aliquid.</p>
 			</div>
 		</div>
 

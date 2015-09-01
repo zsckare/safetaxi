@@ -45,7 +45,7 @@ function vaciarForm() {
 //funciones del usuario
 
 function solicitarTaxi(id_cliente,latitud,longitud,dirfisica) {
-	
+	referencias = $("#referencia").val();
 	url=urlgeneral+"/api/newservice";
 	console.log(""+id_cliente+" "+latitud+","+longitud);
 	var ajax = new XMLHttpRequest();
@@ -57,7 +57,7 @@ function solicitarTaxi(id_cliente,latitud,longitud,dirfisica) {
 		}
 	}	  	
 	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");	
-	ajax.send("id="+id_cliente+"&longitud="+longitud+"&latitud="+latitud+"&dirfisica="+dirfisica);		 	
+	ajax.send("id="+id_cliente+"&longitud="+longitud+"&latitud="+latitud+"&dirfisica="+dirfisica+"&ref="+referencias);		 	
 }
 
 function getDataDriver(id_driver,ubicacion,miubicacion) {
@@ -70,7 +70,8 @@ function getDataDriver(id_driver,ubicacion,miubicacion) {
 	var lat=null;
 	var lon=null;
 	var telefono=null;
-	console.log(miubicacion+"<-- es esta");
+	console.log(miubicacion+"<-- es esta mi ubicacion");
+	console.log(ubicacion+"<-- es esta la ubicacion");
 	$.getJSON(url,function(datos){
 
 		console.log("ejecuntando getJSON");
@@ -216,7 +217,7 @@ var mystr="";
 				$("#modalespera").removeClass("mostrar");
 				$("#modalespera").addClass("no-mostrar");
 				Materialize.toast('Servicio Cancelado', 1000);
-				window.location=urlgeneral+"/app/pedir";
+				redirije();
 			}
 		}
 	
@@ -249,10 +250,45 @@ function ahorano () {
 	$("#cortina").addClass("no-mostrar");
 	$("#modalcalificar").removeClass("mostrar");
 	$("#modalcalificar").addClass("no-mostrar");
+	document.getElementById('referencia').value="";
 }
 
 function vibrar () {
 	if (window.navigator && window.navigator.vibrate) {
 		navigator.vibrate(100);	
 	}else{}
+}
+
+function calificar(id_cliente) {
+	comentario=$("#textarea1").val();
+	rate="5";
+	console.log(""+comentario);
+	url=urlgeneral+"/api/service/?id_cliente=";
+	url+=id_cliente;
+	var id_service=null;
+	$.getJSON(url,function(datos) {
+		$.each(datos.services, function (i, item) {
+			id_service=item.id_servicio;
+			console.log("id_servicio: "+item.id_servicio);
+			cal(item.id_servicio);
+		});
+	});
+
+}
+function cal(id_service) {
+	
+	var ajax = new XMLHttpRequest();
+	uri=urlgeneral+"/api/calificar"
+	ajax.open("POST",uri,true);
+	ajax.onreadystatechange=function () {
+		if (ajax.readyState==4){
+			console.log("!!!!!CALIFICACION!!!!");
+			redirije();
+		}
+	}
+	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");	
+	ajax.send("id_servicio="+id_service+"&comentarios="+comentario+"&rate="+rate);
+}
+function redirije () {
+	window.location=urlgeneral+"/app/pedir";
 }

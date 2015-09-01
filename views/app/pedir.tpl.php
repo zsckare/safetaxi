@@ -99,17 +99,22 @@
 	<div id="modalcalificar" class="no-mostrar">
 		<div class="row"><p class="center-align" style="font-size:1.2em;">Califica Nuestro Servicios</p></div>
 		<div class="row">
-			<div class="col s1 offset-s3">1</div>
-			<div class="col s1">2</div>
-			<div class="col s1">3</div>
-			<div class="col s1">4</div>
-			<div class="col s1">5</div>
+			<div class="col s8 offset-s2">
+				<div class="row" id="live-review"></div>
+				<div class="row" id="live" ></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+        		<textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
+        		<label for="textarea1">Dejanos un Comentario :)</label>
+        	</div>
 		</div>
 		<div class="row">
 			<div class="col s4 offset-s1 btn blue" onclick="ahorano();">Ahora no </div>
-			<div class="col s4 offset-s2 btn  blue darken-4">Calificar</div>
+			<div class="col s4 offset-s2 btn  blue darken-4" onclick="calificar(<?=$_SESSION['id_user'];?>);">Calificar</div>
 		</div>
-		<div class="row"></div>
+		
 		<div class="row">
 			<p class="center-align">¡Agradecemos Su Preferencia!</p>
 		</div>

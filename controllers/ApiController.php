@@ -57,4 +57,28 @@ class ApiController{
 
         return new View("api/destroyservice", ["title" => "", "layout" => "off", "nameLayout" => "dash", "values"=>$values]); 
     }
+
+    public function CalificarAction()
+    {
+        if (isset($_REQUEST['id_servicio'])) {
+            $id_servicio=$_REQUEST['id_servicio'];
+            $comentarios=$_POST['comentarios'];
+            $rate=$_POST['rate'];
+            $calificacion= new RateModel();
+
+            $calificacion->create([            
+            "id_servicio"=> $id_servicio,
+            "comentarios"=> $comentarios,
+            "rate"=>$rate
+            ]);
+        }
+    }
+
+    public function dataServiceAction()
+    {   
+        $servicio=new ServiceModel();
+        $values = $servicio->get($_GET['id_servicio']);
+        return new View("api/dataservice", ["title" => "", "layout" => "off", "nameLayout" => "dash", "values"=>$values]);  
+    }
+
 }

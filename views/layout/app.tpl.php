@@ -49,6 +49,7 @@
 	<script src="/assets/js/messages.js"></script>	
     <script src="/assets/js/sweetalert.min.js"></script>
 	<script src="/assets/js/appmovil.js"></script>
+	<script src="/assets/js/jquery.raty.js"></script>
 	<script>
 		url ="http://" + window.location.hostname + "/client";
 		$(document).on("ready",main	);
@@ -78,8 +79,20 @@
 			});
 		}
 	</script>
-	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    </script>
+	<script>
+		$(document).on('ready',function() {
+			$("#live-review").raty({
+				target: '#live',
+				targetKeep: true
+			});
+		});
+
+	</script>
+	<!--
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3SPE9LEtv399X08t9jqLks4H63qlAgMs"
+  type="text/javascript"></script>
+-->
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 
 	<section style="margin-top:1em;" class="">
 		<?=$yield ?>

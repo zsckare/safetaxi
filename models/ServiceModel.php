@@ -16,7 +16,7 @@
         $query = $this->consult->getConsultar("
             SELECT *
             FROM servicio
-            WHERE $id_servicio = '$value'
+            WHERE id_servico = '$value'
         ");
 
         while($row = $query->fetch_array(MYSQLI_ASSOC)){
@@ -62,7 +62,7 @@
       $fecha=Date::getFecha();
       $id_cliente=$id;
       if($this->consult->getConsultar("
-              INSERT INTO `servicio` (`id_servico`, `id_cliente`,`disponible`,`latitud`,`longitud`, `dirfisica`) VALUES (NULL, '$id_cliente','1','$latitud', '$longitud', '$dirfisica' );
+              INSERT INTO `servicio` (`id_servico`, `id_cliente`,`disponible`,`latitud`,`longitud`, `dirfisica`, `referencias`) VALUES (NULL, '$id_cliente','1','$latitud', '$longitud', '$dirfisica', '$referencias' );
           "))
       {
          
