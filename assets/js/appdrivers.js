@@ -24,19 +24,39 @@ function ocultar () {
 function localize()
 {
 	console.log("---!!!---");
+			/* Si se puede obtener la localización */
  	if (navigator.geolocation)
 	{
         navigator.geolocation.getCurrentPosition(mapa,error);
     }
+            /* Si el navegador no soporta la recuperación de la geolocalización */
     else
     {
     	alert('¡Oops! Tu navegador no soporta geolocalización.');
     }
 }
 
+function loc(){
+	console.log("---!!--OBTENIENDO UBICACION!!---");
+			/* Si se puede obtener la localización */
+ 	if (navigator.geolocation)
+	{
+        navigator.geolocation.getCurrentPosition(function(pos){
+		var latitud = pos.coords.latitude;
+			console.log("latitud"+latitud);
+		var longitud = pos.coords.longitude;
+			console.log("longitud"+longitud);
+		document.getElementById('lat').value=latitud;
+		document.getElementById('lon').value=longitud;
+		
+		},error);
+    }
+
+}
+
 function mapa(pos)
 {
-			/* Obtenemos los parámetros de la API de geolocalización HTML*/
+/* Obtenemos los parámetros de la API de geolocalización HTML*/
 var latitud = pos.coords.latitude;
 var longitud = pos.coords.longitude;
 var precision = pos.coords.accuracy;
@@ -91,6 +111,9 @@ function error(errorCode)
 	else
 		alert("Ha ocurrido un error")
 }
+
+
+
 function tomarservicio(id_driver,id_service) {
 	document.getElementById('libre').value=0;
 	val = document.getElementById('libre').value;
@@ -140,7 +163,7 @@ function activo (id_servicio) {
 	$.getJSON(url,function(datos) {
 		$.each(datos.services, function (i, item) {
 			console.log("referencias: "+item.referencias);
-			referencia='<p class="center-align" style="font-size:1.2em;" >'+item.referencias+"</p>";
+			referencia=item.referencias;
 			
 			$("#refservicio").html(referencia);
 		});
@@ -160,3 +183,21 @@ function terminarservicio () {
 
 	window.location=urlgeneral+"/app/servicesdriver";
 }
+
+function notifyMe() {
+	  if (!("Notification" in window)) {
+	    console.log("This browser does not support desktop notification");
+	  }
+
+	  else if (Notification.permission === "granted") {
+	    var notification = new Notification("Nuevo Servicio Disponible",{ sound: '/assets/audio/ring.mp3' });
+	  }
+
+	  else if (Notification.permission !== 'denied') {
+	    Notification.requestPermission(function (permission) {
+	      if (permission === "granted") {
+	   var notification = new Notification("Nuevo Servicio Disponible",{ sound: '/assets/audio/ring.mp3' });
+	      }
+	    });
+	  }
+	}

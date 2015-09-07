@@ -55,7 +55,20 @@
         return $this->rows;
 
     }
-    
+       public function getAllOrder( $value = null)
+    {
+        $query = $this->consult->getConsultar("
+            SELECT *
+            FROM servicio ORDER BY id_servico DESC
+        ");
+
+        while($row = $query->fetch_array(MYSQLI_ASSOC)){
+            $this->rows[] = $row;
+        }
+
+        return $this->rows;
+
+    }
     public function create($values = array())
     {
       extract($values);

@@ -284,7 +284,7 @@
     },
 
     _buildScoreField: function() {
-      return $('<input />', { name: this.opt.scoreName, type: 'hidden' }).appendTo(this);
+      return $('<input />', { name: this.opt.scoreName, type: 'hidden', id: 'score' }).appendTo(this);
     },
 
     _createCancel: function() {
@@ -745,9 +745,9 @@
     scoreName    : 'score',
     single       : false,
     space        : true,
-    starHalf     : 'lib/images/star-half.png',
-    starOff      : 'lib/images/star-off.png',
-    starOn       : 'lib/images/star-on.png',
+    starHalf     : '/assets/img/star-half.png',
+    starOff      : '/assets/img/star-off.png',
+    starOn       : '/assets/img/star-on.png',
     starType     : 'img',
     target       : undefined,
     targetFormat : '{score}',

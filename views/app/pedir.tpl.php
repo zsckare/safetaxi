@@ -99,7 +99,7 @@
 	<div id="modalcalificar" class="no-mostrar">
 		<div class="row"><p class="center-align" style="font-size:1.2em;">Califica Nuestro Servicios</p></div>
 		<div class="row">
-			<div class="col s8 offset-s2">
+			<div class="center-align">
 				<div class="row" id="live-review"></div>
 				<div class="row" id="live" ></div>
 			</div>
@@ -107,7 +107,7 @@
 		<div class="row">
 			<div class="input-field col s12">
         		<textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
-        		<label for="textarea1">Dejanos un Comentario :)</label>
+        		<label for="textarea1">Dejanos un Comentario </label>
         	</div>
 		</div>
 		<div class="row">

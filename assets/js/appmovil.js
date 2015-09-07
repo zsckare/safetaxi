@@ -245,12 +245,7 @@ function arrived() {
 	$("#modalcalificar").addClass("mostrar");
 }
 function ahorano () {
-
-	$("#cortina").removeClass("mostrar");
-	$("#cortina").addClass("no-mostrar");
-	$("#modalcalificar").removeClass("mostrar");
-	$("#modalcalificar").addClass("no-mostrar");
-	document.getElementById('referencia').value="";
+redirije();
 }
 
 function vibrar () {
@@ -261,7 +256,7 @@ function vibrar () {
 
 function calificar(id_cliente) {
 	comentario=$("#textarea1").val();
-	rate="5";
+	vibrar();
 	console.log(""+comentario);
 	url=urlgeneral+"/api/service/?id_cliente=";
 	url+=id_cliente;
@@ -286,6 +281,8 @@ function cal(id_service) {
 			redirije();
 		}
 	}
+	rate=document.getElementById('score').value;
+	console.log("rate:!!!!!"+rate);
 	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");	
 	ajax.send("id_servicio="+id_service+"&comentarios="+comentario+"&rate="+rate);
 }

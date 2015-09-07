@@ -5,7 +5,7 @@ class AppController{
     public function IndexAction($value='')
     {
         if (isset($_SESSION['user']) && $_SESSION['type']=="client" ) {
-            return new View("app/index", ["title" => "", "layout" => "on", "nameLayout" => "app"]);       
+            return new View("app/pedir", ["title" => "", "layout" => "on", "nameLayout" => "app"]);       
         }else{
             Redirection::go('app/signin');
         }     
@@ -78,7 +78,7 @@ class AppController{
     public function IndexDriverAction($value='')
     {
         if (isset($_SESSION['user']) && $_SESSION['type']=="driver" ) {
-            return new View("appdriver/index", ["title" => "Taxi Seguro Alianza APP 
+            return new View("appdriver/services", ["title" => "Taxi Seguro Alianza APP 
                 Driver", "layout" => "on", "nameLayout" => "appdriver"]); 
         }else{
             Redirection::go('app/logindriver');

@@ -6,7 +6,7 @@
 <div id="cortina" class="no-mostrar" onclick="ocultar();"></div>
 <div id="modalespera" class="no-mostrar mapa"  >
 	<div class="row">
-		<div id="refservicio"></div>
+		<div id="refservicio" class="center-align" style="font-size:1.2em;"></div>
 	</div>
 	<div class="row">
 		<div id="map" class=""></div>
@@ -17,7 +17,7 @@
 		<div class="col s3 offset-s2">
 			<div class="btn" onclick="terminarservicio();">Terminar</div>
 		</div>
-		<div class="col s3 offset-s2 btn red">panic</div>
+		<div class="col s3 offset-s3 btn red">panic</div>
 	</div>
 </div>
 

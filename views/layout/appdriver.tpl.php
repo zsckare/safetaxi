@@ -19,7 +19,7 @@
 	
 
 </head>
-<body>
+<body onload="loc();">
 	
 	<nav class="light-blue top-nav">
 	    <div class="light-blue nav-wrapper container" >
@@ -38,19 +38,15 @@
 
 	    </div>
 	</nav>
-
+	<input type="hidden" id="lat">
+	<input type="hidden" id="lon">
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
     <script src="/assets/js/init.js"></script> 	
 	<script src="/assets/js/messages.js"></script>	
     <script src="/assets/js/sweetalert.min.js"></script>
     <script src="/assets/js/appdrivers.js"></script>	
-	
-	<!--
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3SPE9LEtv399X08t9jqLks4H63qlAgMs"
-  type="text/javascript"></script>
--->
-<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=false&libraries=geometry"></script>
 
 
 	<script>
@@ -59,15 +55,38 @@
 		texto="";
 		url ="http://"+window.location.hostname +"/service";
 			console.log("trayendo servicios disponibles");
-			
+			var lat=document.getElementById('lat').value;
+			var lon=document.getElementById('lon').value;
+			console.log(lat+" "+lon);
 
 			$.getJSON(url,function(datos){
 				$.each(datos.services, function(i, item){
-								
-				texto+="<div class='row'><div class='col s12 m12 l6 btn-large'><div class='' onclick='mostrarmapa( "+iddriver+","+item.id_servicio+","+item.latitud+","+item.longitud+" )' >"+item.dirfisica+"</div></div></div>";
+				var l_driver=parseFloat(lat);
+				var ln_driver=parseFloat(lon);
+				var l_service=parseFloat(item.latitud);
+				var lng_service=parseFloat(item.longitud);
+				var driver=new google.maps.LatLng(l_driver,ln_driver);
+				var service=new google.maps.LatLng(l_service,lng_service);
+				console.log(item.lat_driver+" "+item.lng_driver+" "+item.latitud+" "+item.longitud);
+				var heads=getDistance(driver,service); 
+ 				console.log(heads);
+ 				if(heads<=400){
+ 					console.log("OK! el servicio esta a "+heads+" metros");
+ 					notifyMe();
+  				texto+="<div class='row'><div class='col s12 m12 l6 btn-large'><div class='' onclick='mostrarmapa( "+iddriver+","+item.id_servicio+","+item.latitud+","+item.longitud+" )' >"+item.dirfisica+"</div></div></div>";
+ 				}
+ 				else{
+  				console.log("El servicio esta muy lejos a "+heads+" metros");
+ 				}
+				
 				});
 				$("#tablebody").html(texto);
 			});
+	}
+	function getDistance(driver,service) {
+  		var heading = google.maps.geometry.spherical.computeDistanceBetween(driver,service);
+  		
+  		return heading;
 	}
 	</script>
 	<section style="margin-top:1em;" class="card padding-largo">
@@ -77,3 +96,4 @@
 	
 </body>
 </html>
+
